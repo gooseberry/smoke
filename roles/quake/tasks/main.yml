@@ -1,0 +1,19 @@
+---
+# This is the main playbook to install quake on your system.
+
+- name: Install dependencies
+  become: yes
+  ansible.builtin.apt:
+    pkg:
+      - libopusfile0
+      - libmad0
+      - libsdl2-2.0-0
+      - bchunk
+      - mesa-utils
+      - vorbis-tools
+      - unzip
+
+- name: Install latest version of innoextract from the inter-webs
+  become: yes
+  ansible.builtin.apt:
+    deb: "{{ innoextract_url }}"

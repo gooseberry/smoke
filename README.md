@@ -11,5 +11,5 @@ To get started, you need to install ansible on a fresh copy of crostini and pull
 
 Once you've upgraded your system, you'll need to install ansible.  Run the following commands to do so.
 
->sudo apt-get install python3-pip -y 
->python3 -m pip install --user ansible
+    sudo apt-get install python3-pip -y 
+    python3 -m pip install --user ansible

@@ -20,7 +20,7 @@ qss_dir: "{{ home }}/.qss"
 
 # Quake directories that must be present
 directories:
-  - "{{ base_dir }}//id1/music"
+  - "{{ base_dir }}/id1/music"
   - "{{ base_dir }}/hipnotic/music"
   - "{{ base_dir }}/rogue/music"
   - "{{ qss_dir }}"

@@ -4,13 +4,6 @@
 - name: Pre-Install check list
   ansible.builtin.include_tasks: pre-install.yml
 
-### Innoextract specific tasks
-
-- name: Install latest version of innoextract from the inter-webs
-  become: yes
-  ansible.builtin.apt:
-    deb: "{{ innoextract_url }}"
-
 - name: Create working directory for installation files
   ansible.builtin.tempfile:
     state: directory

@@ -1,5 +1,31 @@
 # Variables for the quake installer
 
+# Install file from gog
+installer: 
+  path: "{{ home }}/setup_quake_the_offering_2.0.0.6.exe"
+
+# Dependencies
+dependencies:
+  - libopusfile0
+  - libmad0
+  - libsdl2-2.0-0
+  - bchunk
+  - mesa-utils
+  - vorbis-tools
+  - unzip
+
+# Quake base directory
+base_dir: "{{ home }}/.quake"
+qss_dir: "{{ home }}/.qss"
+
+# Quake directories that must be present
+directories:
+  - "{{ base_dir }}//id1/music"
+  - "{{ base_dir }}/hipnotic/music"
+  - "{{ base_dir }}/rogue/music"
+  - "{{ qss_dir }}"
+  - "{{ icon_dir }}"
+  - "{{ app_dir }}"
 
 # Quakespasm-Spiked binary file url
 qss_url: https://triptohell.info/moodles/qss/quakespasm_spiked_linux64_dev.zip

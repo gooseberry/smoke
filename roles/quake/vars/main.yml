@@ -1,0 +1,6 @@
+# Variables for the quake installer
+
+
+# Quakespasm-Spiked binary file url
+qss_url: https://triptohell.info/moodles/qss/quakespasm_spiked_linux64_dev.zip
+

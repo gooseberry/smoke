@@ -1,6 +1,14 @@
 ---
 # This is the main playbook to install quake on your system.
 
+- name: Check for installer
+  ansible.builtin.stat: path=~/setup_quake_the_offering_2.0.0.6.exe
+  register: installer_file
+
+- name: fail if the gog installer is not present
+  fail: msg="Place the setup_quake_the_offering_2.0.0.6.exe file in your home directory and try again"
+  when: not installer_file.stat.exists
+
 - name: Install dependencies
   become: yes
   ansible.builtin.apt:
@@ -17,3 +25,93 @@
   become: yes
   ansible.builtin.apt:
     deb: "{{ innoextract_url }}"
+
+- name: Create quake directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: "0755"
+  loop:
+    - ~/.quake/id1/music
+    - ~/.quake/hipnotic/music
+    - ~/.quake/rogue/music
+    - ~/.qss
+    - ~/.local/share/icons
+    - ~/.local/share/applications
+    
+- name: Create temp directory
+  ansible.builtin.tempfile:
+    state: directory
+  register: tmp_dir
+
+- name: Download and install Quakespasm-spiked engine
+  ansible.builtin.unarchive:
+    src: "{{ qss_url }}"
+    dest: ~/.qss
+    remote_src: yes
+
+- name: Extract installer to temp directory
+  ansible.builtin.command: innoextract --lowercase -s -m -d "{{ tmp_dir.path|quote }}" "{{ installer_file.stat.path|quote }}"
+  register: inno_output
+
+- name: Copy quake game files
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    remote_src: yes
+  with_items:
+    - { src: "{{ tmp_dir.path }}/app/id1/pak0.pak", dest: "~/.quake/id1/pak0.pak" }
+    - { src: "{{ tmp_dir.path }}/app/id1/pak1.pak", dest: "~/.quake/id1/pak1.pak" }
+    - { src: "{{ tmp_dir.path }}/app/hipnotic/pak0.pak", dest: "~/.quake/hipnotic/pak0.pak" }
+    - { src: "{{ tmp_dir.path }}/app/rogue/pak0.pak", dest: "~/.quake/rogue/pak0.pak" }
+
+- name: Extract music tracks from CD images
+  ansible.builtin.command: 
+    argv:
+      - bchunk 
+      - -w 
+      - "{{ item.bin }}" 
+      - "{{ item.cue }}" 
+      - "{{ item.dest }}"
+  with_items:
+    - { bin: "{{ tmp_dir.path }}/app/game.gog", cue: "{{ tmp_dir.path }}/app/game.cue", dest: "~/.quake/id1/music/track" }
+    - { bin: "{{ tmp_dir.path }}/app/gamea.gog", cue: "{{ tmp_dir.path }}/app/gamea.cue", dest: "~/.quake/hipnotic/music/track" }
+    - { bin: "{{ tmp_dir.path }}/app/gamed.gog", cue: "{{ tmp_dir.path }}/app/gamed.cue", dest: "~/.quake/rogue/music/track" }
+
+- name: Cleaning up - Removing temp directory
+  ansible.builtin.file:
+    path: "{{ tmp_dir.path }}"
+    state: absent
+  when: tmp_dir.path is defined
+
+- name: Cleaning up - Removing track01.iso files
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - "~/.quake/id1/music/track01.iso"
+    - "~/.quake/hipnotic/music/track01.iso"
+    - "~/.quake/rogue/music/track01.iso"
+
+- name: Find all .wav files
+  ansible.builtin.find:
+    paths: ~/.quake
+    recurse: yes
+    patterns: "*.wav"
+  register: wave_files
+
+- name: Convert wave files to ogg
+  ansible.builtin.command:
+    argv:
+      - oggenc
+      - -Q
+      - -q
+      - 8
+      - "{{ item.path }}"
+  loop: "{{ wave_files.files }}"
+
+- name: Delete old wave files
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: absent
+  loop: "{{ wave_files.files }}"

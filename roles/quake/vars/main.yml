@@ -12,6 +12,7 @@ dependencies:
   - mesa-utils
   - vorbis-tools
   - unzip
+  - innoextract
 
 # Quake base directory
 base_dir: "{{ home }}/.quake"

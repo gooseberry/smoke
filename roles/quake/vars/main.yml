@@ -1,8 +1,7 @@
 # Variables for the quake installer
 
 # Install file from gog
-installer: 
-  path: "{{ home }}/setup_quake_the_offering_2.0.0.6.exe"
+installer: setup_quake_the_offering_2.0.0.6.exe
 
 # Dependencies
 dependencies:

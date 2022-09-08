@@ -1,30 +1,8 @@
 ---
 # This is the main playbook to install quake on your system.
 
-#### Pre-requisites 
-
-- name: Locate install file in home directory
-  ansible.builtin.stat: path: "{{ home }}/{{ installer }}"
-  register: installer_file
-
-- name: Abort installation if install file not presentt
-  fail: msg: "Move {{ installer }} file in your home directory and try again"
-  when: not installer_file.stat.exists
-
-- name: Install dependencies
-  become: yes
-  ansible.builtin.apt:
-    pkg:
-      "{{ dependencies }}"
-
-- name: Create directory tree for the files to be installed
-  ansible.builtin.file:
-    path: "{{ item }}"
-    state: directory
-    mode: "0755"
-  loop: "{{ directories }}"
-
-### End of pre-requisists
+- name: Pre-Install check list
+  ansible.builtin.include_tasks: pre-install.yml
 
 ### Innoextract specific tasks
 

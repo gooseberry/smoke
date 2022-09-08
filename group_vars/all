@@ -2,6 +2,6 @@
 
 
 # common directories
-home: ~/
+home: "~"
 icon_dir: "{{ home }}/.local/share/icons"
-app_dir: "{{ home }}//.local/share/applications"
+app_dir: "{{ home }}/.local/share/applications"

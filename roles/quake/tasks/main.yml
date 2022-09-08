@@ -2,106 +2,127 @@
 # This is the main playbook to install quake on your system.
 
 - name: Pre-Install check list
-  ansible.builtin.include_tasks: pre-install.yml
+  ansible.builtin.include_tasks: common/tasks/pre-install.yml
 
-- name: Create working directory for installation files
-  ansible.builtin.tempfile:
-    state: directory
-  register: tmp_dir
+- name: Find installed files
+  ansible.builtin.stat:
+    path: "{{ base_dir }}/id1/pak0.pak"
+  register: is_game_installed
 
-- name: Extract installer into working directory 
-  ansible.builtin.command: innoextract --lowercase -s -m -d "{{ tmp_dir.path|quote }}" "{{ installer_file.stat.path|quote }}"
-  register: inno_output
+- name: Install Quake games files from gog installer
+  when: not is_game_installed.stat.exists
+  block:  
+  - name: Create working directory for installation files
+    ansible.builtin.tempfile:
+      state: directory
+    register: tmp_dir
 
-- name: Copy required game files into the base directory
-  ansible.builtin.copy:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
-    remote_src: yes
-  with_items:
-    - { 
-        src: "{{ tmp_dir.path }}/app/id1/pak0.pak", 
-        dest: "{{ base_dir }}/id1/pak0.pak" 
-      }
-    - { 
-        src: "{{ tmp_dir.path }}/app/id1/pak1.pak", 
-        dest: "{{ base_dir }}/id1/pak1.pak" 
-      }
-    - { 
-        src: "{{ tmp_dir.path }}/app/hipnotic/pak0.pak", 
-        dest: "{{ base_dir }}/hipnotic/pak0.pak" 
-      }
-    - { 
-        src: "{{ tmp_dir.path }}/app/rogue/pak0.pak", 
-        dest: "{{ base_dir }}/rogue/pak0.pak"
-      }
+  - name: Extract installer into working directory 
+    ansible.builtin.command: innoextract --lowercase -s -m -d "{{ tmp_dir.path|quote }}" "{{ home }}/{{ installer }}"
+    register: inno_output
 
-- name: Extract music tracks from CD images
-  ansible.builtin.command: 
-    argv:
-      - bchunk 
-      - -w 
-      - "{{ item.bin }}" 
-      - "{{ item.cue }}" 
-      - "{{ item.dest }}"
-  with_items:
-    - { 
-        bin: "{{ tmp_dir.path }}/app/game.gog", 
-        cue: "{{ tmp_dir.path }}/app/game.cue", 
-        dest: "{{ base_dir }}/id1/music/track" 
-      }
-    - { 
-        bin: "{{ tmp_dir.path }}/app/gamea.gog", 
-        cue: "{{ tmp_dir.path }}/app/gamea.cue", 
-        dest: "{{ base_dir }}/hipnotic/music/track" 
-      }
-    - { 
-        bin: "{{ tmp_dir.path }}/app/gamed.gog", 
-        cue: "{{ tmp_dir.path }}/app/gamed.cue", 
-        dest: "{{ base_dir }}/rogue/music/track" 
-      }
+  - name: Copy required game files into the base directory
+    ansible.builtin.copy:
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+      remote_src: yes
+    with_items:
+      - { 
+          src: "{{ tmp_dir.path }}/app/id1/pak0.pak", 
+          dest: "{{ base_dir }}/id1/pak0.pak" 
+        }
+      - { 
+          src: "{{ tmp_dir.path }}/app/id1/pak1.pak", 
+          dest: "{{ base_dir }}/id1/pak1.pak" 
+        }
+      - { 
+          src: "{{ tmp_dir.path }}/app/hipnotic/pak0.pak", 
+          dest: "{{ base_dir }}/hipnotic/pak0.pak" 
+        }
+      - { 
+          src: "{{ tmp_dir.path }}/app/rogue/pak0.pak", 
+          dest: "{{ base_dir }}/rogue/pak0.pak"
+        }
 
-- name: Remove working directory
-  ansible.builtin.file:
-    path: "{{ tmp_dir.path }}"
-    state: absent
-  when: tmp_dir.path is defined
+  - name: Extract music tracks from CD images
+    ansible.builtin.command: 
+      argv:
+        - bchunk 
+        - -w 
+        - "{{ item.bin }}" 
+        - "{{ item.cue }}" 
+        - "{{ item.dest }}"
+    with_items:
+      - { 
+          bin: "{{ tmp_dir.path }}/app/game.gog", 
+          cue: "{{ tmp_dir.path }}/app/game.cue", 
+          dest: "{{ base_dir }}/id1/music/track" 
+        }
+      - { 
+          bin: "{{ tmp_dir.path }}/app/gamea.gog", 
+          cue: "{{ tmp_dir.path }}/app/gamea.cue", 
+          dest: "{{ base_dir }}/hipnotic/music/track" 
+        }
+      - { 
+          bin: "{{ tmp_dir.path }}/app/gamed.gog", 
+          cue: "{{ tmp_dir.path }}/app/gamed.cue", 
+          dest: "{{ base_dir }}/rogue/music/track" 
+        }
 
-- name: Remove data tracks from the music folders
-  ansible.builtin.file:
-    path: "{{ item }}"
-    state: absent
-  with_items:
-    - "~/.quake/id1/music/track01.iso"
-    - "~/.quake/hipnotic/music/track01.iso"
-    - "~/.quake/rogue/music/track01.iso"
+  - name: Remove working directory
+    ansible.builtin.file:
+      path: "{{ tmp_dir.path }}"
+      state: absent
+    when: tmp_dir.path is defined
 
-- name: Create list of all music tracks
-  ansible.builtin.find:
-    paths: ~/.quake
-    recurse: yes
-    patterns: "*.wav"
-  register: wave_files
+  - name: Remove data tracks from the music folders
+    ansible.builtin.file:
+      path: "{{ item }}"
+      state: absent
+    with_items:
+      - "~/.quake/id1/music/track01.iso"
+      - "~/.quake/hipnotic/music/track01.iso"
+      - "~/.quake/rogue/music/track01.iso"
 
-- name: Convert wave files to ogg
-  ansible.builtin.command:
-    argv:
-      - oggenc
-      - -Q
-      - -q
-      - 8
-      - "{{ item.path }}"
-  loop: "{{ wave_files.files }}"
+  - name: Create list of all music tracks
+    ansible.builtin.find:
+      paths: ~/.quake
+      recurse: yes
+      patterns: "*.wav"
+    register: wave_files
 
-- name: Delete old wave files
-  ansible.builtin.file:
-    path: "{{ item.path }}"
-    state: absent
-  loop: "{{ wave_files.files }}"
+  - name: Convert wave files to ogg
+    ansible.builtin.command:
+      argv:
+        - oggenc
+        - -Q
+        - -q
+        - 8
+        - "{{ item.path }}"
+    loop: "{{ wave_files.files }}"
+
+  - name: Delete old wave files
+    ansible.builtin.file:
+      path: "{{ item.path }}"
+      state: absent
+    loop: "{{ wave_files.files }}"
 
 - name: Download and install Quakespasm-spiked engine
   ansible.builtin.unarchive:
     src: "{{ qss_url }}"
     dest: "{{ qss_dir }}"
     remote_src: yes
+    creates: "{{ qss_dir }}/quakespasm-spiked-linux64"
+
+- name: Download Icon assets from smoke-resources repository
+  ansible.builtin.get_url:
+    url: "{{ smoke_resources }}/{{ item }}"
+    dest: "{{ icon_dir }}/{{ item }}"
+    force: no
+  loop: "{{ icons }}"
+
+- name: Create Quake Desktop entry
+  ansible.builtin.template:
+    src: quake.desktop.j2
+    dest: "{{ app_dir }}/quake.desktop"
 

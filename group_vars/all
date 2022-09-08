@@ -1,8 +1,5 @@
 # All variables will be set in this file for the time being.
 
-# URL for innoextract
-innoextract_url: https://download.opensuse.org/repositories/home:/dscharrer/Debian_11/amd64/innoextract_1.9-0.1_amd64.deb
-
 
 # common directories
 home: ~/

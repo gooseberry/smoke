@@ -7,7 +7,7 @@ This is a little side project I started when I got a ChromeBook many years ago a
 ## How-to
 To get started, you need to install ansible on a fresh copy of crostini and pull this repository.  
 
->$sudo apt-get update && sudo apt-get upgrade -y
+    $sudo apt-get update && sudo apt-get upgrade -y
 
 Once you've upgraded your system, you'll need to install ansible.  Run the following commands to do so.
 

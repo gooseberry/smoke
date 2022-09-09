@@ -2,7 +2,10 @@
 # Standard extracting command for innoextract
 #
 # {{ tmp_dir.path }} must be registered before including this task list.
-# {{ installer }} must be the full path to the .exe install file.
+#
+# {{ installer }} must be registered before including this task list.
+#   installer: /full/path/to/setup.exe
+#
 # All multi-part installer files must be in the same directory.
 #
 # Use the following format to include this task list:

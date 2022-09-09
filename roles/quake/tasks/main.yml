@@ -28,16 +28,8 @@
           state: directory
       register: tmp_dir
 
-    - name: Extract installer into working directory 
-      ansible.builtin.command: 
-          argv:
-              - innoextract 
-              - --lowercase
-              - -s
-              - -m
-              - -d
-              - "{{ tmp_dir.path|quote }}"
-              - "{{ home }}/{{ installer }}"
+    - name: Use innoextract to extract game files
+      ansible.builtin.include_tasks: common/tasks/extract_inno.yml
 
     - name: Copy game files into the game directory
       ansible.builtin.copy:

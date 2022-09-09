@@ -3,12 +3,12 @@
 
 - name: Locate install file in home directory
   ansible.builtin.stat:
-    path: "{{ home }}/{{ installer }}"
+    path: "{{ installer }}"
   register: install_file
 
 - name: Abort install if install file not found
   ansible.builtin.fail:
-    msg: "Install file {{ home }}/{{ installer }} not found.  Please download installer and try again."
+    msg: "Install file {{ installer }} not found.  Please download installer and try again."
   when: not install_file.stat.exists
 
 - name: Install dependencies

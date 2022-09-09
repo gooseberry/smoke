@@ -1,9 +1,14 @@
 ---
 # Standard extracting command for innoextract
 #
-# {{ tmp_dir.path }} must be registered before including this task list
-# {{ installer }} must be the full path to the .exe install file
-# All multi-part installer files must be in the same directory
+# {{ tmp_dir.path }} must be registered before including this task list.
+# {{ installer }} must be the full path to the .exe install file.
+# All multi-part installer files must be in the same directory.
+#
+# Use the following format to include this task list:
+#
+#   - name: Extract game files with innoextract
+#     ansible.builtin.include_tasks: common/tasks/extract_inno.yml
 
 - name: Extract game installer into working directory
   ansible.builtin.command:

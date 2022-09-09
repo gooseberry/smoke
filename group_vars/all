@@ -1,5 +1,4 @@
-# All variables will be set in this file for the time being.
-
+# Group variables that are common for all installers
 
 # common directories
 home: "{{ lookup('env', 'HOME') }}"

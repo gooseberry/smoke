@@ -3,6 +3,6 @@
 # this should only be called if innoextract 1.8 (included in debian 11) does not work
 
 - name: Install innoextract from the interwebs
-	become: yes
-	ansible.builtin.apt:
-		  deb: "https://download.opensure.org/repositories/home:/dscharrer/Debian_11/amd64/innoextract_1.9-0.1_amd64.deb"
+  become: yes
+  ansible.builtin.apt:
+      deb: "https://download.opensure.org/repositories/home:/dscharrer/Debian_11/amd64/innoextract_1.9-0.1_amd64.deb"

@@ -17,7 +17,9 @@
 - name: Screen width
   ansible.builtin.shell: xrandr|grep '*'|head -n 1|awk '{print $1}'|cut -d\x -f1
   register: screen_width
+  changed_when: false
 
 - name: Screen height
   ansible.builtin.shell: xrandr|grep '*'|head -n 1|awk '{print $1}'|cut -d\x -f2
   register: screen_height
+  changed_when: false

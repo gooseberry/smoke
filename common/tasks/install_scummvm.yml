@@ -1,0 +1,10 @@
+---
+# This task list will install scummvm from scummvm.org
+# scummvm in the debian repository is quite old and does not support
+# many games. Using the binary from scummvm will ensure we always
+# install a more recent version.
+
+- name: Install scummvm from the interwebs
+	become: yes
+	ansible.builtin.apt:
+		  deb: "https://downloads.scummvm.org/frs/scummvm/2.6.0/scummvm_2.6.0-1_debian11_amd64.deb"

@@ -16,7 +16,7 @@ dependencies:
 
 # Quake base directory
 base_dir: "{{ home }}/.quake"
-qss_dir: "{{ home }}/.qss"
+qss_dir: "{{ home }}/qss"
 
 # Quake directories that must be present
 directories:
@@ -26,6 +26,13 @@ directories:
   - "{{ qss_dir }}"
   - "{{ icon_dir }}"
   - "{{ app_dir }}"
+
+# Game files list
+game_files:
+  - { src: "app/id1/pak0.pak", dest: "id1/pak0.pak" }
+  - { src: "app/id1/pak1.pak", dest: "id1/pak1.pak" }
+  - { src: "app/hipnotic/pak0.pak", dest: "hipnotic/pak0.pak" }
+  - { src: "app/rogue/pak0.pak", dest: "rogue/pak0.pak" }
 
 # Quakespasm-Spiked binary file url
 qss_url: https://triptohell.info/moodles/qss/quakespasm_spiked_linux64_dev.zip

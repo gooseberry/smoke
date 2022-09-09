@@ -1,7 +1,7 @@
 ---
 # Starting playbook to install quake
 
-- name: apply quake configuration to all systems
+- name: Quake
   hosts: all
 
   roles:

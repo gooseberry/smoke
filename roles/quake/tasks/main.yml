@@ -19,30 +19,13 @@
 
   - name: Extract installer into working directory 
     ansible.builtin.command: innoextract --lowercase -s -m -d "{{ tmp_dir.path|quote }}" "{{ home }}/{{ installer }}"
-    register: inno_output
 
   - name: Copy required game files into the base directory
     ansible.builtin.copy:
-      src: "{{ item.src }}"
-      dest: "{{ item.dest }}"
+      src: "{{ tmp_dir.path }}/{{ item.src }}"
+      dest: "{{ base_dir }}/{{ item.dest }}"
       remote_src: yes
-    with_items:
-      - { 
-          src: "{{ tmp_dir.path }}/app/id1/pak0.pak", 
-          dest: "{{ base_dir }}/id1/pak0.pak" 
-        }
-      - { 
-          src: "{{ tmp_dir.path }}/app/id1/pak1.pak", 
-          dest: "{{ base_dir }}/id1/pak1.pak" 
-        }
-      - { 
-          src: "{{ tmp_dir.path }}/app/hipnotic/pak0.pak", 
-          dest: "{{ base_dir }}/hipnotic/pak0.pak" 
-        }
-      - { 
-          src: "{{ tmp_dir.path }}/app/rogue/pak0.pak", 
-          dest: "{{ base_dir }}/rogue/pak0.pak"
-        }
+    with_items: "{{ game_files }}"
 
   - name: Extract music tracks from CD images
     ansible.builtin.command: 
@@ -80,9 +63,9 @@
       path: "{{ item }}"
       state: absent
     with_items:
-      - "~/.quake/id1/music/track01.iso"
-      - "~/.quake/hipnotic/music/track01.iso"
-      - "~/.quake/rogue/music/track01.iso"
+      - "{{ base_dir }}/id1/music/track01.iso"
+      - "{{ base_dir }}/hipnotic/music/track01.iso"
+      - "{{ base_dir }}/rogue/music/track01.iso"
 
   - name: Create list of all music tracks
     ansible.builtin.find:
@@ -107,6 +90,8 @@
       state: absent
     loop: "{{ wave_files.files }}"
 
+  # End of block
+
 - name: Download and install Quakespasm-spiked engine
   ansible.builtin.unarchive:
     src: "{{ qss_url }}"
@@ -121,8 +106,29 @@
     force: no
   loop: "{{ icons }}"
 
-- name: Create Quake Desktop entry
+- name: Create Desktop entries
   ansible.builtin.template:
-    src: quake.desktop.j2
-    dest: "{{ app_dir }}/quake.desktop"
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - {
+        src: quake.desktop.j2,
+        dest: "{{ app_dir }}/quake.desktop"
+      }
+    - {
+        src: quake-soa.desktop.j2,
+        dest: "{{ app_dir }}/quake-soa.desktop"
+      }
+    - {
+        src: quake-doe.desktop.j2,
+        dest: "{{ app_dir }}/quake-doe.desktop"
+      }
 
+- name: Deploy config.cfg files
+  ansible.builtin.template:
+    src: config.cfg.j2
+    dest: "{{ item }}"
+  with_items:
+    - "{{ base_dir }}/id1/config.cfg"
+    - "{{ base_dir }}/hipnotic/config.cfg"
+    - "{{ base_dir }}/rogue/config.cfg"

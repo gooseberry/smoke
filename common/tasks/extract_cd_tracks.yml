@@ -4,43 +4,60 @@
 
 - name: Extract music tracks from CD images
   ansible.builtin.command:
-    argv:
-      - bchunk
-      - -w
-      - "{{ tmp_dir.path }}/{{ item.bin }}"
-      - "{{ tmp_dir.path }}/{{ item.cue }}"
-      - "{{ base_dir }}/{{ item.dest }}/track"
+      argv:
+          - bchunk
+          - -w
+          - "{{ tmp_dir.path }}/{{ item.bin }}"
+          - "{{ tmp_dir.path }}/{{ item.cue }}"
+          - "{{ item.dest }}/track"
 
-- name: Find data tracks
-  ansible.builtin.find:
-    paths: "{{ base_dir }}/{{ item.dest }}"
-    patterns: "track01.iso"
-  register: files_to_delete
 
-- name: Remove data tracks
-  ansible.builtin.file:
-    path: "{{ item.path }}"
-    state: absent
-  loop: "{{ files_to_delete.files }}"
+- name: Delete the first track from the CD image
+  block:
 
-- name: Find WAV files
-  ansible.builtin.find:
-    paths: "{{ base_dir }}/{{ item.dest }}"
-    patterns: "*.wav"
-  register: wave_files
+    - name: Find data tracks
+      ansible.builtin.find:
+          paths: "{{ item.dest }}"
+          patterns: "track01.iso"
+      register: files_to_delete
+
+    - name: Remove data tracks
+      ansible.builtin.file:
+          path: "{{ file_item.path }}"
+          state: absent
+      loop: "{{ files_to_delete.files }}"
+      loop_control:
+          loop_var: file_item 
+          label: "{{ file_item.path }}"
+
 
 - name: Convert WAV files to OGG
-  ansible.builtin.command:
-    argv:
-      - oggenc
-      - -Q
-      - -q
-      - 8
-      - "{{ item.path }}"
-  loop: "{{ wave_files.files }}"
+  block:
 
-- name: Delete WAV files
-  ansible.builtin.file:
-    path: "{{ item.path }}"
-    state: absent
-  loop: "{{ wave_files.files }}"
+    - name: Find WAV files
+      ansible.builtin.find:
+          paths: "{{ item.dest }}"
+          patterns: "*.wav"
+      register: wave_files
+
+    - name: Convert WAV files to OGG
+      ansible.builtin.command:
+          argv:
+            - oggenc
+            - -Q
+            - -q
+            - 8
+            - "{{ file_item.path }}"
+      loop: "{{ wave_files.files }}"
+      loop_control:
+          loop_var: file_item
+          label: "{{ file_item.path }}"
+
+    - name: Delete WAV files
+      ansible.builtin.file:
+          path: "{{ file_item.path }}"
+          state: absent
+      loop: "{{ wave_files.files }}"
+      loop_control:
+          loop_var: file_item
+          label: "{{ file_item.path }}"

@@ -14,7 +14,7 @@
     - name: Pre-Install check list
       ansible.builtin.include_tasks: common/tasks/pre_install.yml
 
-    - name: Find installed files
+    - name: Skip extracting installer if game file found on system
       ansible.builtin.stat:
           path: "{{ base_dir }}/id1/pak0.pak"
       register: is_game_installed
@@ -42,13 +42,17 @@
     - name: Copy game files into the game directory
       ansible.builtin.copy:
           src: "{{ tmp_dir.path }}/{{ item.src }}"
-          dest: "{{ base_dir }}/{{ item.dest }}"
+          dest: "{{ item.dest }}"
           remote_src: yes
-      with_items: "{{ game_files }}"
+      loop: "{{ game_files }}"
+      loop_control:
+          label: "{{ item.dest }}"
 
     - name: Extract music tracks from cd image files
       ansible.builtin.include_tasks: common/tasks/extract_cd_tracks.yml
-      with_items: "{{ cd_images }}"
+      loop: "{{ cd_images }}"
+      loop_control:
+          label: "{{ item.dest }}"
 
   when: not is_game_installed.stat.exists
   always:
@@ -82,10 +86,12 @@
       ansible.builtin.template:
           src: "{{ item.src }}"
           dest: "{{ item.dest }}"
-      with_items:
+      loop:
           - { src: quake.desktop.j2, dest: "{{ app_dir }}/quake.desktop" }
           - { src: quake-soa.desktop.j2, dest: "{{ app_dir }}/quake-soa.desktop" }
           - { src: quake-doe.desktop.j2, dest: "{{ app_dir }}/quake-doe.desktop" }
+      loop_control:
+          label: "{{ item.dest }}"
 
     - name: Deploy config.cfg files
       ansible.builtin.template:

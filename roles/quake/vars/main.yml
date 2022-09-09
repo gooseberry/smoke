@@ -18,7 +18,7 @@ dependencies:
 base_dir: "{{ home }}/.quake"
 qss_dir: "{{ home }}/qss"
 
-# Quake directories that must be present
+# Directory trees to be created on the system
 directories:
   - "{{ base_dir }}/id1/music"
   - "{{ base_dir }}/hipnotic/music"
@@ -27,18 +27,19 @@ directories:
   - "{{ icon_dir }}"
   - "{{ app_dir }}"
 
-# Game files list
+# Game files list with source and destination
+# Note {{ tmp_dir.path }} must be prefixed to the src location
 game_files:
-  - { src: "app/id1/pak0.pak", dest: "id1/pak0.pak" }
-  - { src: "app/id1/pak1.pak", dest: "id1/pak1.pak" }
-  - { src: "app/hipnotic/pak0.pak", dest: "hipnotic/pak0.pak" }
-  - { src: "app/rogue/pak0.pak", dest: "rogue/pak0.pak" }
+  - { src: "app/id1/pak0.pak", dest: "{{ base_dir }}/id1/pak0.pak" }
+  - { src: "app/id1/pak1.pak", dest: "{{ base_dir }}/id1/pak1.pak" }
+  - { src: "app/hipnotic/pak0.pak", dest: "{{ base_dir }}/hipnotic/pak0.pak" }
+  - { src: "app/rogue/pak0.pak", dest: "{{ base_dir }}/rogue/pak0.pak" }
 
 # CD Images
 cd_images:
-  - { bin: "app/game.gog", cue: "app/game.cue", dest: "id1/music/" }
-  - { bin: "app/gamea.gog", cue: "app/gamea.cue", dest: "hipnotic/music/" }
-  - { bin: "app/gamed.gog", cue: "app/gamed.cue", dest: "rogue/music/" }
+  - { bin: "app/game.gog", cue: "app/game.cue", dest: "{{ base_dir }}/id1/music/" }
+  - { bin: "app/gamea.gog", cue: "app/gamea.cue", dest: "{{ base_dir }}/hipnotic/music/" }
+  - { bin: "app/gamed.gog", cue: "app/gamed.cue", dest: "{{ base_dir }}/rogue/music/" }
 
 # Quakespasm-Spiked binary file url
 qss_url: https://triptohell.info/moodles/qss/quakespasm_spiked_linux64_dev.zip

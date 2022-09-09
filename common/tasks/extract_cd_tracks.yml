@@ -1,6 +1,23 @@
 ---
-# This tast list will extract music tracks from a cd image and convert
-# it to a ogg format.
+# Extract music tracks from a cd image and convert them to ogg format.
+#
+# {{ tmp_dir.path }} must be registered before including this task list 
+#
+# Use the following format to include this task list:
+#
+#   - name: Extract music tracks from cd image files
+#     ansible.builtin.include_tasks: common/tasks/extract_cd_tracks.yml
+#     loop: "{{ cd_images }}"
+#     loop_control:
+#         label: "{{ item.dest }}"
+#
+# The "{{ cd_images }}" variable must be in the form
+#
+#   cd_images:
+#       - { bin: "file.bin", cue: "file.cue", dest: "/path/to/music/track" }
+#
+# If the bin and cue files are not in the root directory of {{ tmp_dir.path }},
+# include subfolders in the variable definition.
 
 - name: Extract music tracks from CD images
   ansible.builtin.command:

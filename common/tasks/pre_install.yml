@@ -1,5 +1,24 @@
 ---
-# These tasks should be included in the role's main task listing before installing.
+# Perform rudimentary checks on the system before attempting to install
+#
+# {{ installer }} must be registered before including this task list.
+#   installer: /full/path/to/setup.exe
+#
+# {{ dependencies }} must be registered before including this task list.
+#   dependencies:
+#     - package-name1
+#     - package-name2
+#
+# {{ directories }} must be registered before including this task list.
+#   directories:
+#     - /full/path/to/game_files
+#     - /full/path/to/game_configs
+#
+# Use the following format to include this task list:
+#
+#   - name: System pre-install checks
+#     ansible.builtin.include_tasks: common/tasks/pre_install.yml
+
 
 - name: Locate install file in home directory
   ansible.builtin.stat:

@@ -1,18 +1,21 @@
 # Variables for the quake installer
 
 # Install file from gog
-installer: "{{ home }}/setup_quake_the_offering_2.0.0.6.exe"
+installer: { 
+    path: "{{ home }}/setup_quake_the_offering_2.0.0.6.exe",
+    sha1sum: 482866072af20cd730b3ce7fc69606a63db83cad
+    }
 
 # Dependencies
 dependencies:
-  - libopusfile0
-  - libmad0
-  - libsdl2-2.0-0
-  - bchunk
-  - mesa-utils
-  - vorbis-tools
-  - unzip
-  - innoextract
+    - libopusfile0
+    - libmad0
+    - libsdl2-2.0-0
+    - bchunk
+    - mesa-utils
+    - vorbis-tools
+    - unzip
+    - innoextract
 
 # Quake base directory
 base_dir: "{{ home }}/.quake"
@@ -20,12 +23,12 @@ qss_dir: "{{ home }}/qss"
 
 # Directory trees to be created on the system
 directories:
-  - "{{ base_dir }}/id1/music"
-  - "{{ base_dir }}/hipnotic/music"
-  - "{{ base_dir }}/rogue/music"
-  - "{{ qss_dir }}"
-  - "{{ icon_dir }}"
-  - "{{ app_dir }}"
+    - "{{ base_dir }}/id1/music"
+    - "{{ base_dir }}/hipnotic/music"
+    - "{{ base_dir }}/rogue/music"
+    - "{{ qss_dir }}"
+    - "{{ icon_dir }}"
+    - "{{ app_dir }}"
 
 # Game files list with source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location

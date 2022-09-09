@@ -1,0 +1,17 @@
+---
+# Descent 2 role tasks
+# This collection of tasks will install and configure Descent 2
+# to run with the open-source engine d2x-rebirth.
+
+
+- name: Initial system checks before installation
+  block:
+
+      - name: Collect screen resolution to use in config file
+        ansible.builtin.include_tasks: common/tasks/collect_system_info.yml
+
+      - name: Add non-free repository
+        ansible.builtin.include_tasks: common/tasks/add_repo.yml
+
+      - name: Pre-install check list
+        ansible.builtin.include_tasks: common/tasks/pre_install.yml

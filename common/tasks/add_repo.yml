@@ -13,7 +13,13 @@
 #     ansible.builtin.include_tasks: common/tasks/add_repo.yml
 
 - name: Add repository into sources list
+  become: yes
   ansible.builtin.apt_repository:
-      repo: {{ item }}
+      repo: "{{ item }}"
       state: present
   loop: "{{ repo_list }}"
+
+- name: Update apt cache
+  become: yes
+  ansible.builtin.apt:
+      update_cache: yes

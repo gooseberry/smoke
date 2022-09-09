@@ -4,7 +4,10 @@
 # {{ tmp_dir.path }} must be registered before including this task list.
 #
 # {{ installer }} must be registered before including this task list.
-#   installer: /full/path/to/setup.exe
+#   installer: {
+#     path: "/full/path/to/setup.exe"
+#     sha1sum: hash of the file goes here
+#   }
 #
 # All multi-part installer files must be in the same directory.
 #
@@ -22,4 +25,4 @@
           - -m
           - -d
           - "{{ tmp_dir.path|quote }}"
-          - "{{ installer }}"
+          - "{{ installer.path }}"

@@ -1,0 +1,46 @@
+---
+# Descent 2 specific variables
+
+# Install file from gog
+installer: {
+    path: "{{ home }}/setup_descent_2_1.1_(16596).exe",
+    sha1sum: 362773ad0094cb5134e10bf7f401bb1344daeea9
+    }
+
+# Dependencies
+dependencies:
+    - d2x-rebirth
+    - innoextract
+    - bchunk
+    - mesa-utils
+    - vorbis-tools
+      
+# Decent base directorys
+base_dir: "{{ home }}/.d2x-rebirth"
+
+# Directory trees to be created on the system
+directories:
+    - "{{ base_dir }}/music"
+    - "{{ icon_dir }}"
+    - "{{ app_dir }}"
+
+# Game files lists with source and destination
+# Note {{ tmp_dir.path }} must be prefixed to the src location
+game_files:
+    - { src: "app/descent2.ham", dest: "{{ base_dir }}/descent2.ham" }
+    - { src: "app/descent2.hog", dest: "{{ base_dir }}/descent2.hog" }
+    - { src: "app/descent2.s11", dest: "{{ base_dir }}/descent2.s11" }
+    - { src: "app/descent2.s22", dest: "{{ base_dir }}/descent2.s22" }
+    - { src: "app/alien1.pig", dest: "{{ base_dir }}/alien1.pig" }
+    - { src: "app/alien2.pig", dest: "{{ base_dir }}/alien2.pig" }
+    - { src: "app/fire.pig", dest: "{{ base_dir }}/fire.pig" }
+    - { src: "app/groupa.pig", dest: "{{ base_dir }}/groupa.pig" }
+    - { src: "app/ice.pig", dest: "{{ base_dir }}/ice.pig" }
+    - { src: "app/water.pig", dest: "{{ base_dir }}/water.pig" }
+    - { src: "app/intro-h.mvl", dest: "{{ base_dir }}/intro-h.mvl" }
+    - { src: "app/other-h.mvl", dest: "{{ base_dir }}/other-h.mvl" }
+    - { src: "app/robots-h.mvl", dest: "{{ base_dir }}/robots-h.mvl" }
+
+# CD Images
+cd_images:
+    - { bin: "app/descent_ii.gog", cue: "app/descent_ii.inst", dest: "{{ base_dir }}/music" }

@@ -1,0 +1,8 @@
+---
+# Starting playbook to install quake
+
+- name: Descent 2
+  hosts: all
+
+  roles:
+      - descent2

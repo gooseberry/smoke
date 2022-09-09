@@ -1,8 +1,11 @@
 ---
 # This is the main playbook to install quake on your system.
 
+- name: Collect System Info
+  ansible.builtin.include_tasks: common/tasks/collect_system_info.yml
+
 - name: Pre-Install check list
-  ansible.builtin.include_tasks: common/tasks/pre-install.yml
+  ansible.builtin.include_tasks: common/tasks/pre_install.yml
 
 - name: Find installed files
   ansible.builtin.stat:
@@ -27,68 +30,15 @@
       remote_src: yes
     with_items: "{{ game_files }}"
 
-  - name: Extract music tracks from CD images
-    ansible.builtin.command: 
-      argv:
-        - bchunk 
-        - -w 
-        - "{{ item.bin }}" 
-        - "{{ item.cue }}" 
-        - "{{ item.dest }}"
-    with_items:
-      - { 
-          bin: "{{ tmp_dir.path }}/app/game.gog", 
-          cue: "{{ tmp_dir.path }}/app/game.cue", 
-          dest: "{{ base_dir }}/id1/music/track" 
-        }
-      - { 
-          bin: "{{ tmp_dir.path }}/app/gamea.gog", 
-          cue: "{{ tmp_dir.path }}/app/gamea.cue", 
-          dest: "{{ base_dir }}/hipnotic/music/track" 
-        }
-      - { 
-          bin: "{{ tmp_dir.path }}/app/gamed.gog", 
-          cue: "{{ tmp_dir.path }}/app/gamed.cue", 
-          dest: "{{ base_dir }}/rogue/music/track" 
-        }
+  - name: Extract music tracks
+    ansible.builtin.include_tasks: common/tasks/extract_cd_tracks.yml
+    with_items: "{{ cd_images }}"
 
   - name: Remove working directory
     ansible.builtin.file:
       path: "{{ tmp_dir.path }}"
       state: absent
     when: tmp_dir.path is defined
-
-  - name: Remove data tracks from the music folders
-    ansible.builtin.file:
-      path: "{{ item }}"
-      state: absent
-    with_items:
-      - "{{ base_dir }}/id1/music/track01.iso"
-      - "{{ base_dir }}/hipnotic/music/track01.iso"
-      - "{{ base_dir }}/rogue/music/track01.iso"
-
-  - name: Create list of all music tracks
-    ansible.builtin.find:
-      paths: ~/.quake
-      recurse: yes
-      patterns: "*.wav"
-    register: wave_files
-
-  - name: Convert wave files to ogg
-    ansible.builtin.command:
-      argv:
-        - oggenc
-        - -Q
-        - -q
-        - 8
-        - "{{ item.path }}"
-    loop: "{{ wave_files.files }}"
-
-  - name: Delete old wave files
-    ansible.builtin.file:
-      path: "{{ item.path }}"
-      state: absent
-    loop: "{{ wave_files.files }}"
 
   # End of block
 

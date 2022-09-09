@@ -1,0 +1,46 @@
+---
+# This tast list will extract music tracks from a cd image and convert
+# it to a ogg format.
+
+- name: Extract music tracks from CD images
+  ansible.builtin.command:
+    argv:
+      - bchunk
+      - -w
+      - "{{ tmp_dir.path }}/{{ item.bin }}"
+      - "{{ tmp_dir.path }}/{{ item.cue }}"
+      - "{{ base_dir }}/{{ item.dest }}/track"
+
+- name: Find data tracks
+  ansible.builtin.find:
+    paths: "{{ base_dir }}/{{ item.dest }}"
+    patterns: "track01.iso"
+  register: files_to_delete
+
+- name: Remove data tracks
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: absent
+  loop: "{{ files_to_delete.files }}"
+
+- name: Find WAV files
+  ansible.builtin.find:
+    paths: "{{ base_dir }}/{{ item.dest }}"
+    patterns: "*.wav"
+  register: wave_files
+
+- name: Convert WAV files to OGG
+  ansible.builtin.command:
+    argv:
+      - oggenc
+      - -Q
+      - -q
+      - 8
+      - "{{ item.path }}"
+  loop: "{{ wave_files.files }}"
+
+- name: Delete WAV files
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: absent
+  loop: "{{ wave_files.files }}"

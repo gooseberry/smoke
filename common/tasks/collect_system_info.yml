@@ -1,0 +1,14 @@
+---
+# Collects information about your system to help configure
+
+- name: Screen width
+  ansible.builtin.shell: xrandr|grep '*'|head -n 1|awk '{print $1}'|cut -d\x -f1
+  register: screen_width
+
+- name: Screen height
+  ansible.builtin.shell: xrandr|grep '*'|head -n 1|awk '{print $1}'|cut -d\x -f2
+  register: screen_height
+
+- name: debug values
+  ansible.builtin.debug:
+    msg: "Screen height {{ screen_height.stdout }}  Screen width {{ screen_width.stdout }}"

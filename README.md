@@ -4,7 +4,7 @@ Ansible playbooks for installing games on crostini
 ## Purpose
 This is a little side project I started when I got a ChromeBook many years ago and discovered crostini. What started with getting a few games to run on the platform evolved into a larger scale project with multiple bash and python scripts.  I've created a new repository to migrate most of these to ansible because I want to learn ansible and I think it's pretty fun.
 
-Check out the [My Awesome Wiki](../../wiki) for a more complete guide to get you started.
+Check out the [My Awesome Wiki](https://github.com/gooseberry/smoke/wiki/Home) for a more complete guide to get you started.
 
 ## Getting Started
 

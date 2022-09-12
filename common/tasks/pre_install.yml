@@ -33,11 +33,11 @@
     msg: "Install file {{ installer.path }} not found.  Please download installer and try again."
   when: not install_file.stat.exists
 
-- name: Install dependencies
-  become: yes
-  ansible.builtin.apt:
-    name: "{{ dependencies }}"
-    state: present
+- name: Install Packagess
+  ansible.builtin.include_tasks: common/tasks/install_packages.yml
+  loop: "{{ dependencies }}"
+  loop_control:
+      label: "{{ item }}"
 
 - name: Create directory tree for game files
   ansible.builtin.file:

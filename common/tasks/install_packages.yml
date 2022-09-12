@@ -1,0 +1,28 @@
+---
+# Install package as item in a loop.
+#
+# Use the following format to include this task list.
+#
+#   - name: Install Packages
+#     ansible.builtin.include_tasks: common/tasks/install_package.yml
+#     loop: "{{ dependencies }}"
+#     loop_control:
+#         label: "{{ item }}"
+
+
+- name: Install Innoextract
+  ansible.builtin.include_tasks: common/tasks/install_innoextract.yml
+  when: item == "innoextract"
+
+- name: Install ScummVM
+  ansible.builtin.include_tasks: common/tasks/install_scummvm.yml
+  when: item == "scummvm"
+
+- name: Install Package from repository
+  become: yes
+  ansible.builtin.apt:
+      name: "{{ item }}"
+      state: present
+  when: ( item != "innoextract" ) and
+      ( item != "scummvm" )
+

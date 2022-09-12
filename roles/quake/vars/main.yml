@@ -19,7 +19,7 @@ dependencies:
 
 # Quake base directory
 base_dir: "{{ home }}/.quake"
-qss_dir: "{{ home }}/qss"
+qss_dir: "{{ home }}.local/qss"
 
 # Directory trees to be created on the system
 directories:

@@ -16,3 +16,12 @@ Once you've upgraded your system, you'll need to install ansible.  Run the follo
     $python3 -m pip install --user ansible
 
 Check out the [My Awesome Wiki](../../wiki) for a more complete guide to get you started.
+
+## Installing a game
+
+Once you have the ansible installed and the repository setup, installing a game requires you to:
+1. Download the game to your linux home directory
+2. Start the linux terminal application
+3. Change directory to the root of the repository
+4. Run the command `ansible-playbook -i hosts <game>.yml`
+    (Example: ansible-playbook -i hosts quake.yml )

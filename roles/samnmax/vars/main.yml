@@ -1,0 +1,31 @@
+# Variables for the indiana jones and the fate of atlantis installer
+
+# Install file from gog
+installer: { 
+    path: "{{ home }}/sam_and_max_hit_the_road_en_gog_2_20100.sh",
+    sha1sum: 8055a8586b88d6d5f38f32ac4b0c6d1f8646426f
+    }
+
+# Dependencies
+dependencies:
+    - unzip
+    - scummvm
+
+# Quake base directory
+base_dir: "{{ home }}/.scummvm/samnmax"
+
+# Directory trees to be created on the system
+directories:
+    - "{{ base_dir }}"
+    - "{{ home }}/.scummvm/saves"
+    - "{{ icon_dir }}"
+    - "{{ app_dir }}"
+
+# Game files list with source and destination
+# Note {{ tmp_dir.path }} must be prefixed to the src location
+game_files:
+  - { src: "data/noarch/data/monster.sou", dest: "{{ base_dir }}/monster.sou" }
+  - { src: "data/noarch/data/samnmax.001", dest: "{{ base_dir }}/samnmax.001" }
+  - { src: "data/noarch/data/samnmax.000", dest: "{{ base_dir }}/samnmax.000" }
+  - { src: "data/noarch/support/icon.png", dest: "{{ icon_dir }}/samnmax.png" }
+

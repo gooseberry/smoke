@@ -1,0 +1,9 @@
+---
+# Starting playbook to install Sam & Max: Hit the Road
+
+- name: Sam & Max Hit the Road
+  hosts: all
+
+  roles:
+      - scummvm
+      - samnmax

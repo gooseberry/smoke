@@ -1,0 +1,63 @@
+---
+# Sam & Max: Hit the Road role task
+# This collection of tasks will install and configure Sam & Max:
+# Hit the Road to run with the open-source
+# game engine ScummVM.
+
+- name: Initial system checks before installation
+  block:
+
+      - name: Pre-install check list
+        ansible.builtin.include_tasks: common/tasks/pre_install.yml
+
+      - name: Skip extracting installer if game file found on system
+        ansible.builtin.stat:
+            path: "{{ base_dir }}/samnmax.000"
+        register: is_game_installed
+
+
+- name: Extract and configure game files from the installer
+  block:
+
+      - name: Create temporary working directory for installation files
+        ansible.builtin.tempfile:
+            state: directory
+        register: tmp_dir
+
+      - name: Extract game files from mojosetup installer
+        ansible.builtin.include_tasks: common/tasks/extract_mojosetup.yml
+
+      - name: Copy games files from the temporary directory
+        ansible.builtin.include_tasks: common/tasks/copy_files.yml
+        loop: "{{ game_files }}"
+        loop_control:
+            label: "{{ item.dest }}"
+
+  when: not is_game_installed.stat.exists
+  always:
+
+    - name: Delete the temporary working directory
+      ansible.builtin.file:
+          path: "{{ tmp_dir }}"
+          state: absent
+      when: tmp_dir.path is defined  
+
+- name: Insert Sam and Max hit the road game to scummvm
+  ansible.builtin.blockinfile:
+      path: "{{ home }}/.config/scummvm/scummvm.ini"
+      block: |
+          [samnmax]
+          gameid=samnmax
+          description=Sam & Max Hit the Road (CD/English)
+          language=en
+          extra=CD
+          path=/home/eric/.scummvm/samnmax
+          enable_enhancements=true
+          engineid=scumm
+          guioptions=gameOption2 lang_English
+      state: present
+
+- name: Create Desktop Entry
+  ansible.builtin.template:
+      src: samnmax.desktop.j2
+      dest: "{{ app_dir }}/samnmax.desktop"

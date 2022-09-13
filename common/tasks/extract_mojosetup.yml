@@ -14,7 +14,7 @@
 #   Use the following format to include this task list:
 #
 #     - name: Extract game files with unzip
-#       ansible.bultin.include_tasks: common/tasks/extract_inno.yml
+#       ansible.bultin.include_tasks: common/tasks/extract_mojosetup.yml
 
 - name: Extract game installer into working directory
   ansible.builtin.unarchive:

@@ -14,10 +14,6 @@
   ansible.builtin.include_tasks: common/tasks/install_innoextract.yml
   when: item == "innoextract"
 
-- name: Install ScummVM
-  ansible.builtin.include_tasks: common/tasks/install_scummvm.yml
-  when: item == "scummvm"
-
 - name: Install Package from repository
   become: yes
   ansible.builtin.apt:

@@ -1,0 +1,26 @@
+---
+# ScummVM Role task
+# This collection of task will install and configure ScummVM.
+# Games that run on ScummVM should have the scummvm role added
+# to the main playlist on the root folder.  
+#
+
+- name: Check system for scummvm configuration file
+  ansible.builtin.stat:
+      path: "{{ home }}/.config/scummvm/scummvm.ini"
+  register: config_file
+
+- name: Only install ScummVM if the configuration file does not exist
+  block:
+
+      - name: Install ScummVM package directly from the scummvm.org website
+        become: yes
+        ansible.builtin.apt:
+            deb: "https://downloads.scummvm.org/frs/scummvm/2.6.0/scummvm_2.6.0-1_debian11_amd64.deb"
+
+      - name: Deploy ScummVM configuration file
+        ansible.builtin.template:
+            src: scummvm.ini.j2
+            dest: "{{ home }}/.config/scummvm/scummvm.ini"
+
+  when: not config_file.stat.exists

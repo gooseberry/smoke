@@ -17,7 +17,11 @@
 #       ansible.bultin.include_tasks: common/tasks/extract_mojosetup.yml
 
 - name: Extract game installer into working directory
-  ansible.builtin.unarchive:
-      src: "{{ installer }}"
-      dest: "{{ tmp_dir.path |quote }}"
-      remote_src: yes
+  ansible.builtin.command:
+      argv:
+          - unzip
+          - -d
+          - "{{ tmp_dir.path |quote }}"
+          - "{{ installer.path }}"
+  register: result
+  failed_when: result.rc > 1

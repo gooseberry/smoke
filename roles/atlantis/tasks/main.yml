@@ -57,3 +57,8 @@
         engineid=scumm
         guioptions=gameOption2 lang_English
     state: present
+
+- name: Create Desktop Entry
+  ansible.builtin.template:
+      src: atlantis.desktop.j2
+      dest: "{{ app_dir }}/atlantis.desktop"

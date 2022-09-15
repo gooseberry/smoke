@@ -27,4 +27,5 @@ game_files:
   - { src: "data/noarch/data/MONSTER.SOU", dest: "{{ base_dir }}/MONSTER.SOU" }
   - { src: "data/noarch/data/ATLANTIS.001", dest: "{{ base_dir }}/ATLANTIS.001" }
   - { src: "data/noarch/data/ATLANTIS.000", dest: "{{ base_dir }}/ATLANTIS.000" }
+  - { src: "data/noarch/support/icon.png", dest: "{{ icon_dir }}/atlantis.png" }
 

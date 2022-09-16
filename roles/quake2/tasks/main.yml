@@ -11,6 +11,9 @@
       - name: Collection screen resolution to use in the config for full screen
         ansible.builtin.include_tasks: common/tasks/collect_system_info.yml
 
+      - name: Add contrib repository
+        ansible.builtin.include_tasks: common/tasks/add_repo.yml
+
       - name: Pre-install check list
         ansible.builtin.include_tasks: common/tasks/pre_install.yml
 

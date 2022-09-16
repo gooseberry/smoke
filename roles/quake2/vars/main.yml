@@ -62,7 +62,8 @@ game_files:
   - { src: "app/xatrix/video/xu2.cin", dest: "{{ base_dir }}/xatrix/video/xu2.cin" }
   - { src: "app/xatrix/video/xu3.cin", dest: "{{ base_dir }}/xatrix/video/xu3.cin" }
   - { src: "app/xatrix/video/xu4.cin", dest: "{{ base_dir }}/xatrix/video/xu4.cin" }
-  # Music files
+  # Music files - note yamagi looks for the music files in mixed case
+  #               they must have an upper case 'T'
   - { src: "app/music/track02.ogg", dest: "{{ base_dir }}/music/Track02.ogg" }
   - { src: "app/music/track03.ogg", dest: "{{ base_dir }}/music/Track03.ogg" }
   - { src: "app/music/track04.ogg", dest: "{{ base_dir }}/music/Track04.ogg" }

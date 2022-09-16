@@ -1,0 +1,93 @@
+# Variables for the Quake 2 installer
+
+# Install file from gog
+installer: {
+    path: "{{ home }}/setup_quake2_quad_damage_2.0.0.3.exe",
+    sha1sum: 95692ee89f3a4376ca447266044e114ed0c5339
+    }
+    
+# Dependencies
+dependencies:
+    - yamagi-quake2
+    - mesa-utils
+    - innoextract
+
+# Quake 2 base directory
+base_dir: "{{ home }}/.yq2"
+
+# Directories to be created on the system
+directories:
+    - "{{ home }}/.yq2/baseq2/video"
+    - "{{ home }}/.yq2/xatrix/video"
+    - "{{ home }}/.yq2/rogue/video"
+    - "{{ home }}/.yq2/music"
+    - "{{ home }}/.yq2/ctf"
+    - "{{ icon_dir }}"
+    - "{{ app_dir }}"
+
+# Game files list with source and destination
+# Note: {{ tmp_dir.path }} must be prefixed ot the src location.
+game_files:
+  # Pak files
+  - { src: "app/baseq2/pak0.pak", dest: "{{ base_dir }}/baseq2/pak0.pak" }
+  - { src: "app/baseq2/pak1.pak", dest: "{{ base_dir }}/baseq2/pak1.pak" }
+  - { src: "app/baseq2/pak2.pak", dest: "{{ base_dir }}/baseq2/pak2.pak" }
+  - { src: "app/rogue/pak0.pak", dest: "{{ base_dir }}/rogue/pak0.pak" }
+  - { src: "app/xatrix/pak0.pak", dest: "{{ base_dir }}/xatrix/pak0.pak" }
+  - { src: "app/ctf/pak0.pak", dest: "{{ base_dir }}/ctf/pak0.pak" }
+  # Video files
+  - { src: "app/baseq2/video/end.cin", dest: "{{ base_dir }}/baseq2/video/end.cin" }
+  - { src: "app/baseq2/video/eou1_.cin", dest: "{{ base_dir }}/baseq2/video/eou1_.cin" }
+  - { src: "app/baseq2/video/eou2_.cin", dest: "{{ base_dir }}/baseq2/video/eou2_.cin" }
+  - { src: "app/baseq2/video/eou3_.cin", dest: "{{ base_dir }}/baseq2/video/eou3_.cin" }
+  - { src: "app/baseq2/video/eou4_.cin", dest: "{{ base_dir }}/baseq2/video/eou4_.cin" }
+  - { src: "app/baseq2/video/eou5_.cin", dest: "{{ base_dir }}/baseq2/video/eou5_.cin" }
+  - { src: "app/baseq2/video/eou6_.cin", dest: "{{ base_dir }}/baseq2/video/eou6_.cin" }
+  - { src: "app/baseq2/video/eou7_.cin", dest: "{{ base_dir }}/baseq2/video/eou7_.cin" }
+  - { src: "app/baseq2/video/eou8_.cin", dest: "{{ base_dir }}/baseq2/video/eou8_.cin" }
+  - { src: "app/baseq2/video/idlog.cin", dest: "{{ base_dir }}/baseq2/video/idlog.cin" }
+  - { src: "app/baseq2/video/ntro.cin", dest: "{{ base_dir }}/baseq2/video/ntro.cin" }
+  - { src: "app/rogue/video/logo.cin", dest: "{{ base_dir }}/rogue/video/logo.cin" }
+  - { src: "app/rogue/video/rend.cin", dest: "{{ base_dir }}/rogue/video/rend.cin" }
+  - { src: "app/rogue/video/reu1_.cin", dest: "{{ base_dir }}/rogue/video/reu1_.cin" }
+  - { src: "app/rogue/video/reu2_.cin", dest: "{{ base_dir }}/rogue/video/reu2_.cin" }
+  - { src: "app/rogue/video/reu3_.cin", dest: "{{ base_dir }}/rogue/video/reu3_.cin" }
+  - { src: "app/rogue/video/reu4_.cin", dest: "{{ base_dir }}/rogue/video/reu4_.cin" }
+  - { src: "app/rogue/video/rintro.cin", dest: "{{ base_dir }}/rogue/video/rintro.cin" }
+  - { src: "app/xatrix/video/idlog.cin", dest: "{{ base_dir }}/xatrix/video/idlog.cin" }
+  - { src: "app/xatrix/video/logo.cin", dest: "{{ base_dir }}/xatrix/video/logo.cin" }
+  - { src: "app/xatrix/video/xin.cin", dest: "{{ base_dir }}/xatrix/video/xin.cin" }
+  - { src: "app/xatrix/video/xout.cin", dest: "{{ base_dir }}/xatrix/video/xout.cin" }
+  - { src: "app/xatrix/video/xu1.cin", dest: "{{ base_dir }}/xatrix/video/xu1.cin" }
+  - { src: "app/xatrix/video/xu2.cin", dest: "{{ base_dir }}/xatrix/video/xu2.cin" }
+  - { src: "app/xatrix/video/xu3.cin", dest: "{{ base_dir }}/xatrix/video/xu3.cin" }
+  - { src: "app/xatrix/video/xu4.cin", dest: "{{ base_dir }}/xatrix/video/xu4.cin" }
+  # Music files
+  - { src: "app/music/track02.ogg", dest: "{{ base_dir }}/music/Track02.ogg" }
+  - { src: "app/music/track03.ogg", dest: "{{ base_dir }}/music/Track03.ogg" }
+  - { src: "app/music/track04.ogg", dest: "{{ base_dir }}/music/Track04.ogg" }
+  - { src: "app/music/track05.ogg", dest: "{{ base_dir }}/music/Track05.ogg" }
+  - { src: "app/music/track06.ogg", dest: "{{ base_dir }}/music/Track06.ogg" }
+  - { src: "app/music/track07.ogg", dest: "{{ base_dir }}/music/Track07.ogg" }
+  - { src: "app/music/track08.ogg", dest: "{{ base_dir }}/music/Track08.ogg" }
+  - { src: "app/music/track09.ogg", dest: "{{ base_dir }}/music/Track09.ogg" }
+  - { src: "app/music/track10.ogg", dest: "{{ base_dir }}/music/Track10.ogg" }
+  - { src: "app/music/track11.ogg", dest: "{{ base_dir }}/music/Track11.ogg" }
+  - { src: "app/music/track12.ogg", dest: "{{ base_dir }}/music/Track12.ogg" }
+  - { src: "app/music/track13.ogg", dest: "{{ base_dir }}/music/Track13.ogg" }
+  - { src: "app/music/track14.ogg", dest: "{{ base_dir }}/music/Track14.ogg" }
+  - { src: "app/music/track15.ogg", dest: "{{ base_dir }}/music/Track15.ogg" }
+  - { src: "app/music/track16.ogg", dest: "{{ base_dir }}/music/Track16.ogg" }
+  - { src: "app/music/track17.ogg", dest: "{{ base_dir }}/music/Track17.ogg" }
+  - { src: "app/music/track18.ogg", dest: "{{ base_dir }}/music/Track18.ogg" }
+  - { src: "app/music/track19.ogg", dest: "{{ base_dir }}/music/Track19.ogg" }
+  - { src: "app/music/track20.ogg", dest: "{{ base_dir }}/music/Track20.ogg" }
+  - { src: "app/music/track21.ogg", dest: "{{ base_dir }}/music/Track21.ogg" }
+
+# Additional resources
+smoke_resources: https://raw.githubusercontent.com/gooseberry/smoke-resources/main/quake2
+
+icons:
+    - quake2.png
+    - quake2-the-reckoning.png
+    - quake2-ground-zero.png

@@ -1,0 +1,8 @@
+---
+# Starting playbook to install quake
+
+- name: Quake 2
+  hosts: all
+
+  roles:
+      - quake2

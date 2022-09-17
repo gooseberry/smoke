@@ -18,3 +18,26 @@
         register: is_game_installed
 
 
+- name : Extract and configure game files from the installer
+  block:
+
+      - name: Create temporary working directory for installation files
+        ansible.builtin.tempfile:
+            state: directory
+        register: tmp_dir
+
+      - name: Copy game files from the temporary directory
+        ansible.builtin.include_tasks: common/tasks/copy_files.yml
+        loop: "{{ game_files }}"
+        loop_control:
+            label: "{{ item.dest }}"
+
+
+  when: not is_game_installed.stat.exists
+  always:
+
+      - name: Deleter the temporary working directory
+        ansible.builtin.file:
+            path: "{{ tmp_dir.path }}"
+            state: absent
+        when: tmp_dir.path is defined

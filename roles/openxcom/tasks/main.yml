@@ -1,0 +1,30 @@
+---
+# OpenXcom role task
+# This collection of tasks will install and configure OpenXcom AppImage
+# from github.  It does not contain any game configurations for UFO Defense
+# or Terror from the Deep, but it is required before these games can be
+# installed.
+
+- name: Create directory tree
+  ansible.builtin.file:
+      path: "{{ item }}"
+      state: directory
+      mode: "0755"
+  loop: "{{ directories }}"
+
+- name: Check system for OpenXcom AppImage file
+  ansible.builtin.stat:
+      path: "{{ base_dir }}/{{ openxcom_file }}"
+  register: is_openxcom_installed
+
+
+- name: Only download and install the OpenXcom AppImage if it is not present on the system
+  block:
+
+      - name: Download OpenXcom AppImage
+        ansible.builtin.get_url:
+            url: "{{ openxcom_url }}/{{ openxcom_file }}"
+            dest: "{{ base_dir }}/{{ openxcom_file }}"
+            force: no
+
+  when: not is_openxcom_installed.stat.exists

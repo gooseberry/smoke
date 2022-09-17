@@ -1,0 +1,9 @@
+---
+# Starting playbook to install quake
+
+- name: X-COM UFO Defense
+  hosts: all
+
+  roles:
+      - openxcom
+      - ufo_defense

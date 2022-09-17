@@ -1,0 +1,42 @@
+# Variables for the X-COM UFO Defense installer
+
+# Install file from gog
+installer: { 
+    path: "{{ home }}/setup_x-com_ufo_defense_1.2_(28046).exe",
+    sha1sum: 49bf8cbed3d662b6e5e16b87245d69599d4c22c1
+    }
+
+# Dependencies
+dependencies:
+    - innoextract
+
+# Quake base directory
+base_dir: "{{ home }}/.local/share/openxcom/UFO"
+
+# Directory trees to be created on the system
+directories:
+    - "{{ base_dir }}/geodata"
+    - "{{ base_dir }}/geograph"
+    - "{{ base_dir }}/maps"
+    - "{{ base_dir }}/routes"
+    - "{{ base_dir }}/sound"
+    - "{{ base_dir }}/terrain"
+    - "{{ base_dir }}/ufograph"
+    - "{{ base_dir }}/ufointro"
+    - "{{ base_dir }}/units"
+    - "{{ icon_dir }}"
+    - "{{ app_dir }}"
+
+# Game files list with source and destination
+# Note {{ tmp_dir.path }} must be prefixed to the src location
+game_files:
+  - { src: "geodata/", dest: "{{ base_dir }}/geodata/" }
+  - { src: "geograph/", dest: "{{ base_dir }}/geograph/" }
+  - { src: "maps/", dest: "{{ base_dir }}/maps/" }
+  - { src: "routes/", dest: "{{ icon_dir }}/routes/" }
+  - { src: "sound/", dest: "{{ icon_dir }}/sound/" }
+  - { src: "terrain/", dest: "{{ icon_dir }}/terrain/" }
+  - { src: "ufograph/", dest: "{{ icon_dir }}/ufograph/" }
+  - { src: "ufointro/", dest: "{{ icon_dir }}/ufointro/" }
+  - { src: "units/", dest: "{{ icon_dir }}/units/" }
+

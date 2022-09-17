@@ -1,0 +1,20 @@
+---
+# X-COM UFO Desense role task
+# This collection of tasks will install and configure X-COM UFO 
+# Defense to run with the open-source project openxcom
+
+- name: Initial system checks before installation
+  block:
+
+      - name: Collect screen resolution to use in configuration
+        ansible.builtin.include_tasks: common/tasks/collect_system_info.yml
+
+      - name: Pre-Install check list
+        ansible.builtin.include_tasks: common/tasks/pre_install.yml
+
+      - name: Skip extracting installer if game file found on system
+        ansible.builtin.stat:
+            path: "{{ base_dir }}/geodata/world.dat"
+        register: is_game_installed
+
+

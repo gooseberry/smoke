@@ -36,8 +36,17 @@
   when: not is_game_installed.stat.exists
   always:
 
-      - name: Deleter the temporary working directory
+      - name: Delete the temporary working directory
         ansible.builtin.file:
             path: "{{ tmp_dir.path }}"
             state: absent
         when: tmp_dir.path is defined
+
+
+- name: Disable prompt to integrate AppImage with the system menu
+  ansible.builtin.file:
+      path: "{{ home }}/.local/share/appimagekit/OpenXcom_no_desktopintegration"
+      state: touch
+      mode: "0644"
+      modification_time: preserve
+      access_time: preserve

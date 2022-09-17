@@ -42,11 +42,23 @@
             state: absent
         when: tmp_dir.path is defined
 
+- name: Configure shortcuts to launch game from ChromeOS app menu
+  block:
 
-- name: Disable prompt to integrate AppImage with the system menu
-  ansible.builtin.file:
-      path: "{{ home }}/.local/share/appimagekit/OpenXcom_no_desktopintegration"
-      state: touch
-      mode: "0644"
-      modification_time: preserve
-      access_time: preserve
+
+      - name: Disable prompt to integrate AppImage with the system menu
+        ansible.builtin.file:
+            path: "{{ home }}/.local/share/appimagekit/OpenXcom_no_desktopintegration"
+            state: touch
+            mode: "0644"
+            modification_time: preserve
+            access_time: preserve
+
+      - name: Download Icon assets from smoke-resources repository
+        ansible.builtin.get_url:
+            url: "{{ smoke_resources }}
+
+      - name: Create Desktop entry
+        ansible.builtin.template:
+            src: "{{ xcom-ufo-defense.desktop.j2"
+            dest: "{{ app_dir }}/xcom-ufo-defense.desktop"

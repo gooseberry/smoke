@@ -23,6 +23,9 @@
             state: directory
         register: tmp_dir
 
+      - name: Use innoextract to extract game files
+        ansible.builtin.include_tasks: common/tasks/extract_inno.yml
+
       - name: Copy game files from the temporary directory
         ansible.builtin.include_tasks: common/tasks/copy_files.yml
         loop: "{{ game_files }}"

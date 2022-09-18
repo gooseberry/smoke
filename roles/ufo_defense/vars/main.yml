@@ -34,12 +34,12 @@ game_files:
   - { src: "geodata/", dest: "{{ base_dir }}/geodata/" }
   - { src: "geograph/", dest: "{{ base_dir }}/geograph/" }
   - { src: "maps/", dest: "{{ base_dir }}/maps/" }
-  - { src: "routes/", dest: "{{ icon_dir }}/routes/" }
-  - { src: "sound/", dest: "{{ icon_dir }}/sound/" }
-  - { src: "terrain/", dest: "{{ icon_dir }}/terrain/" }
-  - { src: "ufograph/", dest: "{{ icon_dir }}/ufograph/" }
-  - { src: "ufointro/", dest: "{{ icon_dir }}/ufointro/" }
-  - { src: "units/", dest: "{{ icon_dir }}/units/" }
+  - { src: "routes/", dest: "{{ base_dir }}/routes/" }
+  - { src: "sound/", dest: "{{ base_dir }}/sound/" }
+  - { src: "terrain/", dest: "{{ base_dir }}/terrain/" }
+  - { src: "ufograph/", dest: "{{ base_dir }}/ufograph/" }
+  - { src: "ufointro/", dest: "{{ base_dir }}/ufointro/" }
+  - { src: "units/", dest: "{{ base_dir }}/units/" }
 
 # Additional resources
 smoke_resources: https://raw.githubusercontent.com/gooseberry/smoke-resources/main/openxcom/

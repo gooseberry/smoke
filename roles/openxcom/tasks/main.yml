@@ -29,6 +29,7 @@
         ansible.builtin.get_url:
             url: "{{ openxcom_url }}/{{ openxcom_file }}"
             dest: "{{ base_dir }}/{{ openxcom_file }}"
+            mode: "0755"
             force: no
 
   when: not is_openxcom_installed.stat.exists

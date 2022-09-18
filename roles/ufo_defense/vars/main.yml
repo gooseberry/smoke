@@ -24,7 +24,7 @@ directories:
     - "{{ base_dir }}/ufograph"
     - "{{ base_dir }}/ufointro"
     - "{{ base_dir }}/units"
-    - "{{ home }}/.local/share/appimagekit
+    - "{{ home }}/.local/share/appimagekit"
     - "{{ icon_dir }}"
     - "{{ app_dir }}"
 
@@ -41,3 +41,8 @@ game_files:
   - { src: "ufointro/", dest: "{{ icon_dir }}/ufointro/" }
   - { src: "units/", dest: "{{ icon_dir }}/units/" }
 
+# Additional resources
+smoke_resources: https://raw.githubusercontent.com/gooseberry/smoke-resources/main/openxcom/
+
+icons:
+    - openxcom.png

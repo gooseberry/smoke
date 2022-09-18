@@ -1,0 +1,13 @@
+---
+# InnoExtract role task
+# This collection of tasks will download and install innoextract 1.9 from
+# the web, replacing the existing version (1.8) available from the repo
+# This is only needed for install files that are incompatible with 1.8
+#
+# To install this version, add the innoextract role to the game playbook file
+# in the root directory of the smoke program.
+
+- name: Install latest supported innoextract from opensuse.org
+  become: yes
+  ansible.builtin.apt:
+      deb: "https://download.opensuse.org/repositories/home:/dscharrer/Debian_11/amd64/innoextract_1.9-0.1_amd64.deb"

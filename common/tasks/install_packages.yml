@@ -15,5 +15,5 @@
   ansible.builtin.apt:
       name: "{{ item }}"
       state: present
-  when: item != "scummvm" )
+  when: ( item != "scummvm" )
 

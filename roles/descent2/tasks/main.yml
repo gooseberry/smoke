@@ -51,7 +51,7 @@
             label: "{{ item.dest }}"
 
       - name: Extract music tracks from the cd image files
-        ansible.builtin.include_tasks: common/tasks/rip_cd_tracks.yml
+        ansible.builtin.include_tasks: common/tasks/rip_cd_track.yml
         loop: "{{ cd_images }}"
         loop_control:
             label: "{{ item.dest }}"

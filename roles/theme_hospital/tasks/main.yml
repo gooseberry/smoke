@@ -45,3 +45,11 @@
             path: "{{ tmp_dir.path }}"
             state: absent
         when: tmp_dir.path is defined
+
+- name: Configure shortcuts to launch the game from ChromeOS app menu
+  block:
+
+      - name: Deploy config.txt file
+        ansible.builtin.template:
+            src: config.txt.j2
+            dest: "{{ base_dir }}/config.txt"

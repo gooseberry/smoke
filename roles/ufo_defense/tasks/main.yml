@@ -1,0 +1,67 @@
+---
+# X-COM UFO Desense role task
+# This collection of tasks will install and configure X-COM UFO 
+# Defense to run with the open-source project openxcom
+
+- name: Initial system checks before installation
+  block:
+
+      - name: Pre-Install check list
+        ansible.builtin.include_tasks: common/tasks/pre_install.yml
+
+      - name: Skip extracting installer if game file found on system
+        ansible.builtin.stat:
+            path: "{{ base_dir }}/geodata/world.dat"
+        register: is_game_installed
+
+
+- name : Extract and configure game files from the installer
+  block:
+
+      - name: Create temporary working directory for installation files
+        ansible.builtin.tempfile:
+            state: directory
+        register: tmp_dir
+
+      - name: Use innoextract to extract game files
+        ansible.builtin.include_tasks: common/tasks/extract_inno.yml
+
+      - name: Copy game files from the temporary directory
+        ansible.builtin.include_tasks: common/tasks/copy_files.yml
+        loop: "{{ game_files }}"
+        loop_control:
+            label: "{{ item.dest }}"
+
+
+  when: not is_game_installed.stat.exists
+  always:
+
+      - name: Delete the temporary working directory
+        ansible.builtin.file:
+            path: "{{ tmp_dir.path }}"
+            state: absent
+        when: tmp_dir.path is defined
+
+- name: Configure shortcuts to launch game from ChromeOS app menu
+  block:
+
+
+      - name: Disable prompt to integrate AppImage with the system menu
+        ansible.builtin.file:
+            path: "{{ home }}/.local/share/appimagekit/OpenXcom_no_desktopintegration"
+            state: touch
+            mode: "0644"
+            modification_time: preserve
+            access_time: preserve
+
+      - name: Download Icon assets from smoke-resources repository
+        ansible.builtin.get_url:
+            url: "{{ smoke_resources }}/{{ item }}"
+            dest: "{{ icon_dir }}/{{ item }}"
+            force: no
+        loop: "{{ icons }}"
+
+      - name: Create Desktop entry
+        ansible.builtin.template:
+            src: xcom_ufo_defense.desktop.j2
+            dest: "{{ app_dir }}/xcom-ufo-defense.desktop"

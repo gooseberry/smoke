@@ -1,0 +1,8 @@
+---
+# Starting playbook to install quake
+
+- name: OpenXcom AppImage
+  hosts: all
+
+  roles:
+      - openxcom

@@ -6,9 +6,6 @@
 - name: Initial system checks before installation
   block:
 
-      - name: Collect screen resolution to use in configuration
-        ansible.builtin.include_tasks: common/tasks/collect_system_info.yml
-
       - name: Pre-Install check list
         ansible.builtin.include_tasks: common/tasks/pre_install.yml
 

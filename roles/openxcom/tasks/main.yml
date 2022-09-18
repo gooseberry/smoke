@@ -5,6 +5,10 @@
 # or Terror from the Deep, but it is required before these games can be
 # installed.
 
+
+- name: Collect screen resolution to use in options.cfg
+  ansible.builtin.include_tasks: common/tasks/collect_system_info.yml
+
 - name: Create directory tree
   ansible.builtin.file:
       path: "{{ item }}"
@@ -28,3 +32,8 @@
             force: no
 
   when: not is_openxcom_installed.stat.exists
+
+- name: Deploy option.cfg template to openxcom folder
+  ansible.builtin.template:
+      src: options.cfg.j2
+      dest: "{{ config_dir }}/options.cfg"

@@ -54,6 +54,18 @@
         failed_when: unzip_result.rc > 1
         when: installer.path is search(".sh")
 
+      - name: Extract Inno installer contents into working directory
+        ansible.builtin.command:
+            argv:
+                - innoextract
+                - --lowercase
+                - -s
+                - -m
+                - -d
+                - "{{ tmp_dir.path }}"
+                - "{{ installer.path }}"
+        when: installer.path is search(".exe")
+
       - name: Copy games files from the temporary directory
         ansible.builtin.copy:
             src: "{{ tmp_dir.path }}/{{ item.src }}"

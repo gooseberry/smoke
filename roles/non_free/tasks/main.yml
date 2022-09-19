@@ -1,0 +1,26 @@
+---
+# Non-Free role
+# This role will add the non-free debian repo to your system.
+#
+# Games requiring packages from this repo should import this role into their
+# main playbook.
+#
+#   - name: Import debian non-free repo
+#     ansible.builtin.include_role:
+#         name: non_free
+
+- name: Add non-free repo to apt
+  become: yes
+  ansible.builtin.apt_repository:
+      repo: "{{ item }}"
+      state: present
+  loop:
+      - "deb https://deb.debian.org/debian bullseye non-free"
+      - "deb https://deb.debian.org/debian bullseye-updates non-free"
+      - "deb https://deb.debian.org/debian-security/ bullseye-security non-free"
+
+- name: Update apt cache
+  become: yes
+  ansible.builtin.apt:
+      update_cache: yes
+    

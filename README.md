@@ -4,9 +4,9 @@ Ansible playbooks for installing games on crostini
 This project is written to help you get games from your GOG.com library up and running on your own Chromebook. 
 
 ## Background
-This is a little side project I started when I got a ChromeBook many years ago and discovered crostini. What started with getting a few games to run on the platform evolved into a larger scale project with multiple bash and python scripts.  I've created a new repository to migrate most of these to ansible because I want to learn ansible and I think it's pretty fun.
+This is a project I started when I got a ChromeBook many years ago and discovered that crostini could easily run a few older games from gog. What started with getting a few games to run on the platform evolved into a larger scale project with multiple bash and python scripts.  I've created a new repository to migrate most of these to ansible because I want to learn ansible and since I find myself powerwashing my Chromebook from time to time, I wanted to see if I could automate the process of rebuilding my setup without a full backup and restore.
 
-Check out the [Smoke Website](https://gooseberry.github.io/) for a more complete guide to get you started.
+Check out the [Smoke wiki](https://github.com/gooseberry/smoke/wiki) for a more complete guide to get you started.
 
 # Getting Started
 

@@ -17,9 +17,12 @@ base_dir: "{{ home }}/.scummvm/atlantis"
 # Directory trees to be created on the system
 directories:
     - "{{ base_dir }}"
-    - "{{ home }}/.scummvm/saves"
     - "{{ icon_dir }}"
     - "{{ app_dir }}"
+
+# Sanity file
+# If this file exists, the installer will skip extracting the game content
+sanity_file: "{{ base_dir }}/ATLANTIS.000"
 
 # Game files list with source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location

@@ -1,0 +1,37 @@
+---
+# Variables for the Theme Hospital installer
+
+# Install file from gog
+installer: {
+    path: "{{ home }}/setup_theme_hospital_v3_(28027).exe",
+    sha1sum: 5e887b4b0ff3ef021e8159ff9df0c87b37125299
+    }
+
+# Dependencies
+dependencies:
+    - corsix-th
+    - innoextract
+
+# Theme Hospital base directories
+base_dir: "{{ home }}/.config/CorsixTH"
+
+# Directory trees to be created on the system
+directories:
+    - "{{ base_dir }}/ANIMS"
+    - "{{ base_dir }}/DATA"
+    - "{{ base_dir }}/INTRO"
+    - "{{ base_dir }}/LEVELS"
+    - "{{ base_dir }}/QDATA"
+    - "{{ base_dir }}/SOUND"
+    - "{{ icon_dir }}"
+    - "{{ app_dir }}"
+
+# Game files list with source and destination
+# Note {{ tmp_dir.path }} must be prefixed to the src location
+game_files:
+    - { src: "ANIMS/", dest: "{{ base_dir }}/ANIMS/" }
+    - { src: "DATA/", dest: "{{ base_dir }}/DATA/" }
+    - { src: "INTRO/", dest: "{{ base_dir }}/INTRO/" }
+    - { src: "LEVELS/", dest: "{{ base_dir }}/LEVELS/" }
+    - { src: "QDATA/", dest: "{{ base_dir }}/QDATA/" }
+    - { src: "SOUND/", dest: "{{ base_dir }}/SOUND/" }

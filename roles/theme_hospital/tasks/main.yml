@@ -30,8 +30,17 @@
             state: directory
         register: tmp_dir
 
+      # Corsix is case sensitive, the default extractor task sets all files to
+      # lowercase
       - name: Use innoextract to extract game files
-        ansible.builtin.include_tasks: common/tasks/extract_inno.yml
+        ansible.builtin.command:
+            argv:
+                - innoextract
+                - -s
+                - -m
+                - -d
+                - "{{ tmp_dir.path }}"
+                - "{{ installer.path }}"
 
       - name: Copy game files from the temporary directory
         ansible.builtin.include_tasks: common/tasks/copy_files.yml

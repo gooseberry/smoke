@@ -35,7 +35,7 @@
             label: "{{ item }}"
         when: directories is defined
 
-- name: Extract and configur game files from the installer
+- name: Extract and configure game files from the installer
   block:
 
       - name: Create temporary working directory for installation files
@@ -43,17 +43,15 @@
             state: directory
         register: tmp_dir
 
-      - name: MojoSetup
-        block:
-            - name: Unzip mojosetup installer contents into working directory
-              ansible.builtin.command:
-                  argv:
-                      - unzip
-                      - -d
-                      - "{{ tmp_dir.path }}"
-                      - "{{ installer.path }}"
-              register: unzip_result
-              failed_when: unzip_result.rc > 1
+      - name: Unzip mojosetup installer contents into working directory
+        ansible.builtin.command:
+            argv:
+                - unzip
+                - -d
+                - "{{ tmp_dir.path }}"
+                - "{{ installer.path }}"
+        register: unzip_result
+        failed_when: unzip_result.rc > 1
         when: installer.path is search(".sh")
 
       - name: Copy games files from the temporary directory
@@ -65,7 +63,10 @@
         loop_control:
             label: "{{ item.dest }}"
 
-  when: (( not is_game_installed.stat.exists ) and install_file.stat.exists )
+  when:
+      - not is_game_installed.stat.exists
+      - install_file.stat.exists
+
   always:
 
       - name: Delete the temporary working directory

@@ -113,7 +113,7 @@ main () {
   echo
 
   update_system
-  #install_packages ${REQUIRED_PACKAGES[@]}
+  install_packages ${REQUIRED_PACKAGES[@]}
   #install_ansbible
   #append_path ${PATH_DIRECTORIES[@]}
   #clone_repos ${REPO_URL[@]}

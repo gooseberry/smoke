@@ -22,11 +22,12 @@
           description=Sam & Max Hit the Road (CD/English)
           language=en
           extra=CD
-          path=/home/eric/.scummvm/samnmax
+          path={{ base_dir }}
           enable_enhancements=true
           engineid=scumm
           guioptions=gameOption2 lang_English
       state: present
+      marker: "# {mark} SAMNMAX BLOCK INSERTED BY SMOKE"
 
 - name: Create Desktop Entry
   ansible.builtin.template:

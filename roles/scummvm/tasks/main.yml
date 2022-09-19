@@ -29,6 +29,9 @@
         ansible.builtin.apt:
             deb: "https://downloads.scummvm.org/frs/scummvm/2.6.0/scummvm_2.6.0-1_debian11_amd64.deb"
 
+      - name: Collect sytem screen resolution for config file
+        ansible.builtin.include_tasks: common/tasks/collect_system_info.yml
+
       - name: Deploy ScummVM configuration file
         ansible.builtin.template:
             src: scummvm.ini.j2

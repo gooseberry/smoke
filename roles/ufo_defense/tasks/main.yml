@@ -46,14 +46,6 @@
   block:
 
 
-      - name: Disable prompt to integrate AppImage with the system menu
-        ansible.builtin.file:
-            path: "{{ home }}/.local/share/appimagekit/OpenXcom_no_desktopintegration"
-            state: touch
-            mode: "0644"
-            modification_time: preserve
-            access_time: preserve
-
       - name: Download Icon assets from smoke-resources repository
         ansible.builtin.get_url:
             url: "{{ smoke_resources }}/{{ item }}"

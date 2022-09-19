@@ -24,7 +24,6 @@ directories:
     - "{{ base_dir }}/ufograph"
     - "{{ base_dir }}/ufointro"
     - "{{ base_dir }}/units"
-    - "{{ home }}/.local/share/appimagekit"
     - "{{ icon_dir }}"
     - "{{ app_dir }}"
 

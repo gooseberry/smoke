@@ -34,6 +34,15 @@
 
   when: not is_openxcom_installed.stat.exists
 
+
+- name: Disable prompt to integrate AppImage with the system menu
+  ansible.buitin.file:
+      path: "{{ home }}/.local/share/appimagekit/OpenXcom_no_desktopintegration"
+      state: touch
+      mode: "0644"
+      modification_time: preserve
+      access_time: preserve
+
 - name: Deploy option.cfg template to openxcom folder
   ansible.builtin.template:
       src: options.cfg.j2

@@ -64,7 +64,9 @@
                 - -d
                 - "{{ tmp_dir.path }}"
                 - "{{ installer.path }}"
-        when: installer.path is search(".exe")
+        when: 
+            - installer.path is search(".exe")
+            - installer.convert_filename_lowercase
 
       - name: Copy games files from the temporary directory
         ansible.builtin.copy:

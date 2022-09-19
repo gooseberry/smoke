@@ -36,7 +36,7 @@
 
 
 - name: Disable prompt to integrate AppImage with the system menu
-  ansible.buitin.file:
+  ansible.builtin.file:
       path: "{{ home }}/.local/share/appimagekit/OpenXcom_no_desktopintegration"
       state: touch
       mode: "0644"

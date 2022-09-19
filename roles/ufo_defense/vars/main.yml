@@ -27,6 +27,9 @@ directories:
     - "{{ icon_dir }}"
     - "{{ app_dir }}"
 
+# Sanity file
+sanity_file: "{{ base_dir }}/geodata/world.dat"
+
 # Game files list with source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location
 game_files:

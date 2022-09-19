@@ -10,8 +10,6 @@ directories:
     - "{{ base_dir }}"
     - "{{ config_dir }}"
     - "{{ home }}/.local/share/appimagekit"
-    - "{{ base_dir }}"
-    - "{{ config_dir }}"
 
 openxcom_url: https://openxcom.org/download/nightlies
 openxcom_file: OpenXcom_20210611_8d45159bf_x86-64.AppImage

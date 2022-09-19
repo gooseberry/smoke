@@ -14,7 +14,6 @@ readonly script_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # Script Specific Variables
 REQUIRED_PACKAGES=(python3-pip)
-PATH_DIRECTORIES=(${HOME}/.config/ansible)
 GIT_DIR=${HOME}/git
 REPO_URL=(https://github.com/gooseberry/smoke.git)
 
@@ -62,24 +61,6 @@ install_ansible () {
   echo
 }
 
-append_path () {
-  directories=$@
-
-  echo
-  echo "Adding directories to the path..."
-  for directory in ${directories[@]}
-  do
-    msg="    ${directory}..."
-    echo
-    echo "${msg}"
-    echo 'export PATH="${HOME}/.local/bin:${PATH}"' >> ~/.bashrc
-    echo -e "\e[1A\e[K${msg}INSTALLED!"
-  done
-  source ~/.bashrc
-  echo
-  echo "Done adding directories to path"
-  echo
-}
 
 clone_repos () {
   repositories=$@
@@ -115,8 +96,7 @@ main () {
   update_system
   install_packages ${REQUIRED_PACKAGES[@]}
   install_ansible
-  #append_path ${PATH_DIRECTORIES[@]}
-  #clone_repos ${REPO_URL[@]}
+  clone_repos ${REPO_URL[@]}
 
   echo
   echo "************************************************************"

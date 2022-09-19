@@ -127,7 +127,6 @@ main () {
   echo "The Smoke deployment script has completed.  Your system"
   echo "is now ready to use."
   echo
-  exit 0
 }
 
 main

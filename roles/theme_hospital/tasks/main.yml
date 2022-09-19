@@ -10,6 +10,9 @@
       - name: Collect screen resolution to use in config.txt
         ansible.builtin.include_tasks: common/tasks/collect_system_info.yml
 
+      - name: Add contrib repository
+        ansible.builtin.include_tasks: common/tasks/add_repo.yml
+
       - name: Pre-Install check list
         ansible.builtin.include_tasks: common/tasks/pre_install.yml
 
@@ -34,7 +37,7 @@
         ansible.builtin.include_tasks: common/tasks/copy_files.yml
         loop: "{{ game_files }}"
         loop_control:
-            labe: "{{ item.dest }}"
+            label: "{{ item.dest }}"
 
 
   when: not is_game_installed.stat.exists

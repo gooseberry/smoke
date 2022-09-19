@@ -1,0 +1,8 @@
+---
+# Starting playbook to install quake
+
+- name: Theme Hospital
+  hosts: all
+
+  roles:
+      - theme_hospital

@@ -114,7 +114,7 @@ main () {
 
   update_system
   install_packages ${REQUIRED_PACKAGES[@]}
-  install_ansbible
+  install_ansible
   #append_path ${PATH_DIRECTORIES[@]}
   #clone_repos ${REPO_URL[@]}
 

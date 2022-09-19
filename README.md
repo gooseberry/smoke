@@ -10,9 +10,15 @@ Check out the [Smoke Website](https://gooseberry.github.io/) for a more complete
 
 # Getting Started
 
-To get started, you need to install ansible on a fresh copy of crostini and pull this repository.  
+To get started, you need to install ansible on a fresh copy of crostini and run the following commands  
 
-    source <(curl -s https://raw.githubusercontent.com/gooseberry/smoke/main/setup.sh)
+    sudo apt-get update && sudo apt-get upgrade -y
+    sudo apt-get install python3-pip
+    export PATH=$PATH:~/.local/bin
+    python3 -m pip install --user ansible
+    mkdir ~/git
+    cd ~/git
+    git clone https://github.com/gooseberry/smoke.git
 
 
 # Installing a game

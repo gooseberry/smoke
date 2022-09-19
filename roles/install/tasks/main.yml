@@ -1,0 +1,75 @@
+---
+# This role checks your system before completing the installation.
+
+
+- name: Perform stat on install file
+  ansible.builtin.stat:
+      path: "{{ installer.path }}"
+  register: install_file
+
+- name: Perform stat on game file
+  ansible.builtin.stat:
+      path: "{{ sanity_file }}"
+  register: is_game_installed
+
+- name: Pre-Install tasks
+  block:
+
+      - name: Install dependencies from Debian repository
+        become: yes
+        ansible.builtin.apt:
+            name: "{{ item }}"
+            state: present
+        loop: "{{ dependencies }}"
+        loop_control:
+            label: "{{ item }}"
+        when: dependencies is defined
+
+      - name: Create directory tree for game files
+        ansible.builtin.file:
+            path: "{{ item }}"
+            state: directory
+            mode: "0755"
+        loop: "{{ directories }}"
+        loop_control:
+            label: "{{ item }}"
+        when: directories is defined
+
+- name: Extract and configur game files from the installer
+  block:
+
+      - name: Create temporary working directory for installation files
+        ansible.builtin.tempfile:
+            state: directory
+        register: tmp_dir
+
+      - name: MojoSetup
+        block:
+            - name: Unzip mojosetup installer contents into working directory
+              ansible.builtin.command:
+                  argv:
+                      - unzip
+                      - -d
+                      - "{{ tmp_dir.path }}"
+                      - "{{ installer.path }}"
+              register: unzip_result
+              failed_when: unzip_result.rc > 1
+        when: installer.path is search(".sh")
+
+      - name: Copy games files from the temporary directory
+        ansible.builtin.copy:
+            src: "{{ tmp_dir.path }}/{{ item.src }}"
+            dest: "{{ item.dest }}"
+            remote_src: yes
+        loop: "{{ game_files }}"
+        loop_control:
+            label: "{{ item.dest }}"
+
+  when: (( not is_game_installed.stat.exists ) and install_file.stat.exists )
+  always:
+
+      - name: Delete the temporary working directory
+        ansible.builtin.file:
+            path: "{{ tmp_dir.path }}"
+            state: absent
+        when: tmp_dir.path is defined

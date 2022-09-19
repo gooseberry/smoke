@@ -11,15 +11,17 @@ dependencies:
     - unzip
     - scummvm
 
-# Quake base directory
+# Game base directory
 base_dir: "{{ home }}/.scummvm/samnmax"
 
 # Directory trees to be created on the system
 directories:
     - "{{ base_dir }}"
-    - "{{ home }}/.scummvm/saves"
     - "{{ icon_dir }}"
     - "{{ app_dir }}"
+
+# Sanity file
+sanity_file: "{{ base_dir }}/samnmax.000"
 
 # Game files list with source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location

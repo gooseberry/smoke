@@ -13,11 +13,16 @@
 - name: Only install ScummVM if the configuration file does not exist
   block:
 
-      - name: Create ScummVM directory
+      - name: Create ScummVM directories
         ansible.builtin.file:
-            path: "{{ home }}/.config/scummvm"
+            path: "{{ item }}"
             state: directory
             mode: "0755"
+        loop: 
+            - "{{ home }}/.config/scummvm"
+            - "{{ home }}/.scummvm/saves"
+        loop_control:
+            label: "{{ item }}"
 
       - name: Install ScummVM package directly from the scummvm.org website
         become: yes

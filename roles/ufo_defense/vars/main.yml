@@ -25,8 +25,6 @@ directories:
     - "{{ base_dir }}/ufograph"
     - "{{ base_dir }}/ufointro"
     - "{{ base_dir }}/units"
-    - "{{ icon_dir }}"
-    - "{{ app_dir }}"
 
 # Sanity file
 sanity_file: "{{ base_dir }}/geodata/world.dat"

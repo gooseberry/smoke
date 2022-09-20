@@ -17,8 +17,6 @@ base_dir: "{{ home }}/.scummvm/samnmax"
 # Directory trees to be created on the system
 directories:
     - "{{ base_dir }}"
-    - "{{ icon_dir }}"
-    - "{{ app_dir }}"
 
 # Sanity file
 sanity_file: "{{ base_dir }}/samnmax.000"

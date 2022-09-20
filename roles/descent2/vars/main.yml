@@ -22,8 +22,6 @@ base_dir: "{{ home }}/.d2x-rebirth"
 # Directory trees to be created on the system
 directories:
     - "{{ base_dir }}/music"
-    - "{{ icon_dir }}"
-    - "{{ app_dir }}"
 
 # Sanity file
 sanity_file: "{{ base_dir }}/descent2.ham"

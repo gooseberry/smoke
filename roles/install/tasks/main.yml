@@ -27,6 +27,15 @@
             label: "{{ item }}"
         when: dependencies is defined
 
+      - name: Create the directories for Desktop Entries and Icons
+        ansible.builtin.file:
+            path: "{{ item }}"
+            state: directory
+            mode: "0755"
+        loop:
+            - "{{ app_dir }}"
+            - "{{ icon_dir }}"
+
       - name: Create directory tree for game files
         ansible.builtin.file:
             path: "{{ item }}"

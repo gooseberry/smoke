@@ -26,8 +26,6 @@ directories:
     - "{{ base_dir }}/id1/music"
     - "{{ base_dir }}/hipnotic/music"
     - "{{ base_dir }}/rogue/music"
-    - "{{ icon_dir }}"
-    - "{{ app_dir }}"
 
 # Sanity file
 sanity_file: "{{ base_dir }}/id1/pak1.pak"

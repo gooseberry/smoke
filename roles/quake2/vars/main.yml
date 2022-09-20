@@ -23,8 +23,6 @@ directories:
     - "{{ base_dir }}/rogue/video"
     - "{{ base_dir }}/music"
     - "{{ base_dir }}/ctf"
-    - "{{ icon_dir }}"
-    - "{{ app_dir }}"
 
 # Sanity File
 sanity_file: "{{ base_dir }}/baseq2/pak0.pak"

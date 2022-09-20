@@ -24,8 +24,6 @@ directories:
     - "{{ base_dir }}/LEVELS"
     - "{{ base_dir }}/QDATA"
     - "{{ base_dir }}/SOUND"
-    - "{{ icon_dir }}"
-    - "{{ app_dir }}"
 
 # Sanity File
 sanity_file: "{{ base_dir }}/LEVELS/LEVEL.L1"

@@ -63,7 +63,7 @@
         failed_when: unzip_result.rc > 1
         when: installer.path is search(".sh")
 
-      - name: Extract Inno installer contents into working directory
+      - name: Extract Inno installer contents into working directory (lowercase)
         ansible.builtin.command:
             argv:
                 - innoextract
@@ -76,6 +76,19 @@
         when: 
             - installer.path is search(".exe")
             - installer.convert_filename_lowercase
+
+      - name: Extract Inno installer contents into working directory (case-sensitive)
+        ansible.builtin.command:
+            argv:
+                - innoextract
+                - -s
+                - -m
+                - -d
+                - "{{ tmp_dir.path }}"
+                - "{{ installer.path }}"
+        when:
+            - installer.path is search(".exe")
+            - not installer.conver_filename_lowercase
 
       - name: Copy games files from the temporary directory
         ansible.builtin.copy:

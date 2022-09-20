@@ -84,10 +84,13 @@
             - not installer.convert_filename_lowercase
 
       - name: Copy games files from the temporary directory
-        ansible.builtin.include_tasks: copy_files
+        ansible.builtin.include_tasks: copy_files.yml
 
       - name: Extract music tracks from cd image files
         ansible.builtin.include_tasks: rip_cd_tracks.yml
+        loop: "{{ cd_images }}"
+        loop_control:
+            label: "{{ item.dest }}"
         when: cd_images is defined
 
   when:

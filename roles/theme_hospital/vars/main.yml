@@ -4,7 +4,8 @@
 # Install file from gog
 installer: {
     path: "{{ home }}/setup_theme_hospital_v3_(28027).exe",
-    sha1sum: 5e887b4b0ff3ef021e8159ff9df0c87b37125299
+    sha1sum: 5e887b4b0ff3ef021e8159ff9df0c87b37125299,
+    convert_filename_lowercase: False
     }
 
 # Dependencies
@@ -25,6 +26,9 @@ directories:
     - "{{ base_dir }}/SOUND"
     - "{{ icon_dir }}"
     - "{{ app_dir }}"
+
+# Sanity File
+sanity_file: "{{ base_dir }}/LEVELS/LEVEL.L1"
 
 # Game files list with source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location

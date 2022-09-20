@@ -84,13 +84,7 @@
             - not installer.convert_filename_lowercase
 
       - name: Copy games files from the temporary directory
-        ansible.builtin.copy:
-            src: "{{ tmp_dir.path }}/{{ item.src }}"
-            dest: "{{ item.dest }}"
-            remote_src: yes
-        loop: "{{ game_files }}"
-        loop_control:
-            label: "{{ item.dest }}"
+        ansible.builtin.include_tasks: copy_files
 
       - name: Extract music tracks from cd image files
         ansible.builtin.include_tasks: rip_cd_tracks.yml

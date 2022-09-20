@@ -1,0 +1,27 @@
+---
+# Copy game files to the destination
+#
+# {{ tmp_dir.path }} must be registed before including this task list.
+#
+# Use the followin format to include this task list:
+#
+#   - name: Copy game files from the temporary directory
+#     ansible.builtin.include_tasks: copy_files
+#
+# The "{{ game_files }}" variable must be in the form
+#
+#   game_files:
+#     - { src: "/relative/file.pak", dest: "/full/path/to/file.pak" }
+#
+# src directory should be relative to {{ tmp_dir.path }}.
+#
+#
+
+- name: Copy games files from the temporary directory
+  ansible.builtin.copy:
+      src: "{{ tmp_dir.path }}/{{ item.src }}"
+      dest: "{{ item.dest }}"
+      remote_src: yes
+  loop: "{{ game_files }}"
+  loop_control:
+      label: "{{ item.dest }}"

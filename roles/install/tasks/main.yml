@@ -85,6 +85,7 @@
 
       - name: Copy games files from the temporary directory
         ansible.builtin.include_tasks: copy_files.yml
+        when: game_files is defined
 
       - name: Extract music tracks from cd image files
         ansible.builtin.include_tasks: rip_cd_tracks.yml

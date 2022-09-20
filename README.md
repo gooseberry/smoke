@@ -1,4 +1,4 @@
-Ansible playbooks for installing games on crostini
+Smoke is a set of Ansible deployment and configuration rules to automate the installation of various games from [GOG.com](https://gog.com) on the Linux Development Environment (LDE) of a Chromebook.
 
 # Purpose
 This project is written to help you get games from your GOG.com library up and running on your own Chromebook. 

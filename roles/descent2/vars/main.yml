@@ -4,7 +4,8 @@
 # Install file from gog
 installer: {
     path: "{{ home }}/setup_descent_2_1.1_(16596).exe",
-    sha1sum: 362773ad0094cb5134e10bf7f401bb1344daeea9
+    sha1sum: 362773ad0094cb5134e10bf7f401bb1344daeea9,
+    convert_filename_lowercase: True
     }
 
 # Dependencies
@@ -23,6 +24,9 @@ directories:
     - "{{ base_dir }}/music"
     - "{{ icon_dir }}"
     - "{{ app_dir }}"
+
+# Sanity file
+sanity_file: "{{ base_dir }}/descent2.ham"
 
 # Game files lists with source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location

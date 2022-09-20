@@ -1,0 +1,12 @@
+---
+# Quakespasm_spiked variables
+
+# Base directory
+qss_dir: "{{ home }}/.local/qss"
+
+# Directory trees to be created on the system
+directories:
+    - "{{ qss_dir }}"
+
+# Quakespasm-Spiked binary file url
+qss_url: https://triptohell.info/moodles/qss/quakespasm_spiked_linux64_dev.zip

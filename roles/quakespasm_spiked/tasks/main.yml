@@ -1,0 +1,15 @@
+---
+# QuakeSpasm-Spike role to install game engine
+
+- name: Create QuakeSpasm-Spiked binary directory
+  ansible.builtin.file:
+      path: "{{ qss_dir }}"
+      state: directory
+      mode: "0755"
+
+- name: Download and install Quakespasm-spiked engine
+  ansible.builtin.unarchive:
+      src: "{{ qss_url }}"
+      dest: "{{ qss_dir }}"
+      remote_src: yes
+      creates: "{{ qss_dir }}/quakespasm-spiked-linux64"

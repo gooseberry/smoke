@@ -3,7 +3,7 @@
 # Install file from gog
 installer: { 
     path: "{{ home }}/setup_quake_the_offering_2.0.0.6.exe",
-    sha1sum: 482866072af20cd730b3ce7fc69606a63db83cad
+    sha1sum: 482866072af20cd730b3ce7fc69606a63db83cad,
     convert_filename_lowercase: True
     }
 
@@ -20,14 +20,12 @@ dependencies:
 
 # Quake base directory
 base_dir: "{{ home }}/.quake"
-qss_dir: "{{ home }}/.local/qss"
 
 # Directory trees to be created on the system
 directories:
     - "{{ base_dir }}/id1/music"
     - "{{ base_dir }}/hipnotic/music"
     - "{{ base_dir }}/rogue/music"
-    - "{{ qss_dir }}"
     - "{{ icon_dir }}"
     - "{{ app_dir }}"
 
@@ -47,9 +45,6 @@ cd_images:
   - { bin: "app/game.gog", cue: "app/game.cue", dest: "{{ base_dir }}/id1/music/" }
   - { bin: "app/gamea.gog", cue: "app/gamea.cue", dest: "{{ base_dir }}/hipnotic/music/" }
   - { bin: "app/gamed.gog", cue: "app/gamed.cue", dest: "{{ base_dir }}/rogue/music/" }
-
-# Quakespasm-Spiked binary file url
-qss_url: https://triptohell.info/moodles/qss/quakespasm_spiked_linux64_dev.zip
 
 # Additional resources
 smoke_resources: https://raw.githubusercontent.com/gooseberry/smoke-resources/main/quake/

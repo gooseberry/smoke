@@ -4,6 +4,7 @@
 installer: { 
     path: "{{ home }}/setup_quake_the_offering_2.0.0.6.exe",
     sha1sum: 482866072af20cd730b3ce7fc69606a63db83cad
+    convert_filename_lowercase: True
     }
 
 # Dependencies
@@ -29,6 +30,9 @@ directories:
     - "{{ qss_dir }}"
     - "{{ icon_dir }}"
     - "{{ app_dir }}"
+
+# Sanity file
+sanity_file: "{{ base_dir }}/id1/pak1.pak"
 
 # Game files list with source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location

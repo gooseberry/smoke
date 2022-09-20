@@ -5,50 +5,13 @@
 # run with the open source engine Yamagi.
 
 
-- name: Initial system checks before installation
-  block:
+- name: Add contrib repository
+  ansible.builtin.import_role:
+      name: contrib
 
-      - name: Collection screen resolution to use in the config for full screen
-        ansible.builtin.include_tasks: common/tasks/collect_system_info.yml
-
-      - name: Add contrib repository
-        ansible.builtin.include_tasks: common/tasks/add_repo.yml
-
-      - name: Pre-install check list
-        ansible.builtin.include_tasks: common/tasks/pre_install.yml
-
-      - name: Skip extracting installer if game file found on system
-        ansible.builtin.stat:
-            path: "{{ base_dir }}/baseq2/pak0.pak"
-        register: is_game_installed
-
-
-- name: Extract and configure game files from the installer
-  block:
-
-      - name: Create temporary working directory for installation files
-        ansible.builtin.tempfile:
-            state: directory
-        register: tmp_dir
-
-      - name: Use innoextract to extract game files
-        ansible.builtin.include_tasks: common/tasks/extract_inno.yml
-
-      - name: Copy game files from the temporary directory
-        ansible.builtin.include_tasks: common/tasks/copy_files.yml
-        loop: "{{ game_files }}"
-        loop_control:
-            label: "{{ item.dest }}"
-
-  when: not is_game_installed.stat.exists
-  always:
-    
-      - name: Delete the temporary working directory
-        ansible.builtin.file:
-            path: "{{ tmp_dir.path }}"
-            state: absent
-        when: tmp_dir.path is defined
-
+- name: Installing...
+  ansible.builtin.include_role:
+    name: install
 
 - name: Configure shortcuts to launch game from ChromeOS app meny
   block:

@@ -1,15 +1,8 @@
 ---
 # This role checks your system before completing the installation.
 
-- name: Screen width
-  ansible.builtin.shell: xrandr|grep '*'|head -n 1|awk '{print $1}'|cut -d\x -f1
-  register: screen_width
-  changed_when: false
-
-- name: Screen height
-  ansible.builtin.shell: xrandr|grep '*'|head -n 1|awk '{print $1}'|cut -d\x -f2
-  register: screen_height
-  changed_when: false
+- name: Collection System Info
+  ansible.builtin.include_tasks: collect_system_info.yml
 
 - name: Perform stat on install file
   ansible.builtin.stat:

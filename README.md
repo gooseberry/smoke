@@ -1,16 +1,26 @@
-Smoke is a set of Ansible deployment and configuration rules to automate the installation of various games from [GOG.com](https://gog.com) on the Linux Development Environment (LDE) of a Chromebook.
+# Smoke
 
-# Purpose
-This project is written to help you get games from your GOG.com library up and running on your own Chromebook. 
+Smoke is a set of [Ansible](docs.ansible.com) deployment and configuration rules to automate the installation of various games from [GOG.com](https://gog.com) on the Linux Development Environment (LDE) of a Chromebook.
 
-## Background
-This is a project I started when I got a ChromeBook many years ago and discovered that crostini could easily run a few older games from gog. What started with getting a few games to run on the platform evolved into a larger scale project with multiple bash and python scripts.  I've created a new repository to migrate most of these to ansible because I want to learn ansible and since I find myself powerwashing my Chromebook from time to time, I wanted to see if I could automate the process of rebuilding my setup without a full backup and restore.
+## Description
 
-Check out the [Smoke wiki](https://github.com/gooseberry/smoke/wiki) for a more complete guide to get you started.
+The project sets up an Ansible control node within the Linux Environment of a Chromebook and applies the modules from this repository locally to install and configure various games from [GOG.com](https://gog.com) installers.  Game configurations are stored as modules within the *roles* section of this repository and are applied to the local system through *Playbooks* from the base directory of the Smoke repository.  I started this project to quickly recover games on my Chromebook following powerwashing.
+
+Check out the [Smoke wiki](https://github.com/gooseberry/smoke/wiki) for a more information about this project.
+
+## Features
+* Easy to understand modules are written in YAML which means they are human-readable.
+* Ready to run games.  All attempts are made to configure the games to run optimally on your Chromebook, often with modern or tweaked keyboard configurations to get your playing as quickly as possible.
+* Specifically written to support Chromebooks.  There is no plan to support other Linux distros at the moment.
+* Organized in small, single purpose modules to make the modules highly re-useable and simplifies the process of adding new games.
+* Doesn't require additional management software.  Ansible attempts to re-create the known state of a functional game.  It doesn't try to manage a library of games for you or try to link to your online account.
+* Flexible deployment platform.  Any task too complicated for Ansible can be written in a scripting language and run through ansible playbooks. 
+
+Check out the [Smoke wiki](https://github.com/gooseberry/smoke/wiki) for a more information about this project.
 
 # Getting Started
 
-To get started, you need to install ansible on a fresh copy of crostini and run the following commands  
+You will need to Turn On the Linux Development Environment on your Chromebook and install ansible onto the system to get going.  I recommend a fresh Crostini image as the modules in this project will install and configure many components.  Pasting the lines below into the terminal of a freshly deployed LDE will set your system up for using Smoke playbooks to install games. 
 
     sudo apt-get update && sudo apt-get upgrade -y
     sudo apt-get install python3-pip

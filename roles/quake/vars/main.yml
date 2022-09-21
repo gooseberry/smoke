@@ -44,9 +44,6 @@ cd_images:
   - { bin: "app/gamea.gog", cue: "app/gamea.cue", dest: "{{ base_dir }}/hipnotic/music/" }
   - { bin: "app/gamed.gog", cue: "app/gamed.cue", dest: "{{ base_dir }}/rogue/music/" }
 
-# Additional resources
-smoke_resources: https://raw.githubusercontent.com/gooseberry/smoke-resources/main/quake/
-
 icons:
   - quake.png
   - quake-soa.png

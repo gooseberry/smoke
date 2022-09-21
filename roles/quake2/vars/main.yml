@@ -44,9 +44,6 @@ game_files:
   # Music files
   - { src: "app/music/", dest: "{{ base_dir }}/music/" }
 
-# Additional resources
-smoke_resources: https://raw.githubusercontent.com/gooseberry/smoke-resources/main/quake2
-
 icons:
     - quake2.png
     - quake2-the-reckoning.png

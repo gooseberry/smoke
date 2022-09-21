@@ -15,7 +15,7 @@
 
       - name: Download Icon assets from smoke-resources repository
         ansible.builtin.get_url:
-            url: "{{ smoke_resources }}/{{ item }}"
+            url: "{{ icon_url }}/{{ item }}"
             dest: "{{ icon_dir }}/{{ item }}"
             force: no
         loop: "{{ icons }}"

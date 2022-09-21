@@ -1,0 +1,11 @@
+---
+# X-COM Terror from the Deep role task
+# This collection of tasks will install and configure X-COM
+# Terror from the Deep to run with the open-source project
+# OpenXcom
+
+
+- name: Installing...
+  ansible.builtin.include_role:
+      name: install
+

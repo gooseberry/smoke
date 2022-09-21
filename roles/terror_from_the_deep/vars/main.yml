@@ -1,0 +1,44 @@
+# Variables for the X-COM Terror from the Deep Installer
+
+# Install file from gog
+installer: {
+    path: "{{ home }}/setup_x-com_terror_from_the_deep_2.1_(28046).exe"
+    sha1sum: e2a230df78317bbbe41e4ec774ca4e8c0cb212f8
+    convert_filename_lowercase: True
+    }
+
+# Dependencies
+dependencies:
+    - innoextract
+
+# Game base directory
+base_dir: "{{ home }}/.local/share/openxcom/TFTD"
+
+# Directory trees to be created on the system
+directories:
+    - "{{ base_dir }}/geodata"
+    - "{{ base_dir }}/geograph"
+    - "{{ base_dir }}/maps"
+    - "{{ base_dir }}/routes"
+    - "{{ base_dir }}/sound"
+    - "{{ base_dir }}/terrain"
+    - "{{ base_dir }}/ufograph"
+    - "{{ base_dir }}/units"
+
+# Sanity file
+sanity_file: "{{ base_dir }}/geodata/world.dat"
+
+# Game files list with the source and destination
+# Not {{ tmp_dir.path }} must be prefixed to the src location
+game_files:
+    - { src: "geodata/", dest: "{{ base_dir }}/geodata/" }
+    - { src: "geograph/", dest: "{{ base_dir }}/geograph/" }
+    - { src: "maps/", dest: "{{ base_dir }}/maps/" }
+    - { src: "routes/", dest: "{{ base_dir }}/routes/" }
+    - { src: "sound/", dest: "{{ base_dir }}/sound/" }
+    - { src: "terrain/", dest: "{{ base_dir }}/terrain/" }
+    - { src: "ufograph/", dest: "{{ base_dir }}/ufograph/" }
+    - { src: "units/", dest: "{{ base_dir }}/units/" }
+
+icons:
+    - openxcom.png

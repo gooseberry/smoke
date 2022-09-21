@@ -36,6 +36,14 @@
             - "{{ app_dir }}"
             - "{{ icon_dir }}"
 
+      - name: Download missing desktop icons from smoke-repository
+        ansible.builtin.get_url:
+            url: "{{ icon_url }}/{{ item }}"
+            dest: "{{ icon_dir }}/{{ item }}"
+            force: no
+        loop: "{{ icons }}"
+        when: icons is defined
+
       - name: Create directory tree for game files
         ansible.builtin.file:
             path: "{{ item }}"

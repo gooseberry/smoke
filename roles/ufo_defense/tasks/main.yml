@@ -12,14 +12,6 @@
 - name: Configure shortcuts to launch game from ChromeOS app menu
   block:
 
-
-      - name: Download Icon assets from smoke-resources repository
-        ansible.builtin.get_url:
-            url: "{{ icon_url }}/{{ item }}"
-            dest: "{{ icon_dir }}/{{ item }}"
-            force: no
-        loop: "{{ icons }}"
-
       - name: Create Desktop entry
         ansible.builtin.template:
             src: xcom_ufo_defense.desktop.j2

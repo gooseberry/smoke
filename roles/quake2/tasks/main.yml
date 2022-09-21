@@ -16,13 +16,6 @@
 - name: Configure shortcuts to launch game from ChromeOS app meny
   block:
 
-      - name: Download Icon assets from smoke-resource repository
-        ansible.builtin.get_url:
-            url: "{{ icon_url }}/{{ item }}"
-            dest: "{{ icon_dir }}/{{ item }}"
-            force: no
-        loop: "{{ icons }}"
-
       - name: Create Desktop entries
         ansible.builtin.template:
             src: "{{ item.src }}"

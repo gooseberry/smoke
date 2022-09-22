@@ -4,6 +4,9 @@
 # Terror from the Deep to run with the open-source project
 # OpenXcom
 
+- name: Install OpenXcom
+  ansible.builtin.import_role:
+      name: openxcom
 
 - name: Installing...
   ansible.builtin.include_role:

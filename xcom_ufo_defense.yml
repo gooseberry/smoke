@@ -5,5 +5,4 @@
   hosts: all
 
   roles:
-      - openxcom
       - ufo_defense

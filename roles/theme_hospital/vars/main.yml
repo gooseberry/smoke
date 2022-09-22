@@ -42,9 +42,9 @@ directories:
     - "{{ base_dir }}/QDATA"
     - "{{ base_dir }}/SOUND"
 
-# Sanity file
+# Install record
 # If this file exists, the installer will skip extracting the game content
-sanity_file: "{{ base_dir }}/LEVELS/LEVEL.L1"
+install_record: "{{ smoke_config_dir }}/theme_hospital"
 
 # Game files list with source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location

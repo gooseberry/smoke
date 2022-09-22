@@ -41,9 +41,9 @@ directories:
     - "{{ base_dir }}/hipnotic/music"
     - "{{ base_dir }}/rogue/music"
 
-# Sanity file
+# Install record
 # If this file exists, the installer will skip extracting the game content
-sanity_file: "{{ base_dir }}/id1/pak1.pak"
+install_record: "{{ smoke_config_dir }}/quake"
 
 # Game files list with source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location

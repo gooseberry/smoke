@@ -36,9 +36,9 @@ directories:
     - "{{ base_dir }}/ufograph"
     - "{{ base_dir }}/units"
 
-# Sanity file
+# Install record
 # If this file exists, the installer will skip extracting the game content
-sanity_file: "{{ base_dir }}/geodata/world.dat"
+install_record: "{{ smoke_config_dir }}/tftd"
 
 # Game files list with the source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location

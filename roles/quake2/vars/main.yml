@@ -41,9 +41,9 @@ directories:
     - "{{ base_dir }}/music"
     - "{{ base_dir }}/ctf"
 
-# Sanity file
+# Install record
 # If this file exists, the installer will skip extracting the game content
-sanity_file: "{{ base_dir }}/baseq2/pak0.pak"
+install_record: "{{ smoke_config_dir }}/quake2"
 
 # Game files list with source and destination
 # Note: {{ tmp_dir.path }} must be prefixed ot the src location.

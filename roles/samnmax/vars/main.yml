@@ -14,19 +14,23 @@ installer: {
     type: mojosetup
     }
 
-# Dependencies
-dependencies:
-    - unzip
-    - scummvm
-
 # Game base directory
+# format:
+# #   base_dir: /full/path/to/where/game/files/should/be/installed
 base_dir: "{{ home }}/.scummvm/samnmax"
 
-# Directory trees to be created on the system
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
 directories:
     - "{{ base_dir }}"
 
 # Sanity file
+# If this file exists, the installer will skip extracting the game content
 sanity_file: "{{ base_dir }}/samnmax.000"
 
 # Game files list with source and destination
@@ -36,4 +40,3 @@ game_files:
   - { src: "data/noarch/data/samnmax.001", dest: "{{ base_dir }}/samnmax.001" }
   - { src: "data/noarch/data/samnmax.000", dest: "{{ base_dir }}/samnmax.000" }
   - { src: "data/noarch/support/icon.png", dest: "{{ icon_dir }}/samnmax.png" }
-

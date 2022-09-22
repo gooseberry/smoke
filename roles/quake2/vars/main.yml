@@ -14,16 +14,26 @@ installer: {
     type: innosetup
     }
     
-# Dependencies
+# List of dependencies needed to run the game.
+# format:
+#   - package1
+#   - package2
 dependencies:
     - yamagi-quake2
     - mesa-utils
-    - innoextract
 
-# Quake 2 base directory
+# Game base directory
+# format:
+# #   base_dir: /full/path/to/where/game/files/should/be/installed
 base_dir: "{{ home }}/.yq2"
 
-# Directories to be created on the system
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
 directories:
     - "{{ base_dir }}/baseq2/video"
     - "{{ base_dir }}/xatrix/video"
@@ -31,7 +41,8 @@ directories:
     - "{{ base_dir }}/music"
     - "{{ base_dir }}/ctf"
 
-# Sanity File
+# Sanity file
+# If this file exists, the installer will skip extracting the game content
 sanity_file: "{{ base_dir }}/baseq2/pak0.pak"
 
 # Game files list with source and destination
@@ -51,6 +62,8 @@ game_files:
   # Music files
   - { src: "app/music/", dest: "{{ base_dir }}/music/" }
 
+# Icon filenames stored on the smoke-repository git that should be downloaded to the
+# {{ icon_dir }} to create desktop icons.
 icons:
     - quake2.png
     - quake2-the-reckoning.png

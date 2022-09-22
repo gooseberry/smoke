@@ -14,27 +14,35 @@ installer: {
     type: innosetup
     }
 
-# Dependencies
+# List of dependencies needed to run the game.
+# format:
+#   - package1
+#   - package2
 dependencies:
     - libopusfile0
     - libmad0
     - libsdl2-2.0-0
-    - bchunk
     - mesa-utils
-    - vorbis-tools
-    - unzip
-    - innoextract
 
-# Quake base directory
+# Game base directory
+# format:
+# #   base_dir: /full/path/to/where/game/files/should/be/installed
 base_dir: "{{ home }}/.quake"
 
-# Directory trees to be created on the system
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
 directories:
     - "{{ base_dir }}/id1/music"
     - "{{ base_dir }}/hipnotic/music"
     - "{{ base_dir }}/rogue/music"
 
 # Sanity file
+# If this file exists, the installer will skip extracting the game content
 sanity_file: "{{ base_dir }}/id1/pak1.pak"
 
 # Game files list with source and destination
@@ -45,12 +53,17 @@ game_files:
   - { src: "app/hipnotic/pak0.pak", dest: "{{ base_dir }}/hipnotic/pak0.pak" }
   - { src: "app/rogue/pak0.pak", dest: "{{ base_dir }}/rogue/pak0.pak" }
 
-# CD Images
+# List of CD images that should be converted to OGG format
+# format:
+#   - { bin: "/relative/path/image.bin", cue: "/relative/path/image.cue", dest: "/full/path/dest" }
+# bin and cue file locations are relative to tmp_dir.path
 cd_images:
   - { bin: "app/game.gog", cue: "app/game.cue", dest: "{{ base_dir }}/id1/music/" }
   - { bin: "app/gamea.gog", cue: "app/gamea.cue", dest: "{{ base_dir }}/hipnotic/music/" }
   - { bin: "app/gamed.gog", cue: "app/gamed.cue", dest: "{{ base_dir }}/rogue/music/" }
 
+# Icon filenames stored on the smoke-repository git that should be downloaded to the
+# {{ icon_dir }} to create desktop icons.
 icons:
   - quake.png
   - quake-soa.png

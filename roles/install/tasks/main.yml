@@ -36,7 +36,7 @@
 
       # Dependencies include programs needed by game
       - name: Install listed dependencies
-        ansible.builtin.include_task: install_dependencies.yml
+        ansible.builtin.include_tasks: install_dependencies.yml
         when: dependencies is defined
 
       # Copying game files will fail if the directories do not exist

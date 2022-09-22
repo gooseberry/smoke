@@ -87,14 +87,8 @@
             state: absent
         when: tmp_dir.path is defined
 
-- name: Create the directories for Desktop Entries and Icons
-  ansible.builtin.file:
-      path: "{{ item }}"
-      state: directory
-      mode: "0755"
-  loop:
-      - "{{ app_dir }}"
-      - "{{ icon_dir }}"
+- name: Create common system directories
+  ansible.builtin.include_tasks: create_system_directories.yml
 
 - name: Download missing desktop icons from smoke-repository
   ansible.builtin.get_url:

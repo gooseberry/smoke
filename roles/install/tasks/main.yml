@@ -56,43 +56,13 @@
             state: directory
         register: tmp_dir
 
-      - name: Unzip mojosetup installer contents into working directory
-        ansible.builtin.command:
-            argv:
-                - unzip
-                - -d
-                - "{{ tmp_dir.path }}"
-                - "{{ installer.path }}"
-        register: unzip_result
-        failed_when: unzip_result.rc > 1
+      - name: Extract MojoSetup files to temporary directory
+        ansible.builtin.include_tasks: extract_mojo.yml
         when: installer.path is search(".sh")
 
-      - name: Extract Inno installer contents into working directory (lowercase)
-        ansible.builtin.command:
-            argv:
-                - innoextract
-                - --lowercase
-                - -s
-                - -m
-                - -d
-                - "{{ tmp_dir.path }}"
-                - "{{ installer.path }}"
-        when: 
-            - installer.path is search(".exe")
-            - installer.convert_filename_lowercase
-
-      - name: Extract Inno installer contents into working directory (case-sensitive)
-        ansible.builtin.command:
-            argv:
-                - innoextract
-                - -s
-                - -m
-                - -d
-                - "{{ tmp_dir.path }}"
-                - "{{ installer.path }}"
-        when:
-            - installer.path is search(".exe")
-            - not installer.convert_filename_lowercase
+      - name: Extract InnoSetup files to temporary directory
+        ansible.builtin.include_tasks: extract_inno.yml
+        when: installer.path is search(".exe")
 
       - name: Copy games files from the temporary directory
         ansible.builtin.include_tasks: copy_files.yml

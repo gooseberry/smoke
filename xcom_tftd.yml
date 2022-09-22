@@ -1,0 +1,9 @@
+---
+# Starting playbook to install quake
+
+- name: X-COM Terror from the Deep
+  hosts: all
+
+  roles:
+      - openxcom
+      - terror_from_the_deep

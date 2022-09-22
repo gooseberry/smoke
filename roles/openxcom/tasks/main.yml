@@ -7,7 +7,7 @@
 
 
 - name: Collect screen resolution to use in options.cfg
-  ansible.builtin.include_tasks: common/tasks/collect_system_info.yml
+  ansible.builtin.include_tasks: roles/install/tasks/collect_system_info.yml
 
 - name: Create directory tree
   ansible.builtin.file:
@@ -47,3 +47,16 @@
   ansible.builtin.template:
       src: options.cfg.j2
       dest: "{{ config_dir }}/options.cfg"
+
+- name: Download missing desktop icons from smoke-resources
+  ansible.builtin.get_url:
+      url: "{{ icon_url }}/{{ item }}"
+      dest: "{{ icon_dir }}/{{ item }}"
+      force: no
+  loop: "{{ icons }}"
+  when: icons is defined
+
+- name: Create Desktop Entry
+  ansible.builtin.template:
+      src: openxcom.desktop.j2
+      dest: "{{ app_dir }}/openxcom.desktop"

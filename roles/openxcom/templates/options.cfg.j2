@@ -129,7 +129,7 @@ options:
   debug: false
   debugUi: false
   disableAutoEquip: false
-  displayHeight: {{ screen_height.stdout }}
+  displayHeight: {{ screen_height.stdout|int - 100 }}
   displayWidth: {{ screen_width.stdout }}
   dogfightSpeed: 30
   dragScrollPixelTolerance: 10
@@ -137,7 +137,7 @@ options:
   fieldPromotions: false
   forceFire: true
   fpsCounter: false
-  fullscreen: true
+  fullscreen: false
   geoClockSpeed: 80
   geoDragScrollButton: 2
   geoDragScrollInvert: false
@@ -260,7 +260,7 @@ options:
   uiVolume: 42
   useHQXFilter: false
   useOpenGL: true
-  useOpenGLShader: Shaders/sabr.opengl.shader
+  useOpenGLShader: Shaders/hq2x.opengl.shader
   useOpenGLSmoothing: true
   useScaleFilter: false
   useXBRZFilter: false

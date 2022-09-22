@@ -8,19 +8,3 @@
   ansible.builtin.include_role:
       name: install
 
-
-- name: Configure shortcuts to launch game from ChromeOS app menu
-  block:
-
-
-      - name: Download Icon assets from smoke-resources repository
-        ansible.builtin.get_url:
-            url: "{{ smoke_resources }}/{{ item }}"
-            dest: "{{ icon_dir }}/{{ item }}"
-            force: no
-        loop: "{{ icons }}"
-
-      - name: Create Desktop entry
-        ansible.builtin.template:
-            src: xcom_ufo_defense.desktop.j2
-            dest: "{{ app_dir }}/xcom-ufo-defense.desktop"

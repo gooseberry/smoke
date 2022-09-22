@@ -5,8 +5,6 @@ home: "{{ lookup('env', 'HOME') }}"
 icon_dir: "{{ home }}/.local/share/icons"
 app_dir: "{{ home }}/.local/share/applications"
 
-# contrib and non-free repository (required for some game engines like d2x-rebirth)
-repo_list:
-  - "deb https://deb.debian.org/debian bullseye contrib non-free"
-  - "deb https://deb.debian.org/debian bullseye-updates contrib non-free"
-  - "deb https://deb.debian.org/debian-security/ bullseye-security contrib non-free"
+# URL to additional icons for games that do not include an icon
+icon_url: https://raw.githubusercontent.com/gooseberry/smoke-resources/main/icons
+

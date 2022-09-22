@@ -41,9 +41,3 @@ game_files:
   - { src: "ufograph/", dest: "{{ base_dir }}/ufograph/" }
   - { src: "ufointro/", dest: "{{ base_dir }}/ufointro/" }
   - { src: "units/", dest: "{{ base_dir }}/units/" }
-
-# Additional resources
-smoke_resources: https://raw.githubusercontent.com/gooseberry/smoke-resources/main/openxcom/
-
-icons:
-    - openxcom.png

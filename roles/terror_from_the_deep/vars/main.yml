@@ -2,8 +2,8 @@
 
 # Install file from gog
 installer: {
-    path: "{{ home }}/setup_x-com_terror_from_the_deep_2.1_(28046).exe"
-    sha1sum: e2a230df78317bbbe41e4ec774ca4e8c0cb212f8
+    path: "{{ home }}/setup_x-com_terror_from_the_deep_2.1_(28046).exe",
+    sha1sum: e2a230df78317bbbe41e4ec774ca4e8c0cb212f8,
     convert_filename_lowercase: True
     }
 

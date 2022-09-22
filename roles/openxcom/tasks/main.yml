@@ -19,11 +19,13 @@
 - name: Include tasks from install role for deployment
   ansible.builtin.include_role: 
       name: install
-      tasks_from: "{{ item }}"
+      tasks_from: "{{ tasks }}"
   loop:
       - collect_system_info
       - create_directories
       - download_icons
+  loop_control:
+      loop_var: tasks
 
 - name: Check system for OpenXcom AppImage file
   ansible.builtin.stat:

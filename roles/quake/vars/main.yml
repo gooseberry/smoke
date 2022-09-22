@@ -1,10 +1,17 @@
 # Variables for the quake installer
 
-# Install file from gog
+# Install file
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
 installer: { 
     path: "{{ home }}/setup_quake_the_offering_2.0.0.6.exe",
     sha1sum: 482866072af20cd730b3ce7fc69606a63db83cad,
-    convert_filename_lowercase: True
+    convert_filename_lowercase: True,
+    type: innosetup
     }
 
 # Dependencies

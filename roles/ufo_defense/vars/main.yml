@@ -14,14 +14,18 @@ installer: {
     type: innosetup
     }
 
-# Dependencies
-dependencies:
-    - innoextract
-
-# Quake base directory
+# Game base directory
+# format:
+# #   base_dir: /full/path/to/where/game/files/should/be/installed
 base_dir: "{{ home }}/.local/share/openxcom/UFO"
 
-# Directory trees to be created on the system
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
 directories:
     - "{{ base_dir }}/geodata"
     - "{{ base_dir }}/geograph"
@@ -34,6 +38,7 @@ directories:
     - "{{ base_dir }}/units"
 
 # Sanity file
+# If this file exists, the installer will skip extracting the game content
 sanity_file: "{{ base_dir }}/geodata/world.dat"
 
 # Game files list with source and destination

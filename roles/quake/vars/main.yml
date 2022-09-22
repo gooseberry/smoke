@@ -1,6 +1,6 @@
 # Variables for the quake installer
 
-# Install file
+# installer
 # parameters:
 #   - path:         Required    full path to the install file.
 #   - sha1sum:      Optional    not used. planned to check file integrity in future

@@ -1,10 +1,17 @@
 # Variables for the X-COM UFO Defense installer
 
-# Install file from gog
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
 installer: { 
     path: "{{ home }}/setup_x-com_ufo_defense_1.2_(28046).exe",
     sha1sum: 49bf8cbed3d662b6e5e16b87245d69599d4c22c1,
-    convert_filename_lowercase: True
+    convert_filename_lowercase: True,
+    type: innosetup
     }
 
 # Dependencies

@@ -1,10 +1,17 @@
 # Variables for the Quake 2 installer
 
-# Install file from gog
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
 installer: {
     path: "{{ home }}/setup_quake2_quad_damage_2.0.0.3.exe",
     sha1sum: 95692ee89f3a4376ca447266044e114ed0c5339,
-    convert_filename_lowercase: False
+    convert_filename_lowercase: False,
+    type: innosetup
     }
     
 # Dependencies

@@ -39,6 +39,3 @@ game_files:
     - { src: "terrain/", dest: "{{ base_dir }}/terrain/" }
     - { src: "ufograph/", dest: "{{ base_dir }}/ufograph/" }
     - { src: "units/", dest: "{{ base_dir }}/units/" }
-
-icons:
-    - openxcom.png

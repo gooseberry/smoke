@@ -129,7 +129,7 @@ options:
   debug: false
   debugUi: false
   disableAutoEquip: false
-  displayHeight: {{ screen_height.stdout }}
+  displayHeight: {{ screen_height.stdout|int - 100 }}
   displayWidth: {{ screen_width.stdout }}
   dogfightSpeed: 30
   dragScrollPixelTolerance: 10

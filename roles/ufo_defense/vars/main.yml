@@ -41,6 +41,3 @@ game_files:
   - { src: "ufograph/", dest: "{{ base_dir }}/ufograph/" }
   - { src: "ufointro/", dest: "{{ base_dir }}/ufointro/" }
   - { src: "units/", dest: "{{ base_dir }}/units/" }
-
-icons:
-    - openxcom.png

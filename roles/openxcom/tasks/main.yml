@@ -48,6 +48,14 @@
       src: options.cfg.j2
       dest: "{{ config_dir }}/options.cfg"
 
+- name: Download missing desktop icons from smoke-resources
+  ansible.builtin.get_url:
+      url: "{{ icon_url }}/{{ item }}"
+      dest: "{{ icon_dir }}/{{ item }}"
+      force: no
+  loop: "{{ icons }}"
+  when: icons is defined
+
 - name: Create Desktop Entry
   ansible.builtin.template:
       src: openxcom.desktop.j2

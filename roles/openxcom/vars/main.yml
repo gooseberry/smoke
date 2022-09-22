@@ -9,5 +9,8 @@ config_dir: "{{ home }}/.config/openxcom"
 directories:
     - "{{ home }}/.local/share/appimagekit"
 
+icons:
+    - openxcom.png
+
 openxcom_url: https://openxcom.org/download/nightlies
 openxcom_file: OpenXcom_20210611_8d45159bf_x86-64.AppImage

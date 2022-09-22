@@ -5,6 +5,6 @@ home: "{{ lookup('env', 'HOME') }}"
 icon_dir: "{{ home }}/.local/share/icons"
 app_dir: "{{ home }}/.local/share/applications"
 
-# URL to additional icons for games that do not include an icon
+# URL to additional icons for games that do not include a useable icon
 icon_url: https://raw.githubusercontent.com/gooseberry/smoke-resources/main/icons
 

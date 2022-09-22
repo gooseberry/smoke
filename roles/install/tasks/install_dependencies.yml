@@ -1,0 +1,28 @@
+---
+# Install debian packages listed in the game variables
+#
+# Use the following format to include this task list:
+#
+#   - name: Install listed dependencies
+#     ansible.builtin.include_tasks: install_dependencies.yml
+#     when: dependencies is defined
+#
+# The "{{ dependencies }}" variable should be defined in the game's
+# variables as a list of package names
+#
+#   dependencies:
+#       - innoextract
+#       - mesa-utils
+#
+# This task should be skipped if depencies is not defined.
+#
+
+- name: Install dependencies from Debian repository
+  become: yes
+  ansible.builtin.apt:
+      name: "{{ item }}"
+      state: present
+  loop: "{{ dependencies }}"
+  loop_control:
+      label: "{{ item }}"
+  when: dependencies is defined 

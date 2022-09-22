@@ -1,5 +1,5 @@
 ---
-# Starting playbook to install quake
+# Starting playbook to install X-COM UFO Defense
 
 - name: X-COM UFO Defense
   hosts: all

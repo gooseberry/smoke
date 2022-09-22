@@ -1,5 +1,5 @@
 ---
-# Starting playbook to install quake
+# Starting playbook to install Quake
 
 - name: Quake
   hosts: all

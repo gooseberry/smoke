@@ -15,15 +15,25 @@ installer: {
     type: innosetup
     }
 
-# Dependencies
+# List of dependencies needed to run the game.
+# format:
+#   - package1
+#   - package2
 dependencies:
     - corsix-th
-    - innoextract
 
-# Theme Hospital base directories
+# Game base directory
+# format:
+# #   base_dir: /full/path/to/where/game/files/should/be/installed
 base_dir: "{{ home }}/.config/CorsixTH"
 
-# Directory trees to be created on the system
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
 directories:
     - "{{ base_dir }}/ANIMS"
     - "{{ base_dir }}/DATA"
@@ -32,7 +42,8 @@ directories:
     - "{{ base_dir }}/QDATA"
     - "{{ base_dir }}/SOUND"
 
-# Sanity File
+# Sanity file
+# If this file exists, the installer will skip extracting the game content
 sanity_file: "{{ base_dir }}/LEVELS/LEVEL.L1"
 
 # Game files list with source and destination

@@ -4,8 +4,13 @@
 # the web, replacing the existing version (1.8) available from the repo
 # This is only needed for install files that are incompatible with 1.8
 #
-# To install this version, add the innoextract role to the game playbook file
-# in the root directory of the smoke program.
+# To install this version, import this role in the main task list of your
+# game role as follows:
+#
+#   - name: Install Innoextract from OpenSuse.org
+#     ansible.builtin.import_role:
+#         name: innoextract
+#
 
 - name: Install latest supported innoextract from opensuse.org
   become: yes

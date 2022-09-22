@@ -11,6 +11,7 @@
 #
 #   - name: Extract MojoSetup files to temporary directory
 #     ansible.builtin.include_tasks: extract_mojo.yml
+#     when: installer.path is search(".sh")
 #
 
 

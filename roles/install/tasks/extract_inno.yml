@@ -11,6 +11,7 @@
 #
 #   - name: Extract InnoSetup files to temporary directory
 #     ansible.builtin.include_tasks: extract_inno.yml
+#     when: installer.path is search(".exe")
 #
 
 

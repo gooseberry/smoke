@@ -8,11 +8,18 @@
 # {{ screen_width.stdout }} = screen resolution width in pixels
 # {{ screen_height.stdout }} = screen resolution height in pixels
 #
-# Use the following format to include this task list:
+# Use the following format to include this task list from the install role.
 #
 #   - name: Collect system information
 #     ansible.builtin.include_tasks: common/tasks/collect_system_info.yml
-
+#
+# Use the following format to include this task list for another role.
+#
+#    - name: Collect sytem screen resolution for config file
+#      ansible.builtin.include_role:
+#         name: install
+#         tasks_from: collect_system_info
+#
 
 - name: Screen width
   ansible.builtin.shell: xrandr|grep '*'|head -n 1|awk '{print $1}'|cut -d\x -f1

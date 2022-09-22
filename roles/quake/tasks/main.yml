@@ -5,7 +5,7 @@
 # to run with the open-source engine Quakespasm-Spiked.
 
 
-- name: Install QuakeSpasm-Spiked engine
+- name: Install QuakeSpasm-Spiked
   ansible.builtin.import_role:
       name: quakespasm_spiked
 

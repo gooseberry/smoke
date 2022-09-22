@@ -7,8 +7,8 @@
 
 
 # Collect System information
-#    This information is used to confirm the status of your system and the 
-#    presence of the game files.  
+#     This information is used to collect information about your system and to
+#     validate the presence of the game files and installers.
 - name: Collect System information
   block:
       # Check screen resolution to configure game to match your screen
@@ -26,8 +26,11 @@
         ansible.builtin.stat:
             path: "{{ sanity_file }}"
         register: is_game_installed
+  # End of Collect System Information block
 
 # Prerequisite system configurations needed to extract games
+#     Changes required to the system prior to being able to install
+#     the game.
 - name: Pre-Installation Requirements
   block:
 
@@ -47,7 +50,18 @@
             label: "{{ item }}"
         when: directories is defined
 
+      # Desktop entry and desktop icons will fail if the directories don't exis
+      - name: Create common system directories
+        ansible.builtin.include_tasks: create_system_directories.yml
+
+      - name: Download desktop icons
+        ansible.builtin.include_tasks: download_icons.yml
+        when: icons is defined
+    # End of Pre-Installation block
+
 # Extract files from the installer into the appropriate location
+#     This block is executed if the game is to be installed to work
+#     with a different, usually Open-Source, engine.
 - name: Extract game files from the installer
   block:
 
@@ -64,10 +78,12 @@
         ansible.builtin.include_tasks: extract_inno.yml
         when: installer.type == "innosetup"
 
+      # Move only the required files from the temp directory
       - name: Copy games files from the temporary directory
         ansible.builtin.include_tasks: copy_files.yml
         when: game_files is defined
 
+      # Convert CD music tracks to a supported format for game engine
       - name: Extract music tracks from cd image files
         ansible.builtin.include_tasks: rip_cd_tracks.yml
         loop: "{{ cd_images }}"
@@ -78,22 +94,12 @@
   when:
       - not is_game_installed.stat.exists
       - install_file.stat.exists
+      - (game_files is defined or cd_images is defined)
 
   always:
-
+      # Delete the temporary directory to recover HDD space
       - name: Delete the temporary working directory
         ansible.builtin.file:
             path: "{{ tmp_dir.path }}"
             state: absent
         when: tmp_dir.path is defined
-
-- name: Create common system directories
-  ansible.builtin.include_tasks: create_system_directories.yml
-
-- name: Download missing desktop icons from smoke-repository
-  ansible.builtin.get_url:
-      url: "{{ icon_url }}/{{ item }}"
-      dest: "{{ icon_dir }}/{{ item }}"
-      force: no
-  loop: "{{ icons }}"
-  when: icons is defined

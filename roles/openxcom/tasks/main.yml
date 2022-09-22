@@ -4,6 +4,13 @@
 # from github.  It does not contain any game configurations for UFO Defense
 # or Terror from the Deep, but it is required before these games can be
 # installed.
+#
+# Import this role in the main tasks of your games that run on this engine.
+#
+#   - name: Install OpenXcom
+#     ansible.builtin.import_role:
+#         name: openxcom
+#
 
 
 # Collect screen resolution for deployment of options.cfg

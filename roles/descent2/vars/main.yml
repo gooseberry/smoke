@@ -15,22 +15,31 @@ installer: {
     type: innosetup
     }
 
-# Dependencies
+# List of dependencies needed to run the game.
+# format:
+#   - package1
+#   - package2
 dependencies:
     - d2x-rebirth
-    - innoextract
-    - bchunk
     - mesa-utils
-    - vorbis-tools
       
-# Decent base directorys
+# Game base directory
+# format:
+#   base_dir: /full/path/to/where/game/files/should/be/installed
 base_dir: "{{ home }}/.d2x-rebirth"
 
-# Directory trees to be created on the system
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
 directories:
     - "{{ base_dir }}/music"
 
 # Sanity file
+# If this file exists, the installer will skip extracting the game content
 sanity_file: "{{ base_dir }}/descent2.ham"
 
 # Game files lists with source and destination
@@ -50,6 +59,9 @@ game_files:
     - { src: "app/other-h.mvl", dest: "{{ base_dir }}/other-h.mvl" }
     - { src: "app/robots-h.mvl", dest: "{{ base_dir }}/robots-h.mvl" }
 
-# CD Images
+# List of CD images that should be converted to OGG format
+# format:
+#   - { bin: "/relative/path/image.bin", cue: "/relative/path/image.cue", dest: "/full/path/dest" }
+# bin and cue file locations are relative to tmp_dir.path
 cd_images:
     - { bin: "app/descent_ii.gog", cue: "app/descent_ii.inst", dest: "{{ base_dir }}/music" }

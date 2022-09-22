@@ -24,11 +24,13 @@
 # vorbis-tools package is needed for the oggenc command
 - name: Bchunk and vorbis-tools package must be present on system
   ansible.builtin.apt:
-      name: "{{ item }}"
+      name: "{{ package }}"
       state: present
   loop:
       - bchunk
       - vorbis-tools
+  loop_control:
+      loop_var: package
 
 # Rip the CD tracks into .WAV format directly into the destination directory
 - name: Rip tracks from CD

@@ -1,0 +1,35 @@
+---
+# Create directories defined in the game variables.
+#
+# {{ directories }} must be registered and in the form
+#
+#   directories:
+#       - /full/path
+#       - /another/full/path
+#
+# Split from main.yml so that other modules could import this task
+# without re-writing it.
+#
+# Use the following format to include this task list from the install role
+#
+#   - name: Create directories tree
+#     ansible.builtin.include_tasks: create_system_directories.yml
+#     when: directories is defined
+#
+# Use the following format to include this task from another role.
+#
+#   - name: Create directories tree (from install)
+#     ansible.builtin.include_roles:
+#           name: install
+#           tasks_from: create_directories
+#
+
+- name: Create directories tree
+  ansible.builtin.file:
+      path: "{{ item }}"
+      state: directory
+      mode: "0755"
+  loop: "{{ directories }}"
+  loop_control:
+      label: "{{ item }}"
+  when: directories is defined

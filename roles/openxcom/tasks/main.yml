@@ -6,21 +6,22 @@
 # installed.
 
 
-- name: Collect screen resolution to use in options.cfg
-  ansible.builtin.include_tasks: roles/install/tasks/collect_system_info.yml
-
-- name: Create directory tree
-  ansible.builtin.file:
-      path: "{{ item }}"
-      state: directory
-      mode: "0755"
-  loop: "{{ directories }}"
+# Collect screen resolution for deployment of options.cfg
+# Re-use the create_directories tasks from install
+# Re-use the download_icons to download the OpenXcom icon from smoke-resources
+- name: Include tasks from install role for deployment
+  ansible.builtin.include_role: 
+      name: install
+      tasks_from: "{{ item }}"
+  loop:
+      - collect_system_info
+      - create_directories
+      - download_icons
 
 - name: Check system for OpenXcom AppImage file
   ansible.builtin.stat:
       path: "{{ base_dir }}/{{ openxcom_file }}"
   register: is_openxcom_installed
-
 
 - name: Only download and install the OpenXcom AppImage if it is not present on the system
   block:
@@ -47,14 +48,6 @@
   ansible.builtin.template:
       src: options.cfg.j2
       dest: "{{ config_dir }}/options.cfg"
-
-- name: Download missing desktop icons from smoke-resources
-  ansible.builtin.get_url:
-      url: "{{ icon_url }}/{{ item }}"
-      dest: "{{ icon_dir }}/{{ item }}"
-      force: no
-  loop: "{{ icons }}"
-  when: icons is defined
 
 - name: Create Desktop Entry
   ansible.builtin.template:

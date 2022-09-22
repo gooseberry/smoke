@@ -1,0 +1,33 @@
+---
+# Download additional icons from smoke-resources
+#
+# {{ tmp_dir.path }} must be registed before including this task list.
+#
+# {{ icons }} must be in the form
+#
+#   icons:
+#       - icon1.png
+#       - icon2.png
+#
+# Use the followin format to include this task list:
+#
+#   - name: Download desktop icons
+#     ansible.builtin.include_tasks: download_icons.yml
+#     when: icons is defined
+#
+# Use the following format to include this task from another role.
+#
+#   - name: Download desktop icons (from install)
+#     ansible.builtin.include_roles:
+#           name: install
+#           tasks_from: download_icons
+#     when: icons is defined
+#
+
+- name: Download desktop icons from smoke-resources
+  ansible.builtin.get_url:
+      url: "{{ icon_url }}/{{ item }}"
+      dest: "{{ icon_dir }}/{{ item }}"
+      force: no
+  loop: "{{ icons }}"
+  when: icons is defined

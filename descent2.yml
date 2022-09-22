@@ -1,5 +1,5 @@
 ---
-# Starting playbook to install quake
+# Starting playbook to install Descent 2
 
 - name: Descent 2
   hosts: all

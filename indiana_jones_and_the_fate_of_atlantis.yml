@@ -1,5 +1,5 @@
 ---
-# Starting playbook to install quake
+# Starting playbook to install Indiana Jones and the Fate of Atlantis
 
 - name: Indiana Jones and the Fate of Atlantis
   hosts: all

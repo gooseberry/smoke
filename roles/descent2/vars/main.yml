@@ -1,11 +1,18 @@
 ---
 # Descent 2 specific variables
 
-# Install file from gog
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
 installer: {
     path: "{{ home }}/setup_descent_2_1.1_(16596).exe",
     sha1sum: 362773ad0094cb5134e10bf7f401bb1344daeea9,
-    convert_filename_lowercase: True
+    convert_filename_lowercase: True,
+    type: innosetup
     }
 
 # Dependencies

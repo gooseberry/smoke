@@ -1,9 +1,17 @@
 # Variables for the indiana jones and the fate of atlantis installer
 
-# Install file from gog
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
 installer: { 
     path: "{{ home }}/indiana_jones_and_the_fate_of_atlantis_en_gog_2_20145.sh",
-    sha1sum: 340cdc763a7b28f9630b5024a793a9867357a7f2
+    sha1sum: 340cdc763a7b28f9630b5024a793a9867357a7f2,
+    convert_filename_lowercase: False,
+    type: mojosetup
     }
 
 # Dependencies

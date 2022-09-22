@@ -1,0 +1,54 @@
+---
+# Extract the contents of the installer file
+# This assumes that any file with a ".exe" extension is using InnoSetup
+#
+# {{ tmp_dir.path }} must be registed before including this task.
+# {{ installer.path }} must be registed before including this task.
+# {{ installer.convert_to_lowercase }} is used to determine if filenames
+#                                       should be converted to lowercase.
+#
+# Use the followin format to include this task list:
+#
+#   - name: Extract InnoSetup files to temporary directory
+#     ansible.builtin.include_tasks: extract_inno.yml
+#     when: installer.path is search(".exe")
+#
+
+
+# Innoextract provided in the debian repository is 1.8-1.2+b1
+# If you need a more recent version of the tool, add the innoextract
+# role to your game tasks.
+- name: Innoextract package must be present on system
+  ansible.builtin.apt:
+      name: unzip
+      state: present
+
+- name: InnoSetup Extraction
+  block:
+    
+      - name: Extract (case preservation)
+        ansible.builtin.command:
+            argv:
+                - innoextract
+                - -s
+                - -m
+                - -d
+                - "{{ tmp_dir.path }}"
+                - "{{ installer.path }}"
+        when: not installer.convert_filename_lowercase
+
+      - name: Extract (convert to lowercase)
+        ansible.builtin.command:
+            argv:
+                - innoextract
+                - --lowercase
+                - -s
+                - -m
+                - -d
+                - "{{ tmp_dir.path }}"
+                - "{{ installer.path }}"
+        when: installer.convert_filename_lowercase
+
+  when: 
+      - tmp_dir.path is defined
+      - installer.type == "innosetup"

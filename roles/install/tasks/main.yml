@@ -1,49 +1,45 @@
 ---
-# This role checks your system before completing the installation.
+# INSTALL role main tasks.
+#
+# Description: Common set of tasks for all game installations supported by
+#   Smoke.  The installation is broken down into 4 phases:
+#
 
-- name: Collection System Info
-  ansible.builtin.include_tasks: collect_system_info.yml
 
-- name: Perform stat on install file
-  ansible.builtin.stat:
-      path: "{{ installer.path }}"
-  register: install_file
+# Collect System information
+#     This information is used to collect information about your system and to
+#     validate the presence of the game files and installers.
+- name: Collect System information
+  block:
+      # Check screen resolution to configure game to match your screen
+      - name: Collect System Info
+        ansible.builtin.include_tasks: collect_system_info.yml
 
-- name: Perform stat on game file
-  ansible.builtin.stat:
-      path: "{{ sanity_file }}"
-  register: is_game_installed
+      # Skip extracting if installer is not present on system
+      - name: Perform stat on install file
+        ansible.builtin.stat:
+            path: "{{ installer.path }}"
+        register: install_file
 
-- name: Pre-Install tasks
+      # Skip extracting if game files are present on system
+      - name: Perform stat on sanity file
+        ansible.builtin.stat:
+            path: "{{ sanity_file }}"
+        register: is_game_installed
+  # End of Collect System Information block
+
+# Prerequisite system configurations needed to extract games
+#     Changes required to the system prior to being able to install
+#     the game.
+- name: Pre-Installation Requirements
   block:
 
-      - name: Install dependencies from Debian repository
-        become: yes
-        ansible.builtin.apt:
-            name: "{{ item }}"
-            state: present
-        loop: "{{ dependencies }}"
-        loop_control:
-            label: "{{ item }}"
+      # Dependencies include programs needed by game
+      - name: Install listed dependencies
+        ansible.builtin.include_tasks: install_dependencies.yml
         when: dependencies is defined
 
-      - name: Create the directories for Desktop Entries and Icons
-        ansible.builtin.file:
-            path: "{{ item }}"
-            state: directory
-            mode: "0755"
-        loop:
-            - "{{ app_dir }}"
-            - "{{ icon_dir }}"
-
-      - name: Download missing desktop icons from smoke-repository
-        ansible.builtin.get_url:
-            url: "{{ icon_url }}/{{ item }}"
-            dest: "{{ icon_dir }}/{{ item }}"
-            force: no
-        loop: "{{ icons }}"
-        when: icons is defined
-
+      # Copying game files will fail if the directories do not exist
       - name: Create directory tree for game files
         ansible.builtin.file:
             path: "{{ item }}"
@@ -54,7 +50,19 @@
             label: "{{ item }}"
         when: directories is defined
 
-- name: Extract and configure game files from the installer
+      # Desktop entry and desktop icons will fail if the directories don't exis
+      - name: Create common system directories
+        ansible.builtin.include_tasks: create_system_directories.yml
+
+      - name: Download desktop icons
+        ansible.builtin.include_tasks: download_icons.yml
+        when: icons is defined
+    # End of Pre-Installation block
+
+# Extract files from the installer into the appropriate location
+#     This block is executed if the game is to be installed to work
+#     with a different, usually Open-Source, engine.
+- name: Extract game files from the installer
   block:
 
       - name: Create temporary working directory for installation files
@@ -62,48 +70,20 @@
             state: directory
         register: tmp_dir
 
-      - name: Unzip mojosetup installer contents into working directory
-        ansible.builtin.command:
-            argv:
-                - unzip
-                - -d
-                - "{{ tmp_dir.path }}"
-                - "{{ installer.path }}"
-        register: unzip_result
-        failed_when: unzip_result.rc > 1
-        when: installer.path is search(".sh")
+      - name: Extract MojoSetup files to temporary directory
+        ansible.builtin.include_tasks: extract_mojo.yml
+        when: installer.type == "mojosetup"
 
-      - name: Extract Inno installer contents into working directory (lowercase)
-        ansible.builtin.command:
-            argv:
-                - innoextract
-                - --lowercase
-                - -s
-                - -m
-                - -d
-                - "{{ tmp_dir.path }}"
-                - "{{ installer.path }}"
-        when: 
-            - installer.path is search(".exe")
-            - installer.convert_filename_lowercase
+      - name: Extract InnoSetup files to temporary directory
+        ansible.builtin.include_tasks: extract_inno.yml
+        when: installer.type == "innosetup"
 
-      - name: Extract Inno installer contents into working directory (case-sensitive)
-        ansible.builtin.command:
-            argv:
-                - innoextract
-                - -s
-                - -m
-                - -d
-                - "{{ tmp_dir.path }}"
-                - "{{ installer.path }}"
-        when:
-            - installer.path is search(".exe")
-            - not installer.convert_filename_lowercase
-
+      # Move only the required files from the temp directory
       - name: Copy games files from the temporary directory
         ansible.builtin.include_tasks: copy_files.yml
         when: game_files is defined
 
+      # Convert CD music tracks to a supported format for game engine
       - name: Extract music tracks from cd image files
         ansible.builtin.include_tasks: rip_cd_tracks.yml
         loop: "{{ cd_images }}"
@@ -114,9 +94,10 @@
   when:
       - not is_game_installed.stat.exists
       - install_file.stat.exists
+      - (game_files is defined or cd_images is defined)
 
   always:
-
+      # Delete the temporary directory to recover HDD space
       - name: Delete the temporary working directory
         ansible.builtin.file:
             path: "{{ tmp_dir.path }}"

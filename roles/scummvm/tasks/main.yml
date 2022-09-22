@@ -1,10 +1,19 @@
 ---
 # ScummVM Role task
-# This collection of task will install and configure ScummVM.
-# Games that run on ScummVM should have the scummvm role added
-# to the main playlist on the root folder.  
+# This collection of task will install and configure ScummVM from the latest
+# package hosted on https://scummvm.org
+# Games that run on ScummVM should import this role from their main
+# task list as follows:
+#
+#   - name: Install ScummVM
+#     ansible.builtin.import_role:
+#         name: scummvm
 #
 
+# This check should probably look for the executable as opposed to the
+# configuration file.  I will delete the configuration file when I want
+# to force the download to check, but this removes all the installed
+# games.
 - name: Check system for scummvm configuration file
   ansible.builtin.stat:
       path: "{{ home }}/.config/scummvm/scummvm.ini"

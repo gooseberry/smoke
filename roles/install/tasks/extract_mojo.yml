@@ -1,0 +1,54 @@
+---
+# Unzip the contents of the installer file
+# This assumes that any file with a ".sh" extension is using MojoSetup
+#
+# {{ tmp_dir.path }} must be registed before including this task.
+# {{ installer.path }} must be registed before including this task.
+# {{ installer.convert_to_lowercase }} is used to determine if filenames
+#                                       should be converted to lowercase.
+#
+# Use the followin format to include this task list:
+#
+#   - name: Extract MojoSetup files to temporary directory
+#     ansible.builtin.include_tasks: extract_mojo.yml
+#     when: installer.path is search(".sh")
+#
+
+
+- name: Unzip package must be present on system
+  ansible.builtin.apt:
+      name: unzip
+      state: present
+
+# Note unzip exits with code 1 while extracting MojoSetup even if successful.
+# This is because the MojoSetup file has embedded scripts packaged with the
+# zip content that is not extracted by unzip.
+- name: MojoSetup Extraction
+  block:
+    
+      - name: Extract (case preservation)
+        ansible.builtin.command:
+            argv:
+                - unzip
+                - -d
+                - "{{ tmp_dir.path }}"
+                - "{{ installer.path }}"
+        register: unzip_result
+        failed_when: unzip_result.rc > 1
+        when: not installer.convert_filename_lowercase
+
+      - name: Extract (convert to lowercase)
+        ansible.builtin.command:
+            argv:
+                - unzip
+                - -LL
+                - -d
+                - "{{ tmp_dir.path }}"
+                - "{{ installer.path }}"
+          register: unzip_result
+          failed_when: unzip_result.rc > 1
+          when: installer.convert_filename_lowercase
+
+  when: 
+      - tmp_dir.path is defined
+      - installer.type == "mojosetup"

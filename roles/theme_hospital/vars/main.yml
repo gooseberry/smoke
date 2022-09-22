@@ -1,11 +1,18 @@
 ---
 # Variables for the Theme Hospital installer
 
-# Install file from gog
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
 installer: {
     path: "{{ home }}/setup_theme_hospital_v3_(28027).exe",
     sha1sum: 5e887b4b0ff3ef021e8159ff9df0c87b37125299,
-    convert_filename_lowercase: False
+    convert_filename_lowercase: False,
+    type: innosetup
     }
 
 # Dependencies

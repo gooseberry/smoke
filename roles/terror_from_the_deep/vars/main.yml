@@ -1,10 +1,17 @@
 # Variables for the X-COM Terror from the Deep Installer
 
-# Install file from gog
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
 installer: {
     path: "{{ home }}/setup_x-com_terror_from_the_deep_2.1_(28046).exe",
     sha1sum: e2a230df78317bbbe41e4ec774ca4e8c0cb212f8,
-    convert_filename_lowercase: True
+    convert_filename_lowercase: True,
+    type: innosetup
     }
 
 # Dependencies
@@ -29,7 +36,7 @@ directories:
 sanity_file: "{{ base_dir }}/geodata/world.dat"
 
 # Game files list with the source and destination
-# Not {{ tmp_dir.path }} must be prefixed to the src location
+# Note {{ tmp_dir.path }} must be prefixed to the src location
 game_files:
     - { src: "geodata/", dest: "{{ base_dir }}/geodata/" }
     - { src: "geograph/", dest: "{{ base_dir }}/geograph/" }

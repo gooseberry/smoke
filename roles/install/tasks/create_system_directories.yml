@@ -1,0 +1,27 @@
+---
+# Create common directory used by most applications.
+#
+# Split from main.yml so that other modules could import this task
+# without re-writing it.
+#
+# Use the following format to include this task list from the install role
+#
+#   - name: Create common system directories
+#     ansible.builtin.include_tasks: create_system_directories.yml
+#
+# Use the following format to include this task from another role.
+#
+#   - name: Create common system directories (from install)
+#     ansible.builtin.include_roles:
+#           name: install
+#           tasks_from: create_system_directories
+#
+
+- name: Create directories for Desktop Entries and Application Icons
+  ansible.builtin.file:
+      path: "{{ item }}"
+      state: directory
+      mode: "0755"
+  loop:
+      - "{{ app_dir }}"
+      - "{{ icon_dir }}"

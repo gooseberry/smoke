@@ -1,6 +1,17 @@
 ---
 # QuakeSpasm-Spike role to install game engine
 
+# This collection of tasks will install and configure QuakeSpasm-Spiked
+# from the Internet.  It does not contain any game configurations for Quake, 
+# but it is required before this game can be installed.
+#
+# Import this role in the main tasks of your games that run on this engine.
+#
+#   - name: Install QuakeSpasm-Spiked
+#     ansible.builtin.import_role:
+#         name: quakespasm_spiked
+#
+
 - name: Create QuakeSpasm-Spiked binary directory
   ansible.builtin.file:
       path: "{{ qss_dir }}"

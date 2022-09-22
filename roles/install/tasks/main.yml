@@ -22,10 +22,10 @@
         register: install_file
 
       # Skip extracting if game files are present on system
-      - name: Perform stat on sanity file
+      - name: Perform stat on install_record file
         ansible.builtin.stat:
-            path: "{{ sanity_file }}"
-        register: is_game_installed
+            path: "{{ install_record }}"
+        register: game_installed
   # End of Collect System Information block
 
 # Prerequisite system configurations needed to extract games
@@ -91,8 +91,17 @@
             label: "{{ item.dest }}"
         when: cd_images is defined
 
+      # Create an installed_indicator file in smoke config
+      - name: Create install record
+        ansible.builtin.file:
+            path: "{{ install_record }}"
+            state: touch
+            mode: "0755"
+            modification_time: preserve
+            access_time: preserve
+
   when:
-      - not is_game_installed.stat.exists
+      - not game_installed.stat.exists
       - install_file.stat.exists
       - (game_files is defined or cd_images is defined)
 

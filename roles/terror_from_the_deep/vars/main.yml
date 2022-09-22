@@ -36,7 +36,7 @@ directories:
 sanity_file: "{{ base_dir }}/geodata/world.dat"
 
 # Game files list with the source and destination
-# Not {{ tmp_dir.path }} must be prefixed to the src location
+# Note {{ tmp_dir.path }} must be prefixed to the src location
 game_files:
     - { src: "geodata/", dest: "{{ base_dir }}/geodata/" }
     - { src: "geograph/", dest: "{{ base_dir }}/geograph/" }

@@ -25,3 +25,4 @@
   loop:
       - "{{ app_dir }}"
       - "{{ icon_dir }}"
+      - "{{ smoke_config_dir }}"

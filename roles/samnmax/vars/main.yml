@@ -29,9 +29,9 @@ base_dir: "{{ home }}/.scummvm/samnmax"
 directories:
     - "{{ base_dir }}"
 
-# Sanity file
+# Install record
 # If this file exists, the installer will skip extracting the game content
-sanity_file: "{{ base_dir }}/samnmax.000"
+install_record: "{{ smoke_config_dir }}/samnmax"
 
 # Game files list with source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location

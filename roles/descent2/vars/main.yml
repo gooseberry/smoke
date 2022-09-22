@@ -38,10 +38,10 @@ base_dir: "{{ home }}/.d2x-rebirth"
 directories:
     - "{{ base_dir }}/music"
 
-# Sanity file
+# Install record
 # If this file exists, the installer will skip extracting the game content
-sanity_file: "{{ base_dir }}/descent2.ham"
-
+install_record: "{{ smoke_config_dir }}/descent2"
+  
 # Game files lists with source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location
 game_files:

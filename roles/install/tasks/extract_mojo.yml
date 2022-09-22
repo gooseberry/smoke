@@ -45,9 +45,9 @@
                 - -d
                 - "{{ tmp_dir.path }}"
                 - "{{ installer.path }}"
-          register: unzip_result
-          failed_when: unzip_result.rc > 1
-          when: installer.convert_filename_lowercase
+        register: unzip_result
+        failed_when: unzip_result.rc > 1
+        when: installer.convert_filename_lowercase
 
   when: 
       - tmp_dir.path is defined

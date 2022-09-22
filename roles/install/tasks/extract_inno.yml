@@ -51,4 +51,4 @@
 
   when: 
       - tmp_dir.path is defined
-      - installer.path is search(".exe")
+      - installer.type == "innosetup"

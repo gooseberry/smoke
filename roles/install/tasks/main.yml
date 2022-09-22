@@ -58,11 +58,11 @@
 
       - name: Extract MojoSetup files to temporary directory
         ansible.builtin.include_tasks: extract_mojo.yml
-        when: installer.path is search(".sh")
+        when: installer.type == "mojosetup"
 
       - name: Extract InnoSetup files to temporary directory
         ansible.builtin.include_tasks: extract_inno.yml
-        when: installer.path is search(".exe")
+        when: installer.type == "innosetup"
 
       - name: Copy games files from the temporary directory
         ansible.builtin.include_tasks: copy_files.yml

@@ -1,0 +1,43 @@
+# Variables for the indiana jones and the fate of atlantis installer
+
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
+installer: { 
+    path: "{{ home }}/the_dig_en_gog_2_20100.sh",
+    convert_filename_lowercase: False,
+    type: mojosetup
+    }
+
+# Game base directory
+# format:
+#   base_dir: /full/path/to/where/game/files/should/be/installed
+base_dir: "{{ home }}/.scummvm/dig"
+
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
+directories:
+    - "{{ base_dir }}/VIDEO"
+
+# Install record
+# If this file exists, the installer will skip extracting the game content
+install_record: "{{ smoke_config_dir }}/dig"
+
+# Game files list with source and destination
+# Note {{ tmp_dir.path }} must be prefixed to the src location
+game_files:
+  - { src: "data/noarch/data/VIDEO/", dest: "{{ base_dir }}/VIDEO/" } 
+  - { src: "data/noarch/data/DIG.LA0", dest: "{{ base_dir }}/DIG.LA0" }
+  - { src: "data/noarch/data/DIG.LA1", dest: "{{ base_dir }}/DIG.LA1" }
+  - { src: "data/noarch/data/DIGMUSIC.BUN", dest: "{{ base_dir }}/DIGMUSIC.BUN" }
+  - { src: "data/noarch/data/DIGVOICE.BUN", dest: "{{ base_dir }}/DIGVOICE.BUN" }
+  - { src: "data/noarch/support/icon.png", dest: "{{ icon_dir }}/dig.png" }

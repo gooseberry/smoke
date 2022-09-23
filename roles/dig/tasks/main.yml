@@ -1,0 +1,30 @@
+---
+# The Dig role task
+# This collection of tasks will install and configure The Dig
+# to run with the open-source game engine ScummVM.
+
+- name: Install ScummVM
+  ansible.builtin.import_role:
+      name: scummvm
+
+- name: Installing...
+  ansible.builtin.include_role:
+      name: install
+
+- name: Insert The Dig game to scummvm
+  ansible.builtin.blockinfile:
+    path: "{{ home }}/.config/scummvm/scummvm.ini"
+    block: |
+        [dig]
+        gameid=dig
+        description=The Dig
+        path={{ base_dir }}
+        engineid=scumm
+        guioptions=sndNoMIDI
+    state: present
+    marker: "# {mark} DIG BLOCK INSERTED BY SMOKE"
+
+- name: Create Desktop Entry
+  ansible.builtin.template:
+      src: dig.desktop.j2
+      dest: "{{ app_dir }}/dig.desktop"

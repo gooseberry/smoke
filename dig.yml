@@ -1,0 +1,6 @@
+---
+# Install The Dig
+- name: The Dig
+  hosts: all
+  roles:
+    - dig

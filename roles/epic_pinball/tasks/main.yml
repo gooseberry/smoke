@@ -1,0 +1,24 @@
+---
+# Epic Pinball role task
+# This collection of tasks will install and configure
+# Epic Pinball to run with the open-source
+# game engine DosBox.
+
+
+- name: Install DosBox
+  ansible.builtin.import_role:
+      name: dosbox
+
+- name: Installing...
+  ansible.builtin.include_role:
+      name: install
+
+- name: Create Custom DosBox Configuration
+  ansible.builtin.template:
+      src: epic_pinball.conf.j2
+      dest: "{{ base_dir }}/config/epic_pinball.conf"
+
+- name: Create Desktop Entry
+  ansible.builtin.template:
+      src: epic_pinball.desktop.j2
+      dest: "{{ app_dir }}/epic_pinball.desktop"

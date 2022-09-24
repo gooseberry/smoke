@@ -1,0 +1,41 @@
+# Variables for the Epic Pinball installer
+
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
+installer: { 
+    path: "{{ home }}/epic_pinball_the_complete_collection_en_1_0_16760.sh",
+    convert_filename_lowercase: False,
+    type: mojosetup
+    }
+
+# Game base directory
+# format:
+#   base_dir: /full/path/to/where/game/files/should/be/installed
+base_dir: "{{ home }}/.dosbox/epic_pinball"
+
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
+directories:
+    - "{{ base_dir }}/data"
+    - "{{ base_dir }}/config"
+
+# Install record
+# If this file exists, the installer will skip extracting the game content
+install_record: "{{ smoke_config_dir }}/epic_pinball"
+
+# Game files list with source and destination
+# Note {{ tmp_dir.path }} must be prefixed to the src location
+game_files:
+  - { src: "data/noarch/data/", dest: "{{ base_dir }}/data/" }
+  - { src: "data/noarch/support/icon.png", dest: "{{ icon_dir }}/epic_pinball.png" }
+

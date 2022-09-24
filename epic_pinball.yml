@@ -1,0 +1,8 @@
+---
+# Starting playbook to install Epic Pinball
+
+- name: Epic Pinball
+  hosts: all
+
+  roles:
+      - epic_pinball

@@ -1,0 +1,20 @@
+[sdl]
+output=overlay
+
+[render]
+aspect=true
+
+[cpu]
+cycles=max
+cycleup=1000
+cycledown=1000
+
+[mixer]
+prebuffer=80
+
+[autoexec]
+@echo off
+mount c "{{ base_dir }}/data"
+c:
+pinball.exe
+exit

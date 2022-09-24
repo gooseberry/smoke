@@ -1,0 +1,34 @@
+---
+# DosBox Role task
+# This collection of task will install and configure DosBox
+# package from the Debian Repository
+# Games that run on DosBox should import this role from their main
+# task list as follows:
+#
+#   - name: Install DosBox
+#     ansible.builtin.import_role:
+#         name: dosbox
+#
+
+# This check should probably look for the executable as opposed to the
+# configuration file.  I will delete the configuration file when I want
+# to force the download to check, but this removes all the installed
+# games.
+
+- name: Load System Information
+  ansible.builtin.include_role:
+      name: install
+      tasks_from: collect_system_info
+
+- name: Install DosBox from Repo
+  become: yes
+  ansible.builtin.apt:
+      name: dosbox
+      state: present
+
+# This config disables usescancodes because
+# it doesn't work with my laptop
+- name: Deploy Custom DosBox Config
+  ansible.builtin.template:
+      src: dosbox-0.74-3.conf.j2
+      dest: "{{ dosbox_conf }}"

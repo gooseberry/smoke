@@ -1,0 +1,8 @@
+---
+# Torchlight 2 role tasks
+# This collection of tasks will install and configure
+# Torchlight 2 on your computer.
+
+- name: Installing...
+  ansible.builtin.include_role:
+      name: install

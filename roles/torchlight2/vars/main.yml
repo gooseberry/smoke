@@ -1,0 +1,30 @@
+# Variable for the Torchlight 2 installer
+
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
+installer: { 
+    path: "{{ home }}/gog_torchlight_2_2.0.0.2.sh",
+    convert_filename_lowercase: False,
+    type: native
+    }
+
+# List of dependencies needed to run the game.
+# format:
+#   - package1
+#   - package2
+dependencies:
+    - mesa-utils
+
+# Game base directory
+# format:
+# #   base_dir: /full/path/to/where/game/files/should/be/installed
+base_dir: "{{ home }}/.torchlight2"
+
+# Install record
+# If this file exists, the installer will skip extracting the game content
+install_record: "{{ smoke_config_dir }}/torchlight2"

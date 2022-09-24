@@ -1,0 +1,8 @@
+---
+# Starting playbook to install Torchlight 2
+
+- name: Torchlight 2
+  hosts: all
+
+  roles:
+      - torchlight2

@@ -59,6 +59,27 @@
         when: icons is defined
     # End of Pre-Installation block
 
+# Run the native linux installer.
+- name: Install game as packaged by GOG.com
+  block:
+      
+      - name: Install Native Linux game
+        ansible.builtin.include_tasks: run_mojo.yml
+        when: installer.type == "native"
+
+      # Create an installed_indicator file in smoke config
+      - name: Create install record
+        ansible.builtin.file:
+            path: "{{ install_record }}"
+            state: touch
+            mode: "0755"
+            modification_time: preserve
+            access_time: preserve
+  when: 
+      - not game_installed.stat.exists
+      - install_file.stat.exists
+      - installer.type == "native"
+
 # Extract files from the installer into the appropriate location
 #     This block is executed if the game is to be installed to work
 #     with a different, usually Open-Source, engine.
@@ -103,7 +124,7 @@
   when:
       - not game_installed.stat.exists
       - install_file.stat.exists
-      - (game_files is defined or cd_images is defined)
+      - (installer.type == "innosetup" or installer.type == "mojosetup")
 
   always:
       # Delete the temporary directory to recover HDD space

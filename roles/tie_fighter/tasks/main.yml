@@ -1,0 +1,24 @@
+---
+# Tie Fighter role task
+# This collection of tasks will install and configure
+# Tie Fighter to run with the open-source
+# game engine DosBox.
+
+
+- name: Install DosBox
+  ansible.builtin.import_role:
+      name: dosbox
+
+- name: Installing...
+  ansible.builtin.include_role:
+      name: install
+
+- name: Create Custom DosBox Configuration
+  ansible.builtin.template:
+      src: tie_fighter.conf.j2
+      dest: "{{ base_dir }}/config/tie_fighter.conf"
+
+- name: Create Desktop Entry
+  ansible.builtin.template:
+      src: tie_fighter.desktop.j2
+      dest: "{{ app_dir }}/tie_fighter.desktop"

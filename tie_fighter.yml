@@ -1,0 +1,8 @@
+---
+# Starting playbook to install Tie Fighter Special Edition
+
+- name: Tie Fighter Special Edition
+  hosts: all
+
+  roles:
+      - tie_fighter

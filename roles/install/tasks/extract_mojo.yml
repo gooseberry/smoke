@@ -16,6 +16,7 @@
 
 
 - name: Unzip package must be present on system
+  become: yes
   ansible.builtin.apt:
       name: unzip
       state: present

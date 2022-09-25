@@ -26,6 +26,12 @@
       name: dosbox
       state: present
 
+- name: Make Dosbox folde in home directory
+  ansible.builtin.file:
+      path: "{{ home }}/.dosbox"
+      state: directory
+      mode: "0755"
+
 # This config disables usescancodes because
 # it doesn't work with my laptop
 - name: Deploy Custom DosBox Config

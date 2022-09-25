@@ -23,10 +23,10 @@
 #       mapperfile: File used to load/save the key/event mappings from. Resetmapper only works with the default value.
 #     usescancodes: Avoid usage of symkeys, might not work on all operating systems.
 
-fullscreen=true
+fullscreen=false
 fulldouble=true
 fullresolution={{ screen_width.stdout }}x{{ screen_height.stdout|int - 100 }}  # ChromeOS shelf will display above dosbox
-windowresolution=original
+windowresolution={{ screen_width.stdout }}x{{ screen_height.stdout|int - 100 }}
 output=openglnb
 autolock=true
 sensitivity=100

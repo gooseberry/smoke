@@ -9,7 +9,7 @@ prebuffer=80
 [autoexec]
 @echo off
 mount c "{{ base_dir }}/data"
-imgmount d "{{ base_dir }}/data/game.ins"
+imgmount d "{{ base_dir }}/data/game.ins" -t iso
 c:
 tie.exe
 exit

@@ -26,7 +26,7 @@
       name: dosbox
       state: present
 
-- name: Make Dosbox folde in home directory
+- name: Create .dosbox folder in home directory
   ansible.builtin.file:
       path: "{{ home }}/.dosbox"
       state: directory

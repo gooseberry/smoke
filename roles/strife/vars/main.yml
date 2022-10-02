@@ -1,0 +1,40 @@
+# Variables for the strife installer
+
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
+installer: { 
+    path: "{{ home }}/the_original_strife_veteran_edition_1_1_1_43197.sh",
+    convert_filename_lowercase: True,
+    type: mojosetup
+    }
+
+# Game base directory
+# format:
+# #   base_dir: /full/path/to/where/game/files/should/be/installed
+base_dir: "{{ home }}/.config/gzdoom"
+
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
+directories:
+    - "{{ base_dir }}"
+
+# Install record
+# If this file exists, the installer will skip extracting the game content
+install_record: "{{ smoke_config_dir }}/strife"
+
+# Game files list with source and destination
+# Note {{ tmp_dir.path }} must be prefixed to the src location
+game_files:
+  - { src: "data/noarch/game/strife1.wad", dest: "{{ base_dir }}/strife1.wad" }
+  - { src: "data/noarch/game/voices.wad", dest: "{{ base_dir }}/voices.wad" }
+  - { src: "data/noarch/game/sve.wad", dest: "{{ base_dir }}/sve.wad" }
+  - { src: "data/noarch/support/icon.png", dest: "{{ icon_dir }}/strife.png" }

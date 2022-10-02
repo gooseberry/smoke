@@ -1,0 +1,8 @@
+---
+# Starting playbook to install Hexen: Beyond Heretic
+
+- name: Hexen
+  hosts: all
+
+  roles:
+      - hexen

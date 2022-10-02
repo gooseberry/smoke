@@ -1,0 +1,8 @@
+---
+# Starting playbook to install Screamer 2
+
+- name: Screamer 2
+  hosts: all
+
+  roles:
+      - screamer_2

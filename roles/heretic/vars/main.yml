@@ -1,0 +1,42 @@
+# Variables for the quake installer
+
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
+installer: { 
+    path: "{{ home }}/setup_heretic_shadow_of_the_serpent_riders_1.3_(42801).exe",
+    convert_filename_lowercase: True,
+    type: innosetup
+    }
+
+# Game base directory
+# format:
+# #   base_dir: /full/path/to/where/game/files/should/be/installed
+base_dir: "{{ home }}/.config/gzdoom"
+
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
+directories:
+    - "{{ base_dir }}"
+
+# Install record
+# If this file exists, the installer will skip extracting the game content
+install_record: "{{ smoke_config_dir }}/heretic"
+
+# Game files list with source and destination
+# Note {{ tmp_dir.path }} must be prefixed to the src location
+game_files:
+  - { src: "heretic.wad", dest: "{{ base_dir }}/heretic.wad" }
+
+# Icon filenames stored on the smoke-repository git that should be downloaded to the
+# {{ icon_dir }} to create desktop icons.
+icons:
+  - heretic.png

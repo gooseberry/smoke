@@ -1,0 +1,17 @@
+---
+# GZDoom role task
+# This collection of tasks will download and install GZDoom 4.8.2 from
+# the web.
+#
+# To install this version, import this role in the main task list of your
+# game role as follows:
+#
+#   - name: Install GZDoom
+#     ansible.builtin.import_role:
+#         name: gzdoom
+#
+
+- name: Install latest supported gzdoom from github
+  become: yes
+  ansible.builtin.apt:
+      deb: "https://github.com/coelckers/gzdoom/releases/download/g4.8.2/gzdoom_4.8.2_amd64.deb"

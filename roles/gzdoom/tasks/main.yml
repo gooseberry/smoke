@@ -11,7 +11,7 @@
 #         name: gzdoom
 #
 
-- name: Install latest supported gzdoom from github
+- name: Install latest supported GZDoom from github
   become: yes
   ansible.builtin.apt:
       deb: "https://github.com/coelckers/gzdoom/releases/download/g4.8.2/gzdoom_4.8.2_amd64.deb"

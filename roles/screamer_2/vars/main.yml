@@ -1,0 +1,43 @@
+# Variables for the Screamer 2 installer
+
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
+installer: { 
+    path: "{{ home }}/setup_screamer2_2.0.0.1.exe",
+    convert_filename_lowercase: False,
+    type: innosetup
+    }
+
+# Game base directory
+# format:
+#   base_dir: /full/path/to/where/game/files/should/be/installed
+base_dir: "{{ home }}/.dosbox/screamer_2"
+
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
+directories:
+    - "{{ base_dir }}/data"
+    - "{{ base_dir }}/config"
+
+# Install record
+# If this file exists, the installer will skip extracting the game content
+install_record: "{{ smoke_config_dir }}/screamer_2"
+
+# Game files list with source and destination
+# Note {{ tmp_dir.path }} must be prefixed to the src location
+game_files:
+  - { src: "app/", dest: "{{ base_dir }}/data/" }
+
+icons: 
+    - screamer_2.png
+

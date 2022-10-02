@@ -1,0 +1,8 @@
+
+[autoexec]
+@echo off
+mount c "{{ base_dir }}/data"
+c:
+imgmount d game.dat -t iso
+s2.bat
+exit

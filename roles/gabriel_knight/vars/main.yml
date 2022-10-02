@@ -1,0 +1,43 @@
+# Variables for the gabriel knight sins of the fathers installer
+
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup, native
+installer: { 
+    path: "{{ home }}/setup_gabriel_knight_-_sins_of_the_fathers_1.1_(20239).exe",
+    convert_filename_lowercase: False,
+    type: innosetup
+    }
+
+# Game base directory
+# format:
+#   base_dir: /full/path/to/where/game/files/should/be/installed
+base_dir: "{{ home }}/.scummvm/gk1"
+
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
+directories:
+    - "{{ base_dir }}/"
+
+# Install record
+# If this file exists, the installer will skip extracting the game content
+install_record: "{{ smoke_config_dir }}/gk1"
+
+# Game files list with source and destination
+# Note {{ tmp_dir.path }} must be prefixed to the src location
+game_files:
+  - { src: "", dest: "{{ base_dir }}/" } 
+
+# Icon filenames stored on the smoke-repository git that should be downloaded to the
+# {{ icon_dir }} to create desktop icons.
+icons:
+  - gabrielknight.png

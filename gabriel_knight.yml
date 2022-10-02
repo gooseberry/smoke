@@ -1,0 +1,6 @@
+---
+# Install Gabriel Knight
+- name: Gabriel Knight
+  hosts: all
+  roles:
+    - gabriel_knight

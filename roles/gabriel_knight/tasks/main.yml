@@ -1,0 +1,38 @@
+---
+# Gabriel Knight role task
+# This collection of tasks will install and configure Gabriel Knight
+# to run with the open-source game engine ScummVM.
+
+- name: Install ScummVM
+  ansible.builtin.import_role:
+      name: scummvm
+
+- name: Installing...
+  ansible.builtin.include_role:
+      name: install
+
+- name: Insert Gabriel Knight game to scummvm
+  ansible.builtin.blockinfile:
+    path: "{{ home }}/.config/scummvm/scummvm.ini"
+    block: |
+        [gk1-cd]
+        description=Gabriel Knight: Sins of the Fathers (CD/DOS/English)
+        extra=CD
+        enable_high_resolution_graphics=true
+        originalsaveload=false
+        path=/home/eric/.scummvm/gk1
+        engineid=sci
+        subtitles=false
+        gameid=gk1
+        language=en
+        platform=pc
+        enable_hq_video=true
+        speech_mute=false
+        guioptions=sndLinkSpeechToSfx gameOption2 gameOption8 gameOptionA lang_English
+    state: present
+    marker: "# {mark} GK1 BLOCK INSERTED BY SMOKE"
+
+- name: Create Desktop Entry
+  ansible.builtin.template:
+      src: gk1.desktop.j2
+      dest: "{{ app_dir }}/gk1.desktop"

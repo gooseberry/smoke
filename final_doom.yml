@@ -1,0 +1,8 @@
+---
+# Starting playbook to install Final Doom
+
+- name: Final Doom
+  hosts: all
+
+  roles:
+      - final_doom

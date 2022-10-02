@@ -1,0 +1,17 @@
+---
+# Doom role task
+# This collection of tasks will install and configure The Ultimate Doom
+# to run with the open-source engine GZDoom.
+
+- name: Install GZDoom
+  ansible.builtin.import_role:
+      name: gzdoom
+
+- name: Installing...
+  ansible.builtin.include_role:
+      name: install
+
+- name: Create Desktop Entry
+  ansible.builtin.template:
+      src: doom.desktop.j2
+      dest: "{{ app_dir }}/doom.desktop"

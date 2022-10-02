@@ -1,0 +1,8 @@
+---
+# Starting playbook to install The Original Strife: Veteran's Edition
+
+- name: Strife
+  hosts: all
+
+  roles:
+      - strife

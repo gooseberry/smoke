@@ -2,5 +2,6 @@ site_name: Smoke
 site_url: https://gooseberry.github.io/smoke/
 nav:
     - Home: index.md
+    - Getting Started: getting-started.md
 
 theme: readthedocs

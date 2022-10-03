@@ -57,35 +57,6 @@ As more games are supported, they will be added to the table below.  *Smoke* scr
 | [[XCOM Terror from the Deep]] | setup_x-com_terror_from_the_deep_2.1_(28046).exe | xcom_tftd.yml |
 
 
-
-
-
-## [[The Dig]]
-The Dig is a brilliant experience that dives us masterfully in a strange, but beautiful alien world, full of secrets and surprises.  The game with such an amazing soundtrack that it was released on CD and is available in record stores as we speak.  The Dig is a masterpiece in gaming, and a work of art.
-
-## [[Epic Pinball]]
-This game rocks, starting with the awesome music, through the graphics and the great collection of intuitive tables such as the tribute to Epic's first game, Jill of the Jungle, with a table called 'Jungle Pinball'.  They would later develop Extreme Pinball which is a fast paced, surrealistic pinball game.
-
-## [[Gabriel Knight: Sins of the Fathers]]
-
-## [[Indiana Jones and the Fate of Atlantis]]
-Indiana Jones and the Fate of Atlantis stands out as an example of how an adventure game should be made.  With multiple paths to complete the game, adding a ton of replay value.  A plot better than any of the movies, and some of the best puzzles in the whole genre.  A well used licensed game.
-
-## [[Quake 2]]
-Coming out only 1 year after the original, Quake 2 introduces the concepts of stories and purpose to level designs.  Combined with an amazing adrenaline pumping heavy metal soundtrack composed by Sonic Mayhem, the game pulls you into the center of a war between humanity and the Strogg.
-
-## [[Quake]]
-ID software's followup to the Doom series.  Quake set the new standard for first person shooters introducing fully 3D environments.  With tight controls, an endless supply of monsters to shoot down, and an atmospheric soundtrack from Nine Inch Nails, Quake is the pinnacle of FPS games from the 1990s.
-
-## [[Sam and Max: Hit the Road]]
-A classic point-and-click adventure game with great humour, excellent voice acting, and a beautiful art style.  Sam and Max provide a near endless supply of one-liners and puns each one more crude than the last.  In a collection of adventure games, Sam and Max: Hit the Road fun and funny at an unparalleled level.
-
-## [[Theme Hospital]]
-A variation on the business management style game, Theme Hospital put you in charge to building and running a hospital, to hysterical results.  There's strategy involved to running a successful hospital, but the focus here is on having fun.  Tackle the challenges through 12 different hospitals in a game that stands the test of time.
-
-## [[Tie Fighter Collector's CD-ROM (1995)]]
-
-
 ## [[Torchlight II]]
 Casual, fun, and addictive.  A rewarding game with an endless supply of increasingly powerful loot to deal with increasingly powerful monsters.  The game world is beautiful and the leveling system is perfectly matched in this amazing action role playing game created with a timeless yet fresh art style.
 

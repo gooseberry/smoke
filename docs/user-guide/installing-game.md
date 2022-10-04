@@ -1,7 +1,5 @@
-*This install method was last tested on 2022-10-02 on Chrome 105.*
-
 # Requirements
-If you haven't yet installed smoke, head on over to the [[Home]] page for instructions on how to get Smoke running on your Chromebook.  You'll find instructions on how to get your ChromeOS device ready to install this game.  After you've done that, follow the instructions below to get the game installed.
+If you haven't yet installed smoke, head on over to the [Getting Started](/user-guide/getting-started/) page for instructions on how to get Smoke running on your Chromebook.  After you've done that, follow the instructions below to get the game installed.
 
 # Installing a game  
 
@@ -15,7 +13,7 @@ If you haven't yet installed smoke, head on over to the [[Home]] page for instru
 The table of [Supported Games](#supported-games) below indicates the exact filename *Smoke* will look for to install the game.  It will not work if you have a different version of the file.
 
 ## Running the script
-The script must be run from the *Linux Environment*.  Open up the *Term* app from the Chrome App Launcher and change to the *smoke* working directory.
+The script must be run from the *Linux Environment*.  Open up the *Terminal* app from the Chrome App Launcher and change to the *smoke* working directory.
 
     cd ~/git/smoke
 

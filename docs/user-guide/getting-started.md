@@ -41,17 +41,12 @@ Linux is a "developer feature" for users to access common programming tools thro
 ## Install Ansible
 
 ### Ansible
-Ansible is a tool developed to automate the installation and configuration of IT infrastructures.  By installing a control node on your Chromebook, you can make use of all the scripts from this repository to automatically configure and deploy games to your system. 
+Ansible is a tool developed to automate the installation and configuration of IT infrastructures.  By installing a control node on your Chromebook, you can make use of all the scripts from this repository to automatically configure and deploy games to your system.  The instructions below will download the required files and configure your system to run the scripts from this repository.
 
 ### Step-by-step instructions
 1. Open the Terminal application on your Chromebook.
 1. Copy and paste the following lines into the terminal
 
        curl -s https://raw.githubusercontent.com/gooseberry/smoke/main/setup.sh | bash
-
-
-
-
-
 
 Enjoy the features offered by this project and if you're interested in learning more, make sure to check out the [[Under the Hood]] section.

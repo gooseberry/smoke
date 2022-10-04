@@ -1,11 +1,23 @@
-*Descent 2, like its predecessor, brings the idea of 6 degrees of freedom (6dof) to the first person genre. Fast-paced 3 dimensional mazes that are filled with traps and robots intent on killing anything that moves create an environment designed to leave you lost and wondering which side is up while frantically fighting to stay alive.*
+!!! Info
+    Descent 2, like its predecessor, brings the idea of 6 degrees of freedom (6dof) to the first person genre. Fast-paced 3 dimensional mazes that are filled with traps and robots intent on killing anything that moves create an environment designed to leave you lost and wondering which side is up while frantically fighting to stay alive.
 
-<dl>
-  <dt>GOG Store Page</dt>
-  <dd><a href="https://www.gog.com/en/game/descent_2">Descent 2</a></dd>
-  <dt>Game Engine</dt>
-  <dd>[[DXX-Rebirth]]</dd>
-</dl>
+# Game Details
+
+### GOG Store Page
+[Descent 2](https://www.gog.com/en/game/descent_2)
+
+### Game Engine
+[DXX-Rebirth](/engines/dxx-rebirth)
+
+### Supported Installer
+setup_descent_2_1.1_(16596).exe
+
+### Ansible Command
+~~~bash
+cd ~/git/smoke/playbook
+ansible-playbook descent2.yml
+~~~
+
 
 # Known Issues
 

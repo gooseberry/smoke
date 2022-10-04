@@ -23,6 +23,7 @@
 # bchunk package is needed for the bchunk command
 # vorbis-tools package is needed for the oggenc command
 - name: Bchunk and vorbis-tools package must be present on system
+  become: yes
   ansible.builtin.apt:
       name: "{{ package }}"
       state: present

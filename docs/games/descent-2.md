@@ -3,6 +3,7 @@
 
 # Game Details
 
+|  |  |
 |--:|:--|
 | **GOG Store Page** | [Descent 2](https://www.gog.com/en/game/descent_2) |
 | **Game Engine** | [DXX-Rebirth](/engines/dxx-rebirth) |

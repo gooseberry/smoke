@@ -11,6 +11,13 @@ installer: {
     convert_filename_lowercase: True,
     type: mojosetup
     }
+    
+# List of dependencies needed to run the game.
+# format:
+#   - package1
+#   - package2
+dependencies:
+    - libopenal1
 
 # Game base directory
 # format:

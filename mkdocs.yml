@@ -3,8 +3,8 @@ site_url: https://gooseberry.github.io/smoke/
 nav:
     - Home: index.md
     - User Guide:
-        - Getting Started: getting-started.md
-        - Installing a Game: installing-game.md
+        - Getting Started: /user-guide/getting-started.md
+        - Installing a Game: /user-guide/installing-game.md
 
 theme: readthedocs
 markdown_extensions:

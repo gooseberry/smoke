@@ -20,7 +20,7 @@
   loop:
       - libopenal1
       - mesa-utils
-      - mesa-vulkan-drivers
+      - vulkan-tools
   loop_control:
       loop_var: package
 

@@ -12,7 +12,7 @@
 #
 
 # openal1 is needed by GZDoom to support sound
-- name: Bchunk and vorbis-tools package must be present on system
+- name: libopenal1 package must be present on system
   become: yes
   ansible.builtin.apt:
       name: libopenal1

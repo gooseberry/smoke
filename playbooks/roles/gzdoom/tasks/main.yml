@@ -16,6 +16,12 @@
   ansible.builtin.apt:
       deb: "https://github.com/coelckers/gzdoom/releases/download/g4.8.2/gzdoom_4.8.2_amd64.deb"
 
+- name: Create folder structure for GZDoom configuration
+  ansible.builtin.file:
+      path: "{{ home }}/.config/gzdoom"
+      state: directory
+      mode: "0755"
+
 - name: Deploy GZDoom configuration file
   ansible.builtin.template:
       src: gzdoom.ini.j2

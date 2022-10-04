@@ -1,6 +1,4 @@
-# Requirements
-
-## Setting Chrome flags
+# Setting Chrome flags
 For optimal performance with your games, you will need to set some *Chrome flags* on your system. 
 
 !!! Note "Step-by-step instructions"
@@ -13,7 +11,7 @@ For optimal performance with your games, you will need to set some *Chrome flags
     1. Click on **Relaunch** at the bottom of the Chrome flags window to apply the changes and restart your Chromebook.
 
 
-## Enabling Linux Development Environment (LDE)
+# Enabling Linux Development Environment (LDE)
 Turn on the Linux environment using the Chromebook's settings.
 
 !!! Note "Step-by-step instructions"
@@ -26,10 +24,10 @@ Turn on the Linux environment using the Chromebook's settings.
 !!! Tip
     The default space setting for LDE is 10G.  You may need more hard drive space if you intend to install many games.
 
-## Install Ansible
-The script requires to have a recent build of Ansible, so we'll use PIP (Python Package Manager).  You can choose to install this package automatically via a script, or manually enter each command.
+# Install Ansible
+The script requires to have a recent build of Ansible, so we'll use PIP (Python Package Manager).  You can choose to install this package automatically via a script, or manually enter each command, both options are listed below.
 
-### Automatic install
+## Automatic install
 
 !!! Note "Automatic Install"
     Copy and paste the following line into the terminal to install and configure Ansible.
@@ -37,7 +35,7 @@ The script requires to have a recent build of Ansible, so we'll use PIP (Python 
         curl -s https://raw.githubusercontent.com/gooseberry/smoke/main/setup.sh | bash
 
 
-### Manual Install
+## Manual Install
 
 !!! Warning
     Skip this step if you ran the automatic install script.
@@ -63,6 +61,3 @@ The script requires to have a recent build of Ansible, so we'll use PIP (Python 
     
             git clone https://github.com/gooseberry/smoke.git
 
-
-
-Enjoy the features offered by this project and if you're interested in learning more, make sure to check out the [[Under the Hood]] section.

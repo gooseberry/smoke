@@ -9,6 +9,7 @@ config_dir: "{{ home }}/.config/openxcom"
 directories:
     - "{{ home }}/.local/share/appimagekit"
     - "{{ home }}/.local/share/openxcom"
+    - "{{ home }}/.config/openxcom"
 
 icons:
     - openxcom.png

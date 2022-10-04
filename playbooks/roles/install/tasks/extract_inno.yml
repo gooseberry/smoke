@@ -19,8 +19,9 @@
 # If you need a more recent version of the tool, add the innoextract
 # role to your game tasks.
 - name: Innoextract package must be present on system
+  become: yes
   ansible.builtin.apt:
-      name: unzip
+      name: innoextract
       state: present
 
 - name: InnoSetup Extraction

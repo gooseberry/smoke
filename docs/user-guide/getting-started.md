@@ -1,6 +1,6 @@
 # Requirements
 
-## Set Chrome flags
+## Setting Chrome flags
 For optimal performance with your games, you will need to set some *Chrome flags* on your system. 
 
 !!! Note "Step-by-step instructions"
@@ -13,31 +13,47 @@ For optimal performance with your games, you will need to set some *Chrome flags
     1. Click on **Relaunch** at the bottom of the Chrome flags window to apply the changes and restart your Chromebook.
 
 
-## Enable and Launch Linux Development Environment (LDE)
+## Enabling Linux Development Environment (LDE)
+Turn on the Linux environment using the Chromebook's settings.
 
-### Linux Development Environment - Codename: Crostini
-Linux is a "developer feature" for users to access common programming tools through the Linux platform from a ChromeOS device.  It didn't take long for ChromeOS users to start exploiting this feature to install games not designed to run on Chromebooks such as Minecraft and Steam.  This project uses this Linux system to install and run various old games (and some newer ones too) on Chromebooks.
-
-
-### Step-by-step instructions
-1. At the bottom right, click on the time.
-1. Click on the settings Icon ⚙️.
-1. Expand the **Advanced** option and click on **Developers**
-1. Next to Linux development environment, Click on Turn On.
-1. Follow the steps on the screen.
+!!! Note "Step-by-step instructions"
+    1. At the bottom right, click on the time.
+    1. Click on the settings Icon ⚙️.
+    1. Expand the **Advanced** option and click on **Developers**
+    1. Next to Linux development environment, Click on Turn On.
+    1. Follow the steps on the screen.
 
 !!! Tip
     The default space setting for LDE is 10G.  You may need more hard drive space if you intend to install many games.
 
 ## Install Ansible
+The script requires to have a recent build of Ansible, so we'll use PIP (Python Package Manager).  You can choose to install this package automatically via a script, or manually enter each command.
 
-### Ansible
-Ansible is a tool developed to automate the installation and configuration of IT infrastructures.  By installing a control node on your Chromebook, you can make use of all the scripts from this repository to automatically configure and deploy games to your system.  The instructions below will download the required files and configure your system to run the scripts from this repository.
+### Automatic install
 
-### Step-by-step instructions
-1. Open the Terminal application on your Chromebook.
-1. Copy and paste the following lines into the terminal
+!!! Note "Automatic Install"
+    Copy and paste the following line into the terminal to install and configure Ansible.
 
-       curl -s https://raw.githubusercontent.com/gooseberry/smoke/main/setup.sh | bash
+        curl -s https://raw.githubusercontent.com/gooseberry/smoke/main/setup.sh | bash
+
+
+### Manual Install
+
+!!! Warning
+    Skip this step if you ran the automatic install script.
+
+!!! Note "Manual Install"
+    1. Upgrade the packages on your system.
+            sudo apt-get update && sudo apt-get upgrade -y
+    1. Install pip.
+            sudo apt-get install python3-pip -y
+    1. Install latest Ansible package with pip.
+            python3 -m pip --user ansible
+    1. Create a directory to clone smoke.
+            mkdir -p ~/git && cd "$_"
+    1. Clone the smoke repository locally to your system.
+            git clone https://github.com/gooseberry/smoke.git
+
+
 
 Enjoy the features offered by this project and if you're interested in learning more, make sure to check out the [[Under the Hood]] section.

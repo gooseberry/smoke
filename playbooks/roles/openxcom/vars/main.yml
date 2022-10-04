@@ -8,6 +8,7 @@ config_dir: "{{ home }}/.config/openxcom"
 # Directories needed for openxcom games
 directories:
     - "{{ home }}/.local/share/appimagekit"
+    - "{{ home }}/.local/share/openxcom"
 
 icons:
     - openxcom.png

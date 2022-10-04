@@ -14,7 +14,7 @@ setup_descent_2_1.1_(16596).exe
 
 ### Ansible Command
 ~~~bash
-cd ~/git/smoke/playbook
+cd ~/git/smoke/playbooks
 ansible-playbook descent2.yml
 ~~~
 

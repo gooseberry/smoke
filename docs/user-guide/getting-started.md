@@ -28,17 +28,16 @@ Turn on the Linux environment using the Chromebook's settings.
 The script requires to have a recent build of Ansible, so we'll use PIP (Python Package Manager).  You can choose to install this package automatically via a script, or manually enter each command, both options are listed below.
 
 ## Automatic install
+Follow these steps if you want to have a script to complete the configuration of your system automatically.
 
-!!! Note "Automatic Install"
+!!! Note "Step-by-step instructions"
     Copy and paste the following line into the terminal to install and configure Ansible.
 
         curl -s https://raw.githubusercontent.com/gooseberry/smoke/main/setup.sh | bash
 
 
 ## Manual Install
-
-!!! Warning
-    Skip this step if you ran the automatic install script.
+Follow these steps if you prefer to complete the configuration manually by entering each command into the terminal.
 
 !!! Note "Manual Install"
     1. Upgrade the packages on your system.

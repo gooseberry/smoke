@@ -44,14 +44,23 @@ The script requires to have a recent build of Ansible, so we'll use PIP (Python 
 
 !!! Note "Manual Install"
     1. Upgrade the packages on your system.
+
             sudo apt-get update && sudo apt-get upgrade -y
+
     1. Install pip.
+
             sudo apt-get install python3-pip -y
+
     1. Install latest Ansible package with pip.
+
             python3 -m pip --user ansible
+
     1. Create a directory to clone smoke.
+
             mkdir -p ~/git && cd "$_"
+
     1. Clone the smoke repository locally to your system.
+    
             git clone https://github.com/gooseberry/smoke.git
 
 

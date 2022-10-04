@@ -3,16 +3,13 @@
 
 # Game Details
 
-**GOG Store Page**
-  * [Descent 2](https://www.gog.com/en/game/descent_2)
+|  |  |
+|--:|:--|
+| **GOG Store Page** | [Descent 2](https://www.gog.com/en/game/descent_2) |
+| **Game Engine** | [DXX-Rebirth](/engines/dxx-rebirth) |
+| **Supported Installer** | setup_descent_2_1.1_(16596).exe |
 
-**Game Engine**
-  * [DXX-Rebirth](/engines/dxx-rebirth)
-
-**Supported Installer**
-  * setup_descent_2_1.1_(16596).exe
-
-**Ansible Command**
+## Ansible Command
 
 ~~~bash
 cd ~/git/smoke/playbooks

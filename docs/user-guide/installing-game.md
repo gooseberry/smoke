@@ -15,15 +15,15 @@ The table of [Supported Games](#supported-games) below indicates the exact filen
 ## Running the script
 The script must be run from the *Linux Environment*.  Open up the *Terminal* app from the Chrome App Launcher and change to the *smoke* working directory.
 
-    cd ~/git/smoke
+    cd ~/git/smoke/playbooks
 
 From this directory, you can then run the **ansible** command to install and configure your system to run your game.
 
-       ansible-playbook -i hosts <Ansible Playbook>
+       ansible-playbook <Ansible Playbook>
 
    **Example** The line below will start the script to install Descent II.
 
-       ansible-playbook - i hosts descent2.yml
+       ansible-playbook hosts descent2.yml
 
 The installation script will take a few minutes to complete.  Once the it's done, you can start the game by clicking on the *The Ultimate Doom* from the ChromeOS Application Launcher.  The icon will be located in a group labelled *Linux apps*.  Have Fun!
 

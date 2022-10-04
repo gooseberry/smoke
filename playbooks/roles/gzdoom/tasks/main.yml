@@ -11,12 +11,18 @@
 #         name: gzdoom
 #
 
-# openal1 is needed by GZDoom to support sound
-- name: libopenal1 package must be present on system
+# packages needed by GZDoom to support sound
+- name: Checking for GZDoom dependencies
   become: yes
   ansible.builtin.apt:
-      name: libopenal1
+      name: "{{ package }}"
       state: present
+  loop:
+      - libopenal1
+      - mesa-utils
+      - mesa-vulkan-drivers
+  loop_control:
+      loop_var: package
 
 - name: Install latest supported GZDoom from github
   become: yes

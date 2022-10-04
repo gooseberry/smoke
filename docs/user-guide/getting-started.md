@@ -1,25 +1,16 @@
-# Getting Started with Smoke
-
+# Requirements
 
 ## Set Chrome flags
+For optimal performance with your games, you will need to set some *Chrome flags* on your system. 
 
-### Chrome Flags
-Hidden or experimental features that are not intended for use by standard users.  These are typically features that Google are testing to be included in future releases and can be enabled through specific flags by opening the Chrome browser and typing `chrome://flags` in the address bar and hitting **enter**.  This opens a new window on your Chromebook titled **Experiments** and as the banner at the top of this window states, some of these experimental flags can negatively impact your ChromeOS experience.  To get the most of the games you install on LDE, this section guides you on how to set two flags: the *Crostini GPU Support* flag, and the *Pointer Lock for Linux Applications* flag.
-
-#### Crostini GPU Support
-This flag enables the Linux Development Environment to have direct access to the GPU.  This flag is required for Crostini to run OpenGL and other 3D graphic processes on the system.
-
-#### Pointer Lock for Linux Applications
-This flag enables the applications in the Linux container to lock the mouse pointer to the application screen.  This keeps the mouse inside the game screen so that if you cannot scroll past the screen and lose the mouse focus.
-
-### Step-by-step instructions
-1. Open the Chrome browser.
-1. Click on the address bar and type `chrome://flags`, then hit the Enter key.
-1. Click on the search bar and type `exo-pointer-lock`.
-1. Click on the drop-down menu next to the *Pointer lock for Linux applications* flag and select **Enabled**
-1. Click on the search bar and type `crostini-gpu-support`.
-1. Click on the drop-down meny next to the *Crostini GPU Support* flag and select **Enabled**
-1. Click on **Relaunch** at the bottom of the Chrome flags window to apply the changes and restart your Chromebook.
+!!! Note "Step-by-step instructions"
+    1. Open the Chrome browser.
+    1. Click on the address bar and type `chrome://flags`, then hit the Enter key.
+    1. Click on the search bar and type `exo-pointer-lock`.
+    1. Click on the drop-down menu next to the *Pointer lock for Linux applications* flag and select **Enabled**
+    1. Click on the search bar and type `crostini-gpu-support`.
+    1. Click on the drop-down meny next to the *Crostini GPU Support* flag and select **Enabled**
+    1. Click on **Relaunch** at the bottom of the Chrome flags window to apply the changes and restart your Chromebook.
 
 
 ## Enable and Launch Linux Development Environment (LDE)

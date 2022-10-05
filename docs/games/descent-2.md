@@ -23,5 +23,7 @@
 # Known Issues
 
 ## Missing videos
-
 Certain Descent movies are not playing, namely the robot introduction video at the beginning of each level and the descent escape videos.  This is related to a known problem introduced with PhysFS 3 and the d2x-rebirth version 0.58.  Details are available on the related [GitHub Issue <i class="fas fa-external-link-alt"></i>](https://github.com/dxx-rebirth/dxx-rebirth/issues/379)
+
+## Default keyboard configuration
+Descent 2 resets all keyboard configurations for each user.  Every fresh install of Descent 2 will require that the keyboard keys are re-mapped.

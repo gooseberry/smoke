@@ -23,5 +23,6 @@
    ~~~
 !!! Note
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+    
     * Doom 2
     * GZDoom

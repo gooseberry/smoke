@@ -23,5 +23,6 @@
    ~~~
 !!! Note
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+    
     * Torchlight 2
     * Torchlight 2 Mods

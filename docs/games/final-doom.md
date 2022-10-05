@@ -26,6 +26,7 @@ Final doom is no longer sold separately on GOG.com.  Instead it is included as p
    ~~~
 !!! Note
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+    
     * Final Doom: TNT Evilution
     * Final Doom: The Plutonia Experiment
     * GZDoom

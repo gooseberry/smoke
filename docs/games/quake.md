@@ -23,6 +23,7 @@
    ~~~
 !!! Note
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+    
     * Quake
     * Quake: Scourge of Armagon
     * Quake: Dissolution of Eternity

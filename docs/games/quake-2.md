@@ -23,6 +23,7 @@
    ~~~
 !!! Note
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+    
     * Quake 2
     * Quake 2: The Reckoning
     * Quake 2: Ground Zero

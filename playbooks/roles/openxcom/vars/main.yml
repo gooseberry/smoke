@@ -10,6 +10,8 @@ directories:
     - "{{ home }}/.local/share/appimagekit"
     - "{{ home }}/.local/share/openxcom"
     - "{{ home }}/.config/openxcom"
+    - "{{ icon_dir }}"
+    - "{{ app_dir }}"
 
 icons:
     - openxcom.png

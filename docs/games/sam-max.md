@@ -1,7 +1,9 @@
+# Sam & Max: Hit the Road
+
+## Game Details
+
 !!! Tip ""
     A classic point-and-click adventure game with great humour, excellent voice acting, and a beautiful art style.  Sam and Max provide a near endless supply of one-liners and puns each one more crude than the last.  In a collection of adventure games, Sam and Max: Hit the Road fun and funny at an unparalleled level.
-
-# Game Details
 
 |  |  |
 |--:|:--|
@@ -10,7 +12,7 @@
 | **Supported Installer** | sam_and_max_hit_the_road_en_gog_2_20100.sh |
 | **Installer System** | Linux |
 
-# Installing Game
+## Installing Game
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.
 1. Open the Terminal App on your Chromebook.
 1. Paste the following lines into the terminal.
@@ -19,3 +21,7 @@
    cd ~/git/smoke/playbooks
    ansible-playbook samnmax.yml
    ~~~
+!!! Note
+    Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+    * Sam & Max: Hit the Road
+    * ScummVM

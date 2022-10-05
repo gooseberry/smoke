@@ -1,5 +1,5 @@
 !!! Tip ""
-    Something fancy and fun about torchlight 2 goes here.
+    Casual, fun, and addictive. A rewarding game with an endless supply of increasingly powerful loot to deal with increasingly powerful monsters. The game world is beautiful and the leveling system is pefectly matched in this amazing action role playing game created with a timeless yet fresh artstyle.
 
 # Game Details
 

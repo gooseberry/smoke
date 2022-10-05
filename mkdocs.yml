@@ -24,7 +24,8 @@ nav:
         - XCOM UFO Defense: "games/xcom-ufo-defense.md"
         - XCOM Terror from the Deep: "games/xcom-terror-from-the-deep.md"
 
-theme: readthedocs
+theme:
+    name: material
 markdown_extensions:
     - admonition
     - wikilinks

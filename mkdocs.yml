@@ -2,9 +2,28 @@ site_name: Smoke
 site_url: https://gooseberry.github.io/smoke/
 nav:
     - Home: "index.md"
-    - User Guide:
-        - Getting Started: "user-guide/getting-started.md"
-        - Installing a Game: "user-guide/installing-game.md"
+    - Getting Started: "getting-started.md"
+    - Supported Games:
+        - Descent II: "games/descent-2.md"
+        - The Dig: "games/the-dig.md"
+        - Doom II: "games/doom-2.md"
+        - Epic Pinball: "games/epic-pinball.md"
+        - Final Doom: "games/final-doom.md"
+        - Gabriel Knight - Sins of the Fathers: "games/gabriel-knight.md"
+        - Heretic - Shadow of the Serpent Riders: "games/heretic.md"
+        - Hexen - Beyond Heretic: "games/hexen.md"
+        - Indiana Jones and the Fate of Atlantis: "games/atlantis.md"
+        - The Original Strife - Veteran Edition: "games/strife.md"
+        - Quake: "games/quake.md"
+        - Quake 2: "games/quake-2.md"
+        - Sam & Max Hit the Road: "games/sam-max.md"
+        - Screamer 2: "games/screamer-2.md"
+        - Theme Hospital: "games/theme-hospital.md"
+        - Tie Fighter: "games/tie-fighter.md"
+        - Torchlight II: "games/torchlight-2.md"
+        - The Ultimate Doom: "games/doom.md"
+        - XCOM UFO Defense: "games/xcom-ufo-defense.md"
+        - XCOM Terror from the Deep: "games/xcom-terror-from-the-deep.md"
 
 theme: readthedocs
 markdown_extensions:

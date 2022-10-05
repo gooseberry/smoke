@@ -1,6 +1,8 @@
 ---
-# Install Gabriel Knight
+# Starting playbook to install Gabriel Knight
+
 - name: Gabriel Knight
   hosts: all
+  
   roles:
     - gabriel_knight

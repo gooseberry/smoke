@@ -21,6 +21,7 @@
    cd ~/git/smoke/playbooks
    ansible-playbook doom.yml
    ~~~
+   
 !!! Note
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
     

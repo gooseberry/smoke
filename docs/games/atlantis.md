@@ -21,8 +21,9 @@
    cd ~/git/smoke/playbooks
    ansible-playbook atlantis.yml
    ~~~
+   
 !!! Note
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
-    
+
     * Indiana Jone and the Fate of Atlantis
     * ScummVM

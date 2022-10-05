@@ -1,5 +1,5 @@
 !!! Tip ""
-    There is a reason that, before the term First Person Shooter (FPS) was coined, FPS games were known as *Doom clones*.  This game made the genre what it is.  It's simple, it's fast, it's fun.  The original Doom is still the best and for good reasons.
+    There is a reason that games were known as *Doom clones* before the term First Person Shooter was coined.  Doom may not have created the FPS genre, but it perfected it.  It's simple, it's fast, it's fun.  Games today still can't recreate the pure adrenaline fun of the original Doom.
 
 # Game Details
 

@@ -1,5 +1,5 @@
 !!! Tip ""
-    Say something about Gabriel Knight: Sins of the Fathers
+    Featuring an all star voice acting cast, Gabriel Knight is a beautiful blend of art and storytelling, told through a point and click adventure.  The puzzles in this game, while well implemented, take a back seat to the story and fleshed out characters.  Sins of the Fathers is an excellent entry to a great story that spans all three games.  
 
 # Game Details
 

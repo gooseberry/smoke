@@ -1,3 +1,5 @@
+!!! Tip ""
+    The final chapter to the original Doom games.  This game has been bundled into Doom 2 and consist of the two map packs **TNT: Evilution** and **The Plutonia Experiment**.  Final Doom doesn't introduce anything new to the game franchise, offering instead more challenges along the same formula.
 
 # Game Details
 

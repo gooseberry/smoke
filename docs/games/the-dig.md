@@ -17,10 +17,8 @@
 1. Open the Terminal App on your Chromebook.
 1. Paste the following lines into the terminal.
 
-   ~~~bash
-   cd ~/git/smoke/playbooks
-   ansible-playbook dig.yml
-   ~~~
+        cd ~/git/smoke/playbooks && ansible-playbook dig.yml
+
 !!! Note
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
     

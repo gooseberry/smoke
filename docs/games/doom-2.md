@@ -1,5 +1,5 @@
 !!! Tip ""
-    The 2 in Doom 2 stands for the number of barrels on the shotgun.  Bigger levels, new enemies, and the ever loved double barrel shotgun - also called the super shotgun.  Doom 2 doubles up on the fun of the original.
+    The 2 in Doom 2 stands for the number of barrels on the shotgun.  With bigger levels, new enemies, and the ever loved double barrel shotgun - also called the super shotgun - Doom 2 takes everything from the original Doom up a notch to create a unique experience closely tied to the original game.
 
 # Game Details
 

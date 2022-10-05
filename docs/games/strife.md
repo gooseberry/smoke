@@ -1,3 +1,6 @@
+!!! Tip ""
+    Strife takes the classic FPS formula and adds Role Playing elements to it.  The game progress is made through non-linear quests obtained from NPCs with some solid world building lore.  Strife is a story driven FPS from the late 90s with a fasinating world that worth exploring. 
+
 # Game Details
 
 |  |  |

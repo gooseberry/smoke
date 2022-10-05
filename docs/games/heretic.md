@@ -1,3 +1,6 @@
+!!! Tip  ""
+    Heretic brings the same chaotic action as Doom, but in a fantasy setting and introduces new concepts like inventory and more interesting puzzles.  Plus you can turn your enemies into chickens!  Featuring unique and memorable environments, this game forms delivers a fun platform to play through and enough innovation to differentiate itself from other games of the time.
+
 # Game Details
 
 |  |  |

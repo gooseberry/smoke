@@ -1,5 +1,5 @@
 ---
-# Starting playbook to install quake
+# Starting playbook to install XCOM Terror from the Deep
 
 - name: X-COM Terror from the Deep
   hosts: all

@@ -1,16 +1,15 @@
 # Descent II
 
-## Game Details
+!!! Quote ""
 
-!!! Tip ""
     Descent 2, like its predecessor, brings the idea of 6 degrees of freedom (6dof) to the first person genre. Fast-paced 3 dimensional mazes that are filled with traps and robots intent on killing anything that moves create an environment designed to leave you lost and wondering which side is up while frantically fighting to stay alive.
 
-|  |  |
+
+| GOG Store Page | [Descent 2](https://www.gog.com/en/game/descent_2) |
 |--:|:--|
-| **GOG Store Page** | [Descent 2](https://www.gog.com/en/game/descent_2) |
-| **Game Engine** | [DXX-Rebirth](https://www.dxx-rebirth.com/) |
-| **Supported Installer** | setup_descent_2_1.1_(16596).exe |
-| **Installer System** | Windows |
+| **Game Engine** | **[DXX-Rebirth](https://www.dxx-rebirth.com/)** |
+| **Supported Installer** | **setup_descent_2_1.1_(16596).exe** |
+| **Installer System** | **Windows** |
 
 ## Installing Game
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.
@@ -20,6 +19,7 @@
         cd ~/git/smoke/playbooks && ansible-playbook descent2.yml
 
 !!! Note
+
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
     
     * Descent 2

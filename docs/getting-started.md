@@ -58,3 +58,11 @@ The script requires to have a recent build of Ansible, so we'll use PIP (Python 
     
             git clone https://github.com/gooseberry/smoke.git
 
+!!! Note
+
+    After you install ansible, regardless of whether you chose the automatic or manual procedure, you'll need to restart the *Terminal* app before you can run any of the install commands.  Go ahead and type `exit` in the *Terminal* 
+
+## Install a game
+Check out the list of supported games from the navigation menu.  Each game will list the required installation file from GOG.com you will need and will detail out how to get it installed.
+
+Have Fun!

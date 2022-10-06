@@ -31,6 +31,7 @@ theme:
 markdown_extensions:
     - admonition
     - wikilinks
+    - attr_list
     - pymdownx.superfences
     - pymdownx.tabbed:
         alternate_style: true 

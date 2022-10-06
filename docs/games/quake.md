@@ -1,16 +1,14 @@
 # Quake
 
-## Game Details
+!!! Quote ""
 
-!!! Tip ""
     ID software's followup to the Doom series.  Quake set the new standard for first person shooters introducing fully 3D environments.  With tight controls, an endless supply of monsters to shoot down, and an atmospheric soundtrack from Nine Inch Nails, Quake is the pinnacle of FPS games from the 1990s.
 
-|  |  |
+| GOG Store Page | [Quake](https://www.gog.com/game/quake_the_offering) |
 |--:|:--|
-| **GOG Store Page** | [Quake](https://www.gog.com/game/quake_the_offering) |
-| **Game Engine** | [QuakeSpasm-Spiked](https://triptohell.info/moodles/qss/) |
-| **Supported Installer** | setup_quake_the_offering_2.0.0.6.exe |
-| **Installer System** | Windows |
+| **Game Engine** | **[QuakeSpasm-Spiked](https://triptohell.info/moodles/qss/)** |
+| **Supported Installer** | **setup_quake_the_offering_2.0.0.6.exe** |
+| **Installer System** | **Windows** |
 
 ## Installing Game
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.
@@ -20,6 +18,7 @@
         cd ~/git/smoke/playbooks && ansible-playbook quake.yml
 
 !!! Note
+
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
     
     * Quake

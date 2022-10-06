@@ -29,11 +29,13 @@ Smoke is built on a collection of Linux tools.  To get it running, you'll need t
 The script requires to have a recent build of Ansible, so we'll use PIP (Python Package Manager).  You can choose to install this package automatically via a script, or manually enter each command, both options are listed below.
 
 === "Automatic install"
+
     Copy and paste the following line into the terminal to download and run a setup script that will install Ansible and clone the Smoke repository for you.
 
         curl -s https://raw.githubusercontent.com/gooseberry/smoke/main/setup.sh | bash
 
 === "Manual Install"
+
     Follow these steps if you prefer to complete the configuration manually by entering each command into the terminal.
 
     1. Upgrade the packages on your system.

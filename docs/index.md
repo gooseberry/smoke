@@ -1,4 +1,6 @@
-# Description
+# Smoke
+
+## Description
 Smoke is a project with the goal to automate and configure the installation of various [GOG.com](https://gog.com) games on a ChromeOS device.  The project works by calling a series of automated tasks through a tool called [Ansible](https://docs.ansible.com) to configure the Linux Development Environment (LDE) of a Chromebook to a known working state for the selected game.  Start by reading the [[Getting Started]], then check out the [[Supported Games]] for the final steps to get your specific game running.
 
 ## Features

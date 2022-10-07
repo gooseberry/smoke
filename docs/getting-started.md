@@ -17,7 +17,7 @@ For optimal performance running your games on your Chromebook, you will need to 
 Smoke is built on a collection of Linux tools.  To get it running, you'll need to turn on the Linux Development Environment from the Chromebook's settings.
 
 1. At the bottom right, click on the time.
-1. Click on the settings Icon ⚙️.
+1. Click on the settings Icon :material-cog-outline:.
 1. Expand the **Advanced** option and click on **Developers**
 1. Next to Linux development environment, Click on Turn On.
 1. Follow the steps on the screen.

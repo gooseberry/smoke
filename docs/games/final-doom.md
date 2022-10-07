@@ -11,7 +11,8 @@
 | **Installer System** | **Windows** |
 
 !!! Note
-Final doom is no longer sold separately on GOG.com.  Instead it is included as part of Doom II
+
+    Final doom is no longer sold separately on GOG.com.  Instead it is included as part of Doom II
 
 ## Installing Game
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

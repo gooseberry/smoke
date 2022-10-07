@@ -10,7 +10,7 @@
 | **Supported Installer** | **setup_final_doom_1.9_(28044).exe** |
 | **Installer System** | **Windows** |
 
-!!! Note
+!!! Info
 
     Final doom is no longer sold separately on GOG.com.  Instead it is included as part of Doom II
 

@@ -8,7 +8,7 @@ repo_name: gooseberry/smoke
 repo_url: https://github.com/gooseberry/smoke
 
 # Copyright
-copyright: Copyright &copy: 2022 Eric Desgroseilliers
+copyright: Copyright &copy; 2022 Eric Desgroseilliers
 
 # Configuration
 theme:

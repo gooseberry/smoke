@@ -23,3 +23,11 @@
     
     * Sam & Max: Hit the Road
     * ScummVM
+
+!!! Danger "Message of appreciation"
+
+    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+    
+    * Lucasarts for the vision and creating this game.
+    * GOG for making this game available.
+    * ScummVM for ongoing efforts in supporting an excellent engine for adventure games.

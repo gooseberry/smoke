@@ -23,3 +23,11 @@
     
     * Torchlight 2
     * Torchlight 2 Mods
+
+!!! Danger "Message of appreciation"
+
+    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+    
+    * Runic Games for the vision and creating this game.
+    * GOG for making this game available.
+    * Runic Games for releasing this game with Linux support.

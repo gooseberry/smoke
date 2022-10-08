@@ -24,3 +24,11 @@
     * Quake 2
     * Quake 2: The Reckoning
     * Quake 2: Ground Zero
+
+!!! Danger "Message of appreciation"
+
+    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+    
+    * Id Software for the vision and creating this game.
+    * GOG for making this game available.
+    * Yamagi Quake 2 for ongoing efforts in supporting this excellent port.

@@ -15,6 +15,8 @@ theme:
     name: material
     icon: 
         logo: material/gamepad-variant
+        admonition:
+            danger: material/heart
     palette:
         scheme: slate
 
@@ -23,7 +25,6 @@ theme:
         - navigation.instant
         - navigation.tracking
         - navigation.tabs
-        - navigation.tabs.sticky
         - navigation.tops
 
 # Extensions
@@ -40,6 +41,7 @@ markdown_extensions:
 
 # Page tree
 nav:
+    - Home: "index.md"
     - Getting Started: "getting-started.md"
     - Supported Games:
         - Descent II: "games/descent-2.md"
@@ -62,3 +64,8 @@ nav:
         - The Ultimate Doom: "games/doom.md"
         - XCOM UFO Defense: "games/xcom-ufo-defense.md"
         - XCOM Terror from the Deep: "games/xcom-terror-from-the-deep.md"
+    - About:
+        - About: "about/about.md"
+        - Philosophy: "about/philosophy.md"
+        - Alternatives: "about/alternatives.md"
+        - Appreciation: "about/appreciation.md"

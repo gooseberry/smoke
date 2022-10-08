@@ -40,7 +40,7 @@ theme:
         - navigation.instant
         - navigation.tracking
         - navigation.tabs
-        - navigation.tops
+        - navigation.top
 
 # Extensions
 markdown_extensions:

@@ -28,6 +28,10 @@ Smoke is built on a collection of Linux tools.  To get it running, you'll need t
 ## Install Ansible
 The script requires to have a recent build of Ansible, so we'll use PIP (Python Package Manager).  You can choose to install this package automatically via a script, or manually enter each command, both options are listed below.
 
+!!! Warning
+
+    Smoke uses a collection of tools that will automatically install a number of tools inside the Linux Environment of ChromeOS.  When you run one of the install scripts, it can make changes to the Linux Environment without asking your permission first.  This can have adverse effects on some of the other Linux programs you may have aleady installed.
+
 === "Automatic install"
 
     Copy and paste the following line into the terminal to download and run a setup script that will install Ansible and clone the Smoke repository for you.

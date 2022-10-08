@@ -5,12 +5,15 @@ Smoke is a collection of tools to help you install and run several games from th
 For optimal performance running your games on your Chromebook, you will need to set some *Chrome flags* on your system. 
 
 1. Open the Chrome browser.
-1. Click on the address bar and type `chrome://flags`, then hit the Enter key.
+1. Click on the address bar and type `chrome://flags`, then hit +enter+.
 1. Click on the search bar and type `exo-pointer-lock`.
 1. Click on the drop-down menu next to the *Pointer lock for Linux applications* flag and select **Enabled**
 1. Click on the search bar and type `crostini-gpu-support`.
 1. Click on the drop-down meny next to the *Crostini GPU Support* flag and select **Enabled**
 1. Click on **Relaunch** at the bottom of the Chrome flags window to apply the changes and restart your Chromebook.
+
+![Chrome Flags](assets/images/chrome-flags-dark.png#only-dark)
+![Chrome Flags](assets/images/chrome-flags-light.png#only-light)
 
 
 ## Enabling Linux Development Environment (LDE)

@@ -23,3 +23,10 @@
 
     * Indiana Jone and the Fate of Atlantis
     * ScummVM
+
+!!! Danger "Message of appreciation"
+
+    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+    
+    * GOG for making this game available
+    * ScummVM for ongoing efforts in supporting an excellent engine for adventure games.

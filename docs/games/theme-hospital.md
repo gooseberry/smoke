@@ -22,3 +22,11 @@
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
     
     * CorsixTH
+
+!!! Danger "Message of appreciation"
+
+    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+    
+    * Bullfrog for the vision and creating this game.
+    * GOG for making this game available.
+    * CorsixTH for ongoing efforts in supporting this engine.

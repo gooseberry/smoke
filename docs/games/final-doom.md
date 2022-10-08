@@ -28,3 +28,11 @@
     * Final Doom: TNT Evilution
     * Final Doom: The Plutonia Experiment
     * GZDoom
+
+!!! Danger "Message of appreciation"
+
+    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+    
+    * Id Software for the vision and creating this game.
+    * GOG for making this game available.
+    * GZDoom for ongoing efforts in supporting this excellent port.

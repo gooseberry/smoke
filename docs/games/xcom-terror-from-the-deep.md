@@ -23,5 +23,13 @@
     
     * OpenXcom
 
+!!! Danger "Message of appreciation"
+
+    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+    
+    * MicroProse for the vision and creating this game.
+    * GOG for making this game available.
+    * OpenXcom for ongoing efforts in supporting this engine.
+
 !!! Warning "OpenXcom: switching between games"
     Terror from the Deep and UFO Defense both run off the OpenXcom application.  If both games are installed, you can switch between the two from the **mods** section of the main menu.

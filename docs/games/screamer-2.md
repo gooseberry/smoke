@@ -24,6 +24,15 @@
     * Screamer 2
     * DOS Box
 
+!!! Danger "Message of appreciation"
+
+    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+    
+    * Grafiti for the vision and creating this game.
+    * GOG for making this game available.
+    * DOSBox for ongoing efforts in supporting this excellent port.
+    * The folks at VOGONS for supporting all gamers looking to try Very Old Games On New Systems.
+
 ## Known Issues
 
 ### Glide Support

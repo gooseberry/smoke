@@ -25,6 +25,14 @@
     * Quake: Scourge of Armagon
     * Quake: Dissolution of Eternity
 
+!!! Danger "Message of appreciation"
+
+    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+    
+    * Id Software for the vision and creating this game.
+    * GOG for making this game available.
+    * QuakeSpasm-Spiked for ongoing efforts in supporting this excellent port.
+
 ## Known Issues
 
 This script will extract the Quake music from the included CD images so you can hear the music in the game.  However, I have not yet included specific modifications to support two known problems with the tracks.

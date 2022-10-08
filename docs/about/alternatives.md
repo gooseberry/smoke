@@ -1,6 +1,10 @@
 # Alternatives
 
-There are tons of options and tools to get games running on your Chromebook.  Smoke isn't for everyone and if you're not sure about using this option, this section lists out some other solutions that you can explore before digging in.
+There are tons of options and tools to get games running on your Chromebook.  Smoke isn't for everyone and if you're not sure about using this option, this section lists out some other solutions that you can explore before digging in.  
+
+!!! Tip
+
+    You're not stuck using any one solution.  You can try a combination of one or many of these alternatives to have the best solution that works for you.  All these options below are worth trying out.
 
 ## Lutris
 
@@ -52,7 +56,7 @@ Adamhm is an active user in the GOG.com community who has authored countless [in
 
 ## play.it
 
-[play.it](https://forge.dotslashplay.it/groups/play.it/-/activity) is another great source of scripts to help you get your GOG.com games installed on Linux based systems.  This one works by creating a package installer (.deb) that you can use to install the game through the ChromeOS installer.
+[play.it](https://forge.dotslashplay.it/play.it/scripts) is another great source of scripts to help you get your GOG.com games installed on Linux based systems.  This one works by creating a package installer (.deb) that you can use to install the game through the ChromeOS installer.  This project most closely resembles Smoke in terms of goals and approach.
 
 **Advantages**
 
@@ -65,7 +69,7 @@ Adamhm is an active user in the GOG.com community who has authored countless [in
 
 ## Gamehub
 
-[Gamehub](https://tkashkin.github.io/projects/gamehub/)
+[Gamehub](https://tkashkin.github.io/projects/gamehub/) is another launcher / installer combination program.  This one also includes support for retro-console emulation.  Some forums will report that Gamehub's install scripts don't always work.
 
 ## Manual Installs
 

@@ -52,7 +52,7 @@ Adamhm is an active user in the GOG.com community who has authored countless [in
 
 ## play.it
 
-[play.it](https://forge.dotslashplay.it/groups/play.it/-/activity) is another great source of scripts to help you get your GOG.com games installed on Linux based systems.  This one works by creating a package installer (.deb) that you can use to install the game through the ChromeOS installer.
+[play.it](https://forge.dotslashplay.it/play.it/scripts) is another great source of scripts to help you get your GOG.com games installed on Linux based systems.  This one works by creating a package installer (.deb) that you can use to install the game through the ChromeOS installer.  This project most closely resembles Smoke in terms of goals and approach.
 
 **Advantages**
 

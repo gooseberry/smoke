@@ -17,8 +17,21 @@ theme:
         logo: material/gamepad-variant
         admonition:
             danger: material/heart
-    palette:
-        scheme: slate
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-3
+        name: Switch to light mode
+
 
     # Features
     features:

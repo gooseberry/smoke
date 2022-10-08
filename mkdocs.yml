@@ -1,5 +1,44 @@
+# Site Information
 site_name: Smoke
 site_url: https://gooseberry.github.io/smoke/
+site_author: Eric Desgroseilliers
+
+#  Repository
+repo_name: gooseberry/smoke
+repo_url: https://github.com/gooseberry/smoke
+
+# Copyright
+copyright: Copyright &copy: 2022 Eric Desgroseilliers
+
+# Configuration
+theme:
+    name: material
+    icon: 
+        logo: material/gamepad-variant
+    palette:
+        scheme: slate
+
+    # Features
+    features:
+        - navigation.instant
+        - navigation.tracking
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - navigation.tops
+
+# Extensions
+markdown_extensions:
+    - admonition
+    - wikilinks
+    - attr_list
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+        alternate_style: true 
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# Page tree
 nav:
     - Getting Started: "getting-started.md"
     - Supported Games:
@@ -23,18 +62,3 @@ nav:
         - The Ultimate Doom: "games/doom.md"
         - XCOM UFO Defense: "games/xcom-ufo-defense.md"
         - XCOM Terror from the Deep: "games/xcom-terror-from-the-deep.md"
-
-theme:
-    name: material
-    palette:
-        scheme: slate
-markdown_extensions:
-    - admonition
-    - wikilinks
-    - attr_list
-    - pymdownx.superfences
-    - pymdownx.tabbed:
-        alternate_style: true 
-    - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg

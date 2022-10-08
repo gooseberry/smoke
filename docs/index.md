@@ -9,4 +9,4 @@ Install games from your [GOG.com](https://www.gog.com) collection in minutes wit
 * **No Launcher Software**.  Install the game and play the game.  All the supported games will show up in the built-in Chrome App launcher, there is no additional software that tries to manage your library for you.
 * **Optimized Versions**.  When available, a more recent open-source port of the game engine will be installed to replace the old engine for improved user experience.
 
-[Get Started](getting-started.md){ .md-button .md-button--primary }
+[Get Started](getting-started.md){ .md-button .md-button--primary }  [Learn more](about/about.md){ .md-button }

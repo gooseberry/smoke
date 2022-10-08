@@ -2,7 +2,7 @@
 
 !!! Quote ""
 
-    The Dig is a brilliant experience that dives us masterfully in a strange, but beautiful alien world, full of secrets and surprises.  The game with such an amazing soundtrack that it was released on CD and is available in record stores as we speak.  The Dig is a masterpiece in gaming, and a work of art.*
+    The Dig is a brilliant experience that dives us masterfully in a strange, but beautiful alien world, full of secrets and surprises.  The game with such an amazing soundtrack that it was released on CD and is available in record stores as we speak.  The Dig is a masterpiece in gaming, and a work of art.
 
 | GOG Store Page | [The Dig](https://www.gog.com/game/the_dig) |
 |--:|:--|

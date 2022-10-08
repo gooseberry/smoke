@@ -12,14 +12,15 @@ GOG holds a special place for this project as they have been leading the effort 
 
 Ports, Emulators, and reverse-engineering efforts throughout the community are the foundation that make mosts of these games playable today.  A special nod to the passion and dedication of the folks behind these projects that make these games enjoyable on modern systems.  Far from being complete, this short list of open-source projects are the backbone of the Smoke install process.
 
-* CorsixTH
-* DOSBox
-* DXX-Rebirth
-* GZDoom
-* OpenXcom
-* ScummVM
-* QuakeSpasm-Spiked
-* Yamagi-Quake2
+* [Ansible](https://docs.ansible.com/ansible/latest/index.html)
+* [CorsixTH](https://corsixth.com/)
+* [DOSBox](https://www.dosbox.com/)
+* [DXX-Rebirth](https://www.dxx-rebirth.com/)
+* [GZDoom](https://zdoom.org/index)
+* [OpenXcom](https://openxcom.org/)
+* [ScummVM](https://www.scummvm.org/)
+* [QuakeSpasm-Spiked](https://fte.triptohell.info/moodles/qss/)
+* [Yamagi-Quake2](https://www.yamagi.org/quake2/)
 
 ## Online Communities
 

@@ -1,6 +1,6 @@
 ---
-# Arcane Dimensions role task
-# This collection of tasks will install and configure Arcane Dimensions
+# Alkaline role task
+# This collection of tasks will install and configure Alkaline
 # mod for Quake to run with the open-source engine Quakespasm-Spiked.
 
 - name: Install Quake
@@ -12,12 +12,12 @@
       name: install
       tasks_from: create_directories
 
-- name: Download Arcane Dimensions mod
+- name: Download Alkaline mod
   ansible.builtin.unarchive:
       src: "{{ mod_url }}"
-      dest: "{{ base_dir }}/ad/"
+      dest: "{{ base_dir }}"
       remote_src: yes
-      creates: "{{ base_dir }}/ad/pak0.pak"
+      creates: "{{ base_dir }}/qbj/pak0.pak"
 
 - name: Configure shortcuts to launch game from ChromeOS app menu
   block:
@@ -27,7 +27,7 @@
           src: "{{ item.src }}"
           dest: "{{ item.dest }}"
       loop:
-          - { src: ad.desktop.j2, dest: "{{ app_dir }}/ad.desktop" }
+          - { src: qbj.desktop.j2, dest: "{{ app_dir }}/qbj.desktop" }
       loop_control:
           label: "{{ item.dest }}"
 
@@ -36,4 +36,4 @@
           src: config.cfg.j2
           dest: "{{ item }}"
       with_items:
-          - "{{ base_dir }}/ad/config.cfg"
+          - "{{ base_dir }}/qbj/config.cfg"

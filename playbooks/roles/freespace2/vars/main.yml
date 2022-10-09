@@ -9,7 +9,7 @@
 #   - type:         Required    acceptable values: mojosetup, innosetup
 installer: { 
     path: "{{ home }}/setup_freespace_2_1.20_v2_(33372).exe",
-    convert_filename_lowercase: True,
+    convert_filename_lowercase: False,
     type: innosetup
     }
 
@@ -26,15 +26,8 @@ base_dir: "{{ home }}/.freespace2"
 #       - /first/path
 #       - /second/path
 directories:
-    - "{{ base_dir }}/geodata"
-    - "{{ base_dir }}/geograph"
-    - "{{ base_dir }}/maps"
-    - "{{ base_dir }}/routes"
-    - "{{ base_dir }}/sound"
-    - "{{ base_dir }}/terrain"
-    - "{{ base_dir }}/ufograph"
-    - "{{ base_dir }}/ufointro"
-    - "{{ base_dir }}/units"
+    - "{{ base_dir }}/FS2/data/movies"
+    - "{{ base_dir }}/FS2/data/players"
 
 # Install record
 # If this file exists, the installer will skip extracting the game content
@@ -43,12 +36,15 @@ install_record: "{{ smoke_config_dir }}/freespace2"
 # Game files list with source and destination
 # Note {{ tmp_dir.path }} must be prefixed to the src location
 game_files:
-  - { src: "geodata/", dest: "{{ base_dir }}/geodata/" }
-  - { src: "geograph/", dest: "{{ base_dir }}/geograph/" }
-  - { src: "maps/", dest: "{{ base_dir }}/maps/" }
-  - { src: "routes/", dest: "{{ base_dir }}/routes/" }
-  - { src: "sound/", dest: "{{ base_dir }}/sound/" }
-  - { src: "terrain/", dest: "{{ base_dir }}/terrain/" }
+  - { src: "Root_fs2.vp", dest: "{{ base_dir }}/FS2/Root_fs2.vp" }
+  - { src: "smarty_fs2.vp", dest: "{{ base_dir }}/FS2/smarty_fs2.vp" }
+  - { src: "sparky_fs2.vp", dest: "{{ base_dir }}/FS2/sparky_fs2.vp" }
+  - { src: "sparky_hi_fs2.vp", dest: "{{ base_dir }}/FS2/sparky_hi_fs2.vp/" }
+  - { src: "stu_fs2.vp", dest: "{{ base_dir }}/FS2/stu_fs2.vp" }
+  - { src: "tango1_fs2.vp", dest: "{{ base_dir }}/FS2/tango1_fs2.vp" }
+  - { src: "tango2_fs2.vp", dest: "{{ base_dir }}/FS2/tango2_fs2.vp" }
+  - { src: "tango3_fs2.vp", dest: "{{ base_dir }}/FS2/tango3_fs2.vp" }
+  - { src: "warble_fs2.vp", dest: "{{ base_dir }}/FS2/warble_fs2.vp" }
   - { src: "ufograph/", dest: "{{ base_dir }}/ufograph/" }
   - { src: "ufointro/", dest: "{{ base_dir }}/ufointro/" }
   - { src: "units/", dest: "{{ base_dir }}/units/" }

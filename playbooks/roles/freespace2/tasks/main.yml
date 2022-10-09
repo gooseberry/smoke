@@ -1,0 +1,12 @@
+---
+# FreeSpace 2 role task
+# This collection of tasks will install and configure Freespace 2 
+# to run with the open-source project FSO
+
+- name: Install FreeSpace Open (FSO)
+  ansible.builtin.import_role:
+      name: freespace_open
+
+#- name: Installing...
+#  ansible.builtin.include_role:
+#      name: install

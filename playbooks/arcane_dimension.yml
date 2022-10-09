@@ -1,0 +1,8 @@
+---
+# Starting playbook to install Quake mod Arcane Dimensions
+
+- name: Quake - Arcane Dimensions
+  hosts: all
+
+  roles:
+      - arcane_dimensions

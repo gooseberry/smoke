@@ -71,6 +71,8 @@ nav:
         - Indiana Jones and the Fate of Atlantis: "games/atlantis.md"
         - The Original Strife - Veteran Edition: "games/strife.md"
         - Quake: "games/quake.md"
+            - mods:
+                - Arcane Dimensions: "games/arcane-dimensions.md"
         - Quake 2: "games/quake-2.md"
         - Sam & Max Hit the Road: "games/sam-max.md"
         - Screamer 2: "games/screamer-2.md"

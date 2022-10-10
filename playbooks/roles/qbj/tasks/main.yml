@@ -12,7 +12,7 @@
       name: install
       tasks_from: create_directories
 
-- name: Download Alkaline mod
+- name: Download Quake Brutalist Jam mod
   ansible.builtin.unarchive:
       src: "{{ mod_url }}"
       dest: "{{ base_dir }}"

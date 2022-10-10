@@ -1,0 +1,39 @@
+---
+# Alkaline role task
+# This collection of tasks will install and configure Alkaline
+# mod for Quake to run with the open-source engine Quakespasm-Spiked.
+
+- name: Install Quake
+  ansible.builtin.import_role:
+      name: quake
+
+- name: Create directories tree (from install)
+  ansible.builtin.include_role:
+      name: install
+      tasks_from: create_directories
+
+- name: Download Quake Brutalist Jam mod
+  ansible.builtin.unarchive:
+      src: "{{ mod_url }}"
+      dest: "{{ base_dir }}"
+      remote_src: yes
+      creates: "{{ base_dir }}/qbj/pak0.pak"
+
+- name: Configure shortcuts to launch game from ChromeOS app menu
+  block:
+
+    - name: Create Desktop entries
+      ansible.builtin.template:
+          src: "{{ item.src }}"
+          dest: "{{ item.dest }}"
+      loop:
+          - { src: qbj.desktop.j2, dest: "{{ app_dir }}/qbj.desktop" }
+      loop_control:
+          label: "{{ item.dest }}"
+
+    - name: Deploy config.cfg files
+      ansible.builtin.template:
+          src: config.cfg.j2
+          dest: "{{ item }}"
+      with_items:
+          - "{{ base_dir }}/qbj/config.cfg"

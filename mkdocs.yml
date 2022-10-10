@@ -82,9 +82,9 @@ nav:
         - XCOM Terror from the Deep: "games/xcom-terror-from-the-deep.md"
     - Mods:
         - Quake:
-            - Arcane Dimensions: "mods/arcane-dimensions.md"
             - Alkaline: "mods/alkaline.md"
-            - Quake Brutalist Jam: "mods/quake-burtalist-jam.md"
+            - Arcane Dimensions: "mods/arcane-dimensions.md"
+            - Quake Brutalist Jam: "mods/quake-brutalist-jam.md"
     - About:
         - About: "about/about.md"
         - Philosophy: "about/philosophy.md"

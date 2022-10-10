@@ -1,21 +1,22 @@
-# Quake
+# Alkaline
 
 !!! Warning "Installing this mod will attempt to install [Quake](quake.md) onto your system if it is not already present."
 
 !!! Quote ""
 
-    The most ambitious Quake map mod in existance.  Arcane Dimensions features the largest maps you will find running on the Quake ports, so large in fact that modifications to the Quake engines had to be implemented to fit some of these maps.  Filled with nearly as many secrets as monsters, this mod encourages exploration as much as the fast paced action.
+    Presented as *The ultimate Base mod for Quake  ..for now*, Alkaline does not disappoint.  The mod is filled with new and old enemies and new weapons with which to take them on.  This mod is not one to miss.
 
-| Mod Info Page | [Quaddicted](https://www.quaddicted.com/reviews/ad_v1_80p1final.html) |
+| Official Page | [Alkaline](https://alkalinequake.wordpress.com/) |
 |--:|:--|
-| **Alternative Site** | **[ModDB](https://www.moddb.com/mods/arcane-dimensions)** |
+| **Quaddicted Page** | **[Quaddicted](https://www.quaddicted.com/reviews/alkaline1.1.html)** |
+| **Alternative Page** | **[Slipseer](https://www.slipseer.com/index.php?resources/alkaline.62/)**
 | **Game** | **[Quake](quake.md)** |
 
 ## Installing Game
 1. Open the Terminal App on your Chromebook.
 1. Paste the following lines into the terminal.
 
-        cd ~/git/smoke/playbooks && ansible-playbook arcane_dimensions.yml
+        cd ~/git/smoke/playbooks && ansible-playbook alkaline.yml
 
 !!! Info
 
@@ -25,13 +26,14 @@
 
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
     
-    * Arcane Dimensions
+    * Alkaline
 
 !!! Danger "Thank you"
 
     Suppport for this mod is made possible thanks to the help of many people.  Special credit goes out to the following:
     
     * Id Software for the vision and creating Quake.
-    * The enormous team of modders behind this [mod](https://www.quaddicted.com/reviews/ad_v1_80p1final.html) 
+    * All the [contributors](https://alkalinequake.wordpress.com/contributors/) from this mod.  Amazing work.
     * The team behind [Quaddicted](https://www.quaddicted.com)
+    * The team behind [Slipgate Sightseer](https://www.slipseer.com/index.php)
 

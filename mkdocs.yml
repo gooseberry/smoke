@@ -71,10 +71,6 @@ nav:
         - Indiana Jones and the Fate of Atlantis: "games/atlantis.md"
         - The Original Strife - Veteran Edition: "games/strife.md"
         - Quake: "games/quake.md"
-            - mods:
-                - Arcane Dimensions: "games/arcane-dimensions.md"
-                - Alkaline: "games/alkaline.md"
-                - Quake Brutalist Jam: "games/quake-burtalist-jam.md"
         - Quake 2: "games/quake-2.md"
         - Sam & Max Hit the Road: "games/sam-max.md"
         - Screamer 2: "games/screamer-2.md"
@@ -84,6 +80,11 @@ nav:
         - The Ultimate Doom: "games/doom.md"
         - XCOM UFO Defense: "games/xcom-ufo-defense.md"
         - XCOM Terror from the Deep: "games/xcom-terror-from-the-deep.md"
+    -Mods:
+        -Quake:
+            - Arcane Dimensions: "mods/arcane-dimensions.md"
+            - Alkaline: "mods/alkaline.md"
+            - Quake Brutalist Jam: "mods/quake-burtalist-jam.md"
     - About:
         - About: "about/about.md"
         - Philosophy: "about/philosophy.md"

@@ -31,9 +31,9 @@
       - name: Download FreeSpaceOpen AppImage
         ansible.builtin.unarchive:
             src: "{{ freespace_open_url }}"
-            dest: "{{ base_dir }}/bin"
+            dest: "{{ base_dir }}"
             mode: "0755"
             remote_src: yes
-            creates: "{{ base_dir}}/bin/{{ freespace_open_appImage }}"
+            creates: "{{ base_dir}}/{{ freespace_open_appImage }}"
 
 

@@ -2,12 +2,12 @@
 # Variables for the openxcom appimage installer
 
 # OpenXcom base directories
-base_dir: "{{ home }}/.freespace2"
+base_dir: "{{ home }}/.local/fs2_open"
 
 # Directories needed for openxcom games
 directories:
     - "{{ home }}/.local/share/appimagekit"
-    - "{{ base_dir }}/bin"
+    - "{{ base_dir }}"
     - "{{ icon_dir }}"
     - "{{ app_dir }}"
 

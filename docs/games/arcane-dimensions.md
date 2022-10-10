@@ -1,4 +1,4 @@
-# Quake
+# Arcane Dimensions
 
 !!! Warning "Installing this mod will attempt to install [Quake](quake.md) onto your system if it is not already present."
 

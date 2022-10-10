@@ -1,0 +1,8 @@
+---
+# Starting playbook to install Quake mod Quake Brutalist Jam
+
+- name: Quake - Quake Brutalist Jam
+  hosts: all
+
+  roles:
+      - qbj

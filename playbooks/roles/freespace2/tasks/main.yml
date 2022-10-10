@@ -10,3 +10,8 @@
 - name: Installing...
   ansible.builtin.include_role:
       name: install
+
+- name: Create Desktop Entry
+  ansible.builtin.template:
+      src: freespace2.desktop.j2
+      dest: "{{ app_dir }}/freespace2.desktop"

@@ -1,42 +1,37 @@
 # Quake
 
+!!! Warning "Installing this mod will attempt to install [Quake](quake.md) onto your system if it is not already present."
+
 !!! Quote ""
 
-    ID software's followup to the Doom series.  Quake set the new standard for first person shooters introducing fully 3D environments.  With tight controls, an endless supply of monsters to shoot down, and an atmospheric soundtrack from Nine Inch Nails, Quake is the pinnacle of FPS games from the 1990s.
+    The most ambitious Quake map mod in existance.  Arcane Dimensions features the largest maps you will find running on the Quake ports, so large in fact that modifications to the Quake engines had to be implemented to fit some of these maps.  Filled with nearly as many secrets as monsters, this mod encourages exploration as much as the fast paced action.
 
-| GOG Store Page | [Quake](https://www.gog.com/game/quake_the_offering) |
+| Mod Info Page | [Quaddicted](https://www.quaddicted.com/reviews/ad_v1_80p1final.html) |
 |--:|:--|
-| **Game Engine** | **[QuakeSpasm-Spiked](https://triptohell.info/moodles/qss/)** |
-| **Supported Installer** | **setup_quake_the_offering_2.0.0.6.exe** |
-| **Installer System** | **Windows** |
+| **Alternative Site** | **[ModDB](https://www.moddb.com/mods/arcane-dimensions)** |
+| **Game** | **[Quake](quake.md)** |
 
 ## Installing Game
-1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.
 1. Open the Terminal App on your Chromebook.
 1. Paste the following lines into the terminal.
 
-        cd ~/git/smoke/playbooks && ansible-playbook quake.yml
+        cd ~/git/smoke/playbooks && ansible-playbook arcane_dimensions.yml
+
+!!! Info
+
+    You don't need to download the mod manually, the scripts will fetch the file from [Quaddicted](https://www.quaddicted.com) automatically.
 
 !!! Note
 
     Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
     
-    * Quake
-    * Quake: Scourge of Armagon
-    * Quake: Dissolution of Eternity
+    * Arcane Dimensions
 
-!!! Danger "Message of appreciation"
+!!! Danger "Thank you"
 
-    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+    Suppport for this mod is made possible thanks to the help of many people.  Special credit goes out to the following:
     
-    * Id Software for the vision and creating this game.
-    * GOG for making this game available.
-    * QuakeSpasm-Spiked for ongoing efforts in supporting this excellent port.
+    * Id Software for the vision and creating Quake.
+    * The enormous team of modders behind this [mod](https://www.quaddicted.com/reviews/ad_v1_80p1final.html) 
+    * The team behind [Quaddicted](https://www.quaddicted.com)
 
-## Known Issues
-
-This script will extract the Quake music from the included CD images so you can hear the music in the game.  However, I have not yet included specific modifications to support two known problems with the tracks.
-
-1. The provided CUE sheets packaged with installer incorrectly lists track times.  see [GOG Forum Discussion <i class="fas fa-external-link-alt"></i>](https://www.gog.com/forum/quake_series/quake_the_offering_incorrect_cue_sheets).  This script does not address this problem at the moment
-
-2. The soundtrack provided with the game is apparently pre-emphasized.  see [GOG Forum Discussion <i class="fas fa-external-link-alt"></i>](https://www.gog.com/forum/quake_series/quake_the_offering_tweak_guide_video_quakespasm_extracting_audio_deemphasising).  This script does not address this problem at the moment.

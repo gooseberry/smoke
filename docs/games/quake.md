@@ -25,7 +25,7 @@
     * Quake: Scourge of Armagon
     * Quake: Dissolution of Eternity
 
-!!! Danger "Message of appreciation"
+!!! Danger "Thank you"
 
     This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
     

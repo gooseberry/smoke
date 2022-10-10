@@ -19,7 +19,7 @@
 
 !!! Info
 
-    You don't need to download the mod manually, the scripts will fetch the file from [Quaddicted](https://www.quaddicted.com) automatically.
+    Smoke will download the mod file from [Quaddicted](https://www.quaddicted.com) automatically.
 
 !!! Note
 

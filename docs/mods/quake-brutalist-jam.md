@@ -8,7 +8,7 @@
 
     A relative new-comer to the world of Quake maps, Quake Brutalist Jam (or QBJ) offers a collection of maps in the style of **brutalist architecture**.  The effects are amazing in the Quake engine.  Although completed in a little over 2 weeks, this mod shows amazing promise for the future of Quake mods.
 
-| Mod Info Page | [Slipgate Sightseer](https://www.slipseer.com/index.php?resources/quake-brutalist-jam.126/)) |
+| Mod Info Page | [Slipgate Sightseer](https://www.slipseer.com/index.php?resources/quake-brutalist-jam.126/) |
 |--:|:--|
 | **Game** | **[Quake](quake.md)** |
 

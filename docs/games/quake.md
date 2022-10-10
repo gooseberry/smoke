@@ -17,13 +17,13 @@
 
         cd ~/git/smoke/playbooks && ansible-playbook quake.yml
 
-!!! Note
+## Playing Game
 
-    Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+Once installed, you can play this game by clicking the game icon on the ChromeOS Launcher.  The following icons are created by this installer in the *Linux apps* folder of the Launcher listed as
     
-    * Quake
-    * Quake: Scourge of Armagon
-    * Quake: Dissolution of Eternity
+* Quake
+* Quake: Scourge of Armagon
+* Quake: Dissolution of Eternity
 
 !!! Danger "Thank you"
 

@@ -1,6 +1,8 @@
 # Quake Brutalist Jam
 
-!!! Warning "Installing this mod will attempt to install [Quake](quake.md) onto your system if it is not already present."
+!!! Warning 
+    
+    This is a mod designed to work with [Quake](quake.md) and will only work if Quake has been installed.  If Quake is not present on your system, this script will attempt to install it.
 
 !!! Quote ""
 
@@ -16,15 +18,13 @@
 
         cd ~/git/smoke/playbooks && ansible-playbook quake_brutalist_jam.yml
 
-!!! Info
+## Playing Game
 
-    Smoke will download the mod file from [Slipgate Sightseer](https://www.slipseer.com/index.php) automatically.
-
-!!! Note
-
-    Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+Once installed, you can play this game by clicking the game icon on the ChromeOS Launcher.  The following icons are created by this installer in the *Linux apps* folder of the Launcher listed as
     
-    * Quake Brutalist Jam
+* Quake Brutalist Jam
+
+
 
 !!! Danger "Thank you"
 

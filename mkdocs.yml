@@ -80,8 +80,8 @@ nav:
         - The Ultimate Doom: "games/doom.md"
         - XCOM UFO Defense: "games/xcom-ufo-defense.md"
         - XCOM Terror from the Deep: "games/xcom-terror-from-the-deep.md"
-    -Mods:
-        -Quake:
+    - Mods:
+        - Quake:
             - Arcane Dimensions: "mods/arcane-dimensions.md"
             - Alkaline: "mods/alkaline.md"
             - Quake Brutalist Jam: "mods/quake-burtalist-jam.md"

@@ -10,6 +10,8 @@
 | **Supported Installer** | **epic_pinball_the_complete_collection_en_1_0_16760.sh** |
 | **Installer System** | **Linux** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

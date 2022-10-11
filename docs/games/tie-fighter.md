@@ -14,6 +14,8 @@
 
     This script was only tested against the 1995 Collector's CD-ROM Edition.  The 1994 edition and the 1998 edition will not work.
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

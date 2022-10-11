@@ -10,6 +10,8 @@
 | **Supported Installer** | **indiana_jones_and_the_fate_of_atlantis_en_gog_2_20145.sh** |
 | **Installer System** | **Linux** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

@@ -10,6 +10,8 @@
 | **Supported Installer** | **setup_the_ultimate_doom_1.9_(28044).exe** |
 | **Installer System** | **Windows** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

@@ -10,6 +10,8 @@
 | **Supported Installer** | **gog_torchlight_2_2.0.0.2.sh** |
 | **Installer System** | **Linux** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

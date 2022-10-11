@@ -10,6 +10,8 @@
 | **Supported Installer** | **setup_heretic_shadow_of_the_serpent_riders_1.3_(42801).exe** |
 | **Installer System** | **Windows** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

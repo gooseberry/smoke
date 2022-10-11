@@ -10,6 +10,8 @@
 | **Supported Installer** | **setup_freespace_2_1.20_v2_(33372).exe** |
 | **Installer System** | **Windows** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

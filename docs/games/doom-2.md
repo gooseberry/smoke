@@ -10,6 +10,8 @@
 | **Supported Installer** | **setup_doom_ii_with_master_levels_1.9_(28044).exe** |
 | **Installer System** | **Windows** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

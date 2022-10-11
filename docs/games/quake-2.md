@@ -10,6 +10,8 @@
 | **Supported Installer** | **setup_quake2_quad_damage_2.0.0.3.exe** |
 | **Installer System** | **Windows** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

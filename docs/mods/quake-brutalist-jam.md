@@ -1,9 +1,5 @@
 # Quake Brutalist Jam
 
-!!! Warning 
-    
-    This is a mod designed to work with [Quake](quake.md) and will only work if Quake has been installed.  If Quake is not present on your system, this script will attempt to install it.
-
 !!! Quote ""
 
     A relative new-comer to the world of Quake maps, Quake Brutalist Jam (or QBJ) offers a collection of maps in the style of **brutalist architecture**.  The effects are amazing in the Quake engine.  Although completed in a little over 2 weeks, this mod shows amazing promise for the future of Quake mods.
@@ -13,6 +9,11 @@
 | **Game** | **[Quake](quake.md)** |
 
 ## Installing Game
+
+!!! Warning 
+    
+    This is a mod designed to work with [Quake](quake.md).  If Quake is not present on your system, this script will attempt to install it.
+
 1. Open the Terminal App on your Chromebook.
 1. Paste the following lines into the terminal.
 

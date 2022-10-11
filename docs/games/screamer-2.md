@@ -11,18 +11,19 @@
 | **Installer System** | **Windows** |
 
 ## Installing Game
+
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.
 1. Open the Terminal App on your Chromebook.
 1. Paste the following lines into the terminal.
 
         cd ~/git/smoke/playbooks && ansible-playbook screamer_2.yml
 
-!!! Note
+## Playing Game
 
-    Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+Once installed, you can play this game by clicking the game icon on the ChromeOS Launcher.  The following icons are created by this installer in the *Linux apps* folder of the Launcher listed as
     
-    * Screamer 2
-    * DOS Box
+* Screamer 2
+* DOS Box
 
 !!! Danger "Message of appreciation"
 

@@ -1,9 +1,5 @@
 # Arcane Dimensions
 
-!!! Warning 
-    
-    This is a mod designed to work with [Quake](quake.md) and will only work if Quake has been installed.  If Quake is not present on your system, this script will attempt to install it.
-
 !!! Quote ""
 
     The most ambitious Quake map mod in existance.  Arcane Dimensions features the largest maps you will find running on the Quake ports, so large in fact that modifications to the Quake engines had to be implemented to fit some of these maps.  Filled with nearly as many secrets as monsters, this mod encourages exploration as much as the fast paced action.
@@ -14,6 +10,11 @@
 | **Game** | **[Quake](quake.md)** |
 
 ## Installing Game
+
+!!! Warning 
+    
+    This is a mod designed to work with [Quake](quake.md).  If Quake is not present on your system, this script will attempt to install it.
+
 1. Open the Terminal App on your Chromebook.
 1. Paste the following lines into the terminal.
 

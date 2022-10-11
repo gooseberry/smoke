@@ -1,12 +1,8 @@
 # Alkaline
 
-!!! Warning 
-    
-    This is a mod designed to work with [Quake](quake.md) and will only work if Quake has been installed.  If Quake is not present on your system, this script will attempt to install it.
-
 !!! Quote ""
 
-    Presented as *The ultimate Base mod for Quake  ..for now*, Alkaline does not disappoint.  The mod is filled with new and old enemies and new weapons with which to take them on.  This mod is not one to miss.
+    Presented as *The ultimate Base mod for Quake  ..for now*, Alkaline does not disappoint.  Large scale maps in industrialized and space environments designed for fast pace action each with plenty of secrets worth exploring.  The mod is filled with new and old enemies and new weapons with which to take them on.
 
 | Official Page | [Alkaline](https://alkalinequake.wordpress.com/) |
 |--:|:--|
@@ -15,6 +11,11 @@
 | **Game** | **[Quake](quake.md)** |
 
 ## Installing Game
+
+!!! Warning 
+    
+    This is a mod designed to work with [Quake](quake.md).  If Quake is not present on your system, this script will attempt to install it.
+
 1. Open the Terminal App on your Chromebook.
 1. Paste the following lines into the terminal.
 

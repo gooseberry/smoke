@@ -55,7 +55,9 @@ markdown_extensions:
         emoji_generator: !!python/name:materialx.emoji.to_svg
     - pymdownx.keys
     - pymdownx.snippets:
-        base_path: ["assets/snippets"]
+        base_path: 
+            - "assets/snippets/"
+            - "../assets/snippets/"
 
 # Page tree
 nav:

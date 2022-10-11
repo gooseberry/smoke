@@ -56,8 +56,9 @@ markdown_extensions:
     - pymdownx.keys
     - pymdownx.snippets:
         base_path: 
-            - "assets/snippets/"
-            - "../assets/snippets/"
+            - "docs/assets/snippets"
+            - "assets/snippets"
+            - "../assets/snippets"
 
 # Page tree
 nav:

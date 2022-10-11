@@ -11,6 +11,8 @@
 | **Supported Installer** | **setup_descent_2_1.1_(16596).exe** |
 | **Installer System** | **Windows** |
 
+--8<-- "../assets/snippets/requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

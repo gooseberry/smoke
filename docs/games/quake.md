@@ -17,15 +17,15 @@
 
         cd ~/git/smoke/playbooks && ansible-playbook quake.yml
 
-!!! Note
+## Playing Game
 
-    Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+Once installed, you can play this game by clicking the game icon on the ChromeOS Launcher.  The following icons are created by this installer in the *Linux apps* folder of the Launcher listed as
     
-    * Quake
-    * Quake: Scourge of Armagon
-    * Quake: Dissolution of Eternity
+* Quake
+* Quake: Scourge of Armagon
+* Quake: Dissolution of Eternity
 
-!!! Danger "Message of appreciation"
+!!! Danger "Thank you"
 
     This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
     
@@ -40,3 +40,11 @@ This script will extract the Quake music from the included CD images so you can 
 1. The provided CUE sheets packaged with installer incorrectly lists track times.  see [GOG Forum Discussion <i class="fas fa-external-link-alt"></i>](https://www.gog.com/forum/quake_series/quake_the_offering_incorrect_cue_sheets).  This script does not address this problem at the moment
 
 2. The soundtrack provided with the game is apparently pre-emphasized.  see [GOG Forum Discussion <i class="fas fa-external-link-alt"></i>](https://www.gog.com/forum/quake_series/quake_the_offering_tweak_guide_video_quakespasm_extracting_audio_deemphasising).  This script does not address this problem at the moment.
+
+## What Now?
+
+Finished the game but want more?  Smoke now supports limited mod installation.  Check out these amazing mods for Quake you can install with Smoke.
+
+* [Alkaline](../mods/alkaline.md)
+* [Arcane Dimensions](../mods/arcane-dimensions.md)
+* [Quake Bruatlist Jam](../mods/quake-brutalist-jam.md)

@@ -1,0 +1,8 @@
+---
+# Starting playbook to install Quake mod Alkaline
+
+- name: Quake - Alkaline
+  hosts: all
+
+  roles:
+      - alkaline

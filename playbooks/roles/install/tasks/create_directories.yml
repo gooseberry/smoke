@@ -19,7 +19,7 @@
 # Use the following format to include this task from another role.
 #
 #   - name: Create directories tree (from install)
-#     ansible.builtin.include_roles:
+#     ansible.builtin.include_role:
 #           name: install
 #           tasks_from: create_directories
 #

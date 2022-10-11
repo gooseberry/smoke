@@ -1,0 +1,8 @@
+---
+# Starting playbook to install FreeSpace 2
+
+- name: Free Space 2 Install
+  hosts: all
+
+  roles:
+      - freespace2

@@ -65,6 +65,7 @@ nav:
         - Doom II: "games/doom-2.md"
         - Epic Pinball: "games/epic-pinball.md"
         - Final Doom: "games/final-doom.md"
+        - Freespace 2: "games/freespace-2.md"
         - Gabriel Knight - Sins of the Fathers: "games/gabriel-knight.md"
         - Heretic - Shadow of the Serpent Riders: "games/heretic.md"
         - Hexen - Beyond Heretic: "games/hexen.md"
@@ -80,6 +81,11 @@ nav:
         - The Ultimate Doom: "games/doom.md"
         - XCOM UFO Defense: "games/xcom-ufo-defense.md"
         - XCOM Terror from the Deep: "games/xcom-terror-from-the-deep.md"
+    - Mods:
+        - Quake:
+            - Alkaline: "mods/alkaline.md"
+            - Arcane Dimensions: "mods/arcane-dimensions.md"
+            - Quake Brutalist Jam: "mods/quake-brutalist-jam.md"
     - About:
         - About: "about/about.md"
         - Philosophy: "about/philosophy.md"

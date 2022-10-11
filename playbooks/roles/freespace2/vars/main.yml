@@ -1,0 +1,67 @@
+# Variables for the FreeSpace 2  installer
+
+# installer
+# parameters:
+#   - path:         Required    full path to the install file.
+#   - sha1sum:      Optional    not used. planned to check file integrity in future
+#   - convert_filename_lowercase: Required  set to true if filenames need to be
+#                                           converted to lowercase.
+#   - type:         Required    acceptable values: mojosetup, innosetup
+installer: { 
+    path: "{{ home }}/setup_freespace_2_1.20_v2_(33372).exe",
+    convert_filename_lowercase: False,
+    type: innosetup
+    }
+
+# List of dependencies needed to run the game.
+# format:
+#   - package1
+#   - package2
+dependencies:
+    - libopenal1
+
+# Game base directory
+# format:
+# #   base_dir: /full/path/to/where/game/files/should/be/installed
+base_dir: "{{ home }}/.FS2"
+
+# List of directories that need to be created on the system.
+# The builtin.copy module will not create directories.  You must list
+# all destination directories here.
+# format:
+#   directories:
+#       - /first/path
+#       - /second/path
+directories:
+    - "{{ base_dir }}/data/movies"
+    - "{{ base_dir }}/data/players"
+
+# Install record
+# If this file exists, the installer will skip extracting the game content
+install_record: "{{ smoke_config_dir }}/freespace2"
+
+# Game files list with source and destination
+# Note {{ tmp_dir.path }} must be prefixed to the src location
+game_files:
+  - { src: "Root_fs2.vp", dest: "{{ base_dir }}/Root_fs2.vp" }
+  - { src: "smarty_fs2.vp", dest: "{{ base_dir }}/smarty_fs2.vp" }
+  - { src: "sparky_fs2.vp", dest: "{{ base_dir }}/sparky_fs2.vp" }
+  - { src: "sparky_hi_fs2.vp", dest: "{{ base_dir }}/sparky_hi_fs2.vp" }
+  - { src: "stu_fs2.vp", dest: "{{ base_dir }}/stu_fs2.vp" }
+  - { src: "tango1_fs2.vp", dest: "{{ base_dir }}/tango1_fs2.vp" }
+  - { src: "tango2_fs2.vp", dest: "{{ base_dir }}/tango2_fs2.vp" }
+  - { src: "tango3_fs2.vp", dest: "{{ base_dir }}/tango3_fs2.vp" }
+  - { src: "warble_fs2.vp", dest: "{{ base_dir }}/warble_fs2.vp" }
+  - { src: "data/players/hud_1.hcf", dest: "{{ base_dir }}/data/players/hud_1.hcf" }
+  - { src: "data/players/hud_2.hcf", dest: "{{ base_dir }}/data/players/hud_2.hcf" }
+  - { src: "data/players/hud_3.hcf", dest: "{{ base_dir }}/data/players/hud_3.hcf" }
+  - { src: "data2/COLOSSUS.MVE", dest: "{{ base_dir }}/data/movies/colossus.mve" }
+  - { src: "data2/INTRO.MVE", dest: "{{ base_dir }}/data/movies/intro.mve" }
+  - { src: "data2/MONO1.MVE", dest: "{{ base_dir }}/data/movies/mono1.mve" }
+  - { src: "data3/MONO2.MVE", dest: "{{ base_dir }}/data/movies/mono2.mve" }
+  - { src: "data3/MONO3.MVE", dest: "{{ base_dir }}/data/movies/mono3.mve" }
+  - { src: "data3/MONO4.MVE", dest: "{{ base_dir }}/data/movies/mono4.mve" }
+  - { src: "data3/BASTION.MVE", dest: "{{ base_dir }}/data/movies/bastion.mve" }
+  - { src: "data3/ENDPART1.MVE", dest: "{{ base_dir }}/data/movies/endpart1.mve" }
+  - { src: "data3/ENDPRT2A.MVE", dest: "{{ base_dir }}/data/movies/endprt2a.mve" }
+  - { src: "data3/ENDPRT2B.MVE", dest: "{{ base_dir }}/data/movies/endprt2b.mve" }

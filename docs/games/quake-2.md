@@ -17,13 +17,13 @@
 
         cd ~/git/smoke/playbooks && ansible-playbook quake2.yml
 
-!!! Note
+## Playing Game
 
-    Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+Once installed, you can play this game by clicking the game icon on the ChromeOS Launcher.  The following icons are created by this installer in the *Linux apps* folder of the Launcher listed as
     
-    * Quake 2
-    * Quake 2: The Reckoning
-    * Quake 2: Ground Zero
+* Quake 2
+* Quake 2: The Reckoning
+* Quake 2: Ground Zero
 
 !!! Danger "Message of appreciation"
 

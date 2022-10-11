@@ -30,10 +30,6 @@
     
 * OpenXcom
 
-!!! Info "OpenXcom: switching between games"
-
-    Terror from the Deep and UFO Defense both run off the OpenXcom application.  If both games are installed, you can switch between the two from the **mods** section of the main menu.
-
 --8<-- "thank-you.md"
     
     * MicroProse for the vision and creating this game.

@@ -11,7 +11,7 @@
 | **Supported Installer** | **setup_descent_2_1.1_(16596).exe** |
 | **Installer System** | **Windows** |
 
---8<-- "../assets/snippets/requirements.md"
+--8<-- "requirements.md"
 
 ## Installing Game
 

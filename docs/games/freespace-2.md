@@ -2,12 +2,12 @@
 
 !!! Quote ""
 
-    ID software's followup to the Doom series.  Quake set the new standard for first person shooters introducing fully 3D environments.  With tight controls, an endless supply of monsters to shoot down, and an atmospheric soundtrack from Nine Inch Nails, Quake is the pinnacle of FPS games from the 1990s.
+    One of the most solid space fighter simulation game ever made.  Freespace 2 is a culmination of all that was great about the space sims of the 90s with a complex ship mechanics system which uses nearly every key on the keyboard and a gripping and well paced story told throug mission briefings and in game chatter.
 
-| GOG Store Page | [Quake](https://www.gog.com/game/quake_the_offering) |
+| GOG Store Page | [Freespace 2](https://www.gog.com/en/game/freespace_2) |
 |--:|:--|
-| **Game Engine** | **[QuakeSpasm-Spiked](https://triptohell.info/moodles/qss/)** |
-| **Supported Installer** | **setup_quake_the_offering_2.0.0.6.exe** |
+| **Game Engine** | **[FS2Open Source Code Project](https://github.com/scp-fs2open/fs2open.github.com/wiki)** |
+| **Supported Installer** | **setup_freespace_2_1.20_v2_(33372).exe** |
 | **Installer System** | **Windows** |
 
 ## Installing Game
@@ -21,30 +21,13 @@
 
 Once installed, you can play this game by clicking the game icon on the ChromeOS Launcher.  The following icons are created by this installer in the *Linux apps* folder of the Launcher listed as
     
-* Quake
-* Quake: Scourge of Armagon
-* Quake: Dissolution of Eternity
+* Freespace 2
 
 !!! Danger "Thank you"
 
     This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
     
-    * Id Software for the vision and creating this game.
+    * Volition for the vision and creating this game.
     * GOG for making this game available.
-    * QuakeSpasm-Spiked for ongoing efforts in supporting this excellent port.
-
-## Known Issues
-
-This script will extract the Quake music from the included CD images so you can hear the music in the game.  However, I have not yet included specific modifications to support two known problems with the tracks.
-
-1. The provided CUE sheets packaged with installer incorrectly lists track times.  see [GOG Forum Discussion <i class="fas fa-external-link-alt"></i>](https://www.gog.com/forum/quake_series/quake_the_offering_incorrect_cue_sheets).  This script does not address this problem at the moment
-
-2. The soundtrack provided with the game is apparently pre-emphasized.  see [GOG Forum Discussion <i class="fas fa-external-link-alt"></i>](https://www.gog.com/forum/quake_series/quake_the_offering_tweak_guide_video_quakespasm_extracting_audio_deemphasising).  This script does not address this problem at the moment.
-
-## What Now?
-
-Finished the game but want more?  Smoke now supports limited mod installation.  Check out these amazing mods for Quake you can install with Smoke.
-
-* [Alkaline](../mods/alkaline.md)
-* [Arcane Dimensions](../mods/arcane-dimensions.md)
-* [Quake Bruatlist Jam](../mods/quake-brutalist-jam.md)
+    * FS2Open Source Code Project for ongoing efforts in supporting this excellent port.
+    * All the people at [Hard Light Productions](https://www.hard-light.net/) for all the support to gamers.

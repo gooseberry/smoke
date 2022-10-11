@@ -10,25 +10,23 @@
 | **Supported Installer** | **setup_freespace_2_1.20_v2_(33372).exe** |
 | **Installer System** | **Windows** |
 
+## Requirements
+
 --8<-- "requirements.md"
 
 ## Installing Game
 
-1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.
-1. Open the Terminal App on your Chromebook.
-1. Paste the following lines into the terminal.
+--8<-- "install-game-instructions.md"
 
         cd ~/git/smoke/playbooks && ansible-playbook freespace2.yml
 
 ## Playing Game
 
-Once installed, you can play this game by clicking the game icon on the ChromeOS Launcher.  The following icons are created by this installer in the *Linux apps* folder of the Launcher listed as
+--8<-- "playing-game.md"
     
 * Freespace 2
 
-!!! Danger "Thank you"
-
-    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+--8<-- "thank-you.md"
     
     * Volition for the vision and creating this game.
     * GOG for making this game available.

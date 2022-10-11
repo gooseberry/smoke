@@ -10,26 +10,24 @@
 | **Supported Installer** | **epic_pinball_the_complete_collection_en_1_0_16760.sh** |
 | **Installer System** | **Linux** |
 
+## Requirements
+
 --8<-- "requirements.md"
 
 ## Installing Game
 
-1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.
-1. Open the Terminal App on your Chromebook.
-1. Paste the following lines into the terminal.
+--8<-- "install-game-instructions.md"
 
         cd ~/git/smoke/playbooks && ansible-playbook epic_pinball.yml
 
 ## Playing Game
 
-Once installed, you can play this game by clicking the game icon on the ChromeOS Launcher.  The following icons are created by this installer in the *Linux apps* folder of the Launcher listed as
+--8<-- "playing-game.md"
     
 * Epic Pinball
 * DOS Box
 
-!!! Danger "Message of appreciation"
-
-    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+--8<-- "thank-you.md"
     
     * Epic Games for the vision and creating this game.
     * GOG for making this game available.

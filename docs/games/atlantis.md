@@ -10,26 +10,24 @@
 | **Supported Installer** | **indiana_jones_and_the_fate_of_atlantis_en_gog_2_20145.sh** |
 | **Installer System** | **Linux** |
 
+## Requirements
+
 --8<-- "requirements.md"
 
 ## Installing Game
 
-1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.
-1. Open the Terminal App on your Chromebook.
-1. Paste the following lines into the terminal.
+--8<-- "install-game-instructions.md"
 
         cd ~/git/smoke/playbooks && ansible-playbook atlantis.yml
 
 ## Playing Game
 
-Once installed, you can play this game by clicking the game icon on the ChromeOS Launcher.  The following icons are created by this installer in the *Linux apps* folder of the Launcher listed as
+--8<-- "playing-game.md"
 
 * Indiana Jone and the Fate of Atlantis
 * ScummVM
 
-!!! Danger "Message of appreciation"
-
-    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+--8<-- "thank-you.md"
     
     * Lucasarts for the vision and creating this game.
     * GOG for making this game available.

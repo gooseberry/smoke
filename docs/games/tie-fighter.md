@@ -10,30 +10,28 @@
 | **Supported Installer** | **gog_star_wars_tie_fighter_special_edition_2.1.0.3.sh** |
 | **Installer System** | **Linux** |
 
-!!! Warning "STAR WARS: Tie Fighter Collector's CD (1995)"
-
-    This script was only tested against the 1995 Collector's CD-ROM Edition.  The 1994 edition and the 1998 edition will not work.
+## Requirements
 
 --8<-- "requirements.md"
 
 ## Installing Game
 
-1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.
-1. Open the Terminal App on your Chromebook.
-1. Paste the following lines into the terminal.
+!!! Info
+
+    This script was only tested against the 1995 Collector's CD-ROM Edition.  The 1994 edition and the 1998 edition will not work.
+
+--8<-- "install-game-instructions.md"
 
         cd ~/git/smoke/playbooks && ansible-playbook tie_fighter.yml
 
 ## Playing Game
 
-Once installed, you can play this game by clicking the game icon on the ChromeOS Launcher.  The following icons are created by this installer in the *Linux apps* folder of the Launcher listed as
+--8<-- "playing-game.md"
     
 * Tie Fighter
 * DOS Box
 
-!!! Danger "Message of appreciation"
-
-    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+--8<-- "thank-you.md"
     
     * Lucasarts for the vision and creating this game.
     * GOG for making this game available.

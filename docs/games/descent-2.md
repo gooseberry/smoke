@@ -11,6 +11,8 @@
 | **Supported Installer** | **setup_descent_2_1.1_(16596).exe** |
 | **Installer System** | **Windows** |
 
+## Requirements
+
 --8<-- "requirements.md"
 
 ## Installing Game
@@ -25,9 +27,7 @@
     
 * Descent 2
 
-!!! Danger "Message of appreciation"
-
-    This game installer is made possible thanks to the help of many people.  Special credit goes out to the following:
+--8<-- "thank-you.md"
     
     * Parallax Software for the vision and creating this game.
     * GOG for making this game available.

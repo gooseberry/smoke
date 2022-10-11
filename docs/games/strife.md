@@ -10,6 +10,8 @@
 | **Supported Installer** | **the_original_strife_veteran_edition_1_1_1_43197.sh** |
 | **Installer System** | **Linux** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

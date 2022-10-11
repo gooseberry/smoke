@@ -10,6 +10,10 @@
 | **Alternative Page** | **[Slipseer](https://www.slipseer.com/index.php?resources/alkaline.62/)**
 | **Game** | **[Quake](quake.md)** |
 
+--8<-- "requirements.md"
+
+--8<-- "quake-mod.md"
+
 ## Installing Game
 
 !!! Warning 

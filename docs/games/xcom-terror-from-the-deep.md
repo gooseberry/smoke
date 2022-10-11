@@ -10,6 +10,8 @@
 | **Supported Installer** | **setup_x-com_ufo_defense_1.2_(28046).exe** |
 | **Installer System** | **Windows** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

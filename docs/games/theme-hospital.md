@@ -10,6 +10,8 @@
 | **Supported Installer** | **setup_theme_hospital_v3_(28027).exe** |
 | **Installer System** | **Windows** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

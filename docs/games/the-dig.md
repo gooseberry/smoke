@@ -10,6 +10,8 @@
 | **Supported Installer** | **the_dig_en_gog_2_20100.sh** |
 | **Installer System** | **Linux** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.

@@ -12,6 +12,8 @@
 | **Supported Installer** | **setup_hexen_beyond_heretic_1.1_(42801).exe** |
 | **Installer System** | **Windows** |
 
+--8<-- "requirements.md"
+
 ## Installing Game
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.
 1. Open the Terminal App on your Chromebook.

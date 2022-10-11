@@ -19,12 +19,12 @@
 
         cd ~/git/smoke/playbooks && ansible-playbook hexen.yml
 
-!!! Note
+## Playing Game
 
-    Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+Once installed, you can play this game by clicking the game icon on the ChromeOS Launcher.  The following icons are created by this installer in the *Linux apps* folder of the Launcher listed as
     
-    * Hexen: Beyond Heretic
-    * GZDoom
+* Hexen: Beyond Heretic
+* GZDoom
 
 !!! Danger "Message of appreciation"
 

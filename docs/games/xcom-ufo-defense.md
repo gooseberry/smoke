@@ -11,15 +11,20 @@
 | **Installer System** |** Windows** |
 
 ## Installing Game
+
 1. Place the **Supported Installer** file in the *Linux files* folder on your Chromebook.
 1. Open the Terminal App on your Chromebook.
 1. Paste the following lines into the terminal.
 
         cd ~/git/smoke/playbooks && ansible-playbook xcom_ufo_defense.yml
 
-!!! Note
+## Playing Game
 
-    Once installed, you will find the following shortcuts in the *Linux apps* folder of the Launcher:
+!!! Info
+
+    Terror from the Deep and UFO Defense both run off the OpenXcom application.  If both games are installed, you can switch between the two from the **mods** section of the main menu.
+
+Once installed, you can play this game by clicking the game icon on the ChromeOS Launcher.  The following icons are created by this installer in the *Linux apps* folder of the Launcher listed as
     
     * OpenXcom
 

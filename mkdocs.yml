@@ -65,6 +65,7 @@ nav:
     - Supported Games:
         - Descent II: "games/descent-2.md"
         - The Dig: "games/the-dig.md"
+        - Doom: "games/doom.md"
         - Doom II: "games/doom-2.md"
         - Epic Pinball: "games/epic-pinball.md"
         - Final Doom: "games/final-doom.md"
@@ -81,7 +82,6 @@ nav:
         - Theme Hospital: "games/theme-hospital.md"
         - Tie Fighter: "games/tie-fighter.md"
         - Torchlight II: "games/torchlight-2.md"
-        - The Ultimate Doom: "games/doom.md"
         - XCOM UFO Defense: "games/xcom-ufo-defense.md"
         - XCOM Terror from the Deep: "games/xcom-terror-from-the-deep.md"
     - Mods:

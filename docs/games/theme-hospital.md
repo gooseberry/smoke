@@ -1,12 +1,18 @@
+[//]: # (Import global reference links)
+--8<-- "reference-links.md"
+
+[//]: # (Set local reference links) 
+[GOG Store Page]: https://www.gog.com/game/theme_hospital "Theme Hospital"
+
 # Theme Hospital
 
 !!! Quote ""
 
     A variation on the business management style game, Theme Hospital put you in charge to building and running a hospital, to hysterical results.  There's strategy involved to running a successful hospital, but the focus here is on having fun.  Tackle the challenges through 12 different hospitals in a game that stands the test of time.
 
-| GOG Store Page | [Theme Hospital](https://www.gog.com/game/theme_hospital) |
+| Game Information | [GOG Store Page][]] |
 |--:|:--|
-| **Game Engine** | **[CorsixTH](https://corsixth.com/)** |
+| **Game Engine** | **[CorsixTH][]** |
 | **Supported Installer** | **setup_theme_hospital_v3_(28027).exe** |
 | **Installer System** | **Windows** |
 

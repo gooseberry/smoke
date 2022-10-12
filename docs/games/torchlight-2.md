@@ -1,10 +1,16 @@
+[//]: # (Import global reference links)
+--8<-- "reference-links.md"
+
+[//]: # (Set local reference links) 
+[GOG Store Page]: https://www.gog.com/en/game/torchlight_ii "Torchlight II"
+
 # Torchlight II
 
 !!! Quote ""
 
     Casual, fun, and addictive. A rewarding game with an endless supply of increasingly powerful loot to deal with increasingly powerful monsters. The game world is beautiful and the leveling system is pefectly matched in this amazing action role playing game created with a timeless yet fresh artstyle.
 
-| GOG Store Page | [Torchlight II](https://www.gog.com/en/game/torchlight_ii) |
+| Game Information | [GOG Store Page][] |
 |--:|:--|
 | **Game Engine** | **Linux Native** |
 | **Supported Installer** | **gog_torchlight_2_2.0.0.2.sh** |

@@ -3,9 +3,6 @@
 
 [//]: # (Set local reference links) 
 [GOG Store Page]: https://www.gog.com/en/game/xcom_terror_from_the_deep "XCOM Terror from the Deep"
-[Game Engine]: [OpenXcom][]
-
-
 
 # XCOM: Terror from the Deep
 
@@ -13,9 +10,9 @@
 
     The sequel to XCOM UFO Defense, XCOM Terror from the deep ramps up the difficulty level to the extreme.  Terror from the Deep adopts the mechanics from the first game and enhances them to offer new challenges with it's own rewards that draws players in.  It's a model that the new releases haven't quite managed to replicate.
 
-| [GOG Store Page][] |  |
+| Game Information | [GOG Store Page][]  |
 |--:|:--|
-| **[Game Engine][]** | [OpenXcom][] |
+| **Game Engine** | **[OpenXcom][]** |
 | **Supported Installer** | **setup_x-com_ufo_defense_1.2_(28046).exe** |
 | **Installer System** | **Windows** |
 

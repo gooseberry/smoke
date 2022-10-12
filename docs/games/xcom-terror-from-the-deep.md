@@ -6,6 +6,7 @@
 [Game Engine]: [OpenXcom][]
 
 
+
 # XCOM: Terror from the Deep
 
 !!! Quote ""
@@ -14,7 +15,7 @@
 
 | [GOG Store Page][] |  |
 |--:|:--|
-| **[Game Engine][]** |  |
+| **[Game Engine][]** | [OpenXcom][] |
 | **Supported Installer** | **setup_x-com_ufo_defense_1.2_(28046).exe** |
 | **Installer System** | **Windows** |
 

@@ -1,3 +1,5 @@
+[//]: # (Links to game engine websites)
+
 [CorsixTH]: https://corsixth.com/
 [DOSBox]: https://www.dosbox.com/
 [DXX-Rebirth]: https://www.dxx-rebirth.com/
@@ -7,3 +9,4 @@
 [QuakeSpasm-Spiked]: https://triptohell.info/moodles/qss/
 [ScummVM]: https://www.scummvm.org/
 [Yamagi Quake]: https://www.yamagi.org/quake2/
+

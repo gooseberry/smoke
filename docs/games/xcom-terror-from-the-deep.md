@@ -1,5 +1,5 @@
 [//]: # (Import global reference links)
---8<--"reference-links.md"
+--8<-- "reference-links.md"
 
 [//]: # (Set local reference links) 
 [GOG Store Page]: https://www.gog.com/en/game/xcom_terror_from_the_deep "XCOM Terror from the Deep"

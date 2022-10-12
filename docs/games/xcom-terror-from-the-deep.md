@@ -6,7 +6,7 @@
 
     The sequel to XCOM UFO Defense, XCOM Terror from the deep ramps up the difficulty level to the extreme.  Terror from the Deep adopts the mechanics from the first game and enhances them to offer new challenges with it's own rewards that draws players in.  It's a model that the new releases haven't quite managed to replicate.
 
-| GOG Store Page | [game] |
+| GOG Store Page | [game][] |
 |--:|:--|
 | **Game Engine** | **[OpenXcom](https://openxcom.org/)** |
 | **Supported Installer** | **setup_x-com_ufo_defense_1.2_(28046).exe** |

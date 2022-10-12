@@ -4,8 +4,6 @@
 
     Hexen takes the concepts introduced in Heretic and really runs with them.  Introducing character classes with different weapons and characteristics along with a hub map that serves as a bridge between levels, Hexen brought on a level of complexity never before seen in the FPS genre, culminating with large scale puzzles that span the entire game.  This game offers an experience you won't find in any other game of the time.
 
-|  |  |
-
 | GOG Store Page | [Hexen: Beyond Heretic](https://www.gog.com/en/game/hexen_beyond_heretic) |
 |--:|:--|
 | **Game Engine** | **[GZDoom](https://zdoom.org/index)** |

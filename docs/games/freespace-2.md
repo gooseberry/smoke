@@ -6,7 +6,7 @@
 
 | GOG Store Page | [Freespace 2](https://www.gog.com/en/game/freespace_2) |
 |--:|:--|
-| **Game Engine** | **[FS2Open Source Code Project](https://github.com/scp-fs2open/fs2open.github.com/wiki)** |
+| **Game Engine** | **[FS2Open](https://github.com/scp-fs2open/fs2open.github.com/wiki)** |
 | **Supported Installer** | **setup_freespace_2_1.20_v2_(33372).exe** |
 | **Installer System** | **Windows** |
 

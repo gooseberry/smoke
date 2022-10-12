@@ -1,12 +1,18 @@
+[//]: # (Import global reference links)
+--8<-- "reference-links.md"
+
+[//]: # (Set local reference links) 
+[GOG Store Page]: https://www.gog.com/en/game/xcom_ufo_defense "XCOM UFO Defense"
+
 # XCOM: UFO Defense
 
 !!! Quote ""
 
     Turn-based tacticle combat was perfected with X-COM: UFO Defense. The quality and depth of play in this game is a masterpiece on it's own. Be prepared to sink hours into this game with a steep learning curve and a rewarding system that keeps players engaged to the very end.
 
-| GOG Store Page | [XCOM UFO Defense](https://www.gog.com/en/game/xcom_ufo_defense) |
+| Game Information | [GOG Store Page][] |
 |--:|:--|
-| **Game Engine** | **[OpenXcom](https://openxcom.org/)** |
+| **Game Engine** | **[OpenXcom][]** |
 | **Supported Installer** | **setup_x-com_ufo_defense_1.2_(28046).exe** |
 | **Installer System** | **Windows** |
 

@@ -1,12 +1,18 @@
+[//]: # (Import global reference links)
+--8<-- "reference-links.md"
+
+[//]: # (Set local reference links) 
+[GOG Store Page]: https://www.gog.com/game/gabriel_knight_sins_of_the_fathers "Gabriel Knight: Sins of the Fathers"
+
 # Gabriel Knight: Sins of the Fathers
 
 !!! Quote ""
 
     Featuring an all star voice acting cast, Gabriel Knight is a beautiful blend of art and storytelling, told through a point and click adventure.  The puzzles in this game, while well implemented, take a back seat to the story and fleshed out characters.  Sins of the Fathers is an excellent entry to a great story that spans all three games.  
 
-| GOG Store Page | [Gabriel Knight: Sins of the Fathers](https://www.gog.com/game/gabriel_knight_sins_of_the_fathers) |
+| Game Information | [GOG Store Page][] |
 |--:|:--|
-| **Game Engine** | **[ScummVM](https://www.scummvm.org/)** |
+| **Game Engine** | **[ScummVM][]** |
 | **Supported Installer** | **setup_gabriel_knight_-_sins_of_the_fathers_1.1_(20239).exe** |
 | **Installer System** | **Windows** |
 

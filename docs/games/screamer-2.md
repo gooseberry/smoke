@@ -1,12 +1,18 @@
+[//]: # (Import global reference links)
+--8<-- "reference-links.md"
+
+[//]: # (Set local reference links) 
+[GOG Store Page]: https://www.gog.com/game/screamer_2 "Screamer 2"
+
 # Screamer 2
 
 !!! Quote ""
 
     Pure racing adrenaline fun.  Screamer 2 is all about being the fastest around the track.  Forget the perfect racing line.  Forget the right braking distance.  Just floor the gas pedal and zoom around the track in the glory of 3D Dos graphics.  
 
-| GOG Store Page | [Screamer 2](https://www.gog.com/game/screamer_2) |
+| Game Information | [GOG Store Page][] |
 |--:|:--|
-| **Game Engine** | **[DOSBox](https://www.dosbox.com/)** |
+| **Game Engine** | **[DOSBox][]** |
 | **Supported Installer** | **setup_screamer2_2.0.0.1.exe** |
 | **Installer System** | **Windows** |
 

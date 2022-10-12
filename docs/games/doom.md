@@ -1,12 +1,18 @@
+[//]: # (Import global reference links)
+--8<-- "reference-links.md"
+
+[//]: # (Set local reference links) 
+[GOG Store Page]: https://www.gog.com/en/game/doom_1993 "Doom"
+
 # Doom
 
 !!! Quote ""
 
     There is a reason that games were known as *Doom clones* before the term First Person Shooter was coined.  Doom may not have created the FPS genre, but it perfected it.  It's simple, it's fast, it's fun.  Games today still can't recreate the pure adrenaline fun of the original Doom.
 
-| GOG Store Page | [Doom](https://www.gog.com/en/game/doom_1993) |
+| Game Information | [GOG Store Page][] |
 |--:|:--|
-| **Game Engine** | **[GZDoom](https://zdoom.org/index)** |
+| **Game Engine** | **[GZDoom][]** |
 | **Supported Installer** | **setup_the_ultimate_doom_1.9_(28044).exe** |
 | **Installer System** | **Windows** |
 

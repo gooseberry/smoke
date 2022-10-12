@@ -1,12 +1,18 @@
+[//]: # (Import global reference links)
+--8<-- "reference-links.md"
+
+[//]: # (Set local reference links) 
+[GOG Store Page]: https://www.gog.com/game/doom_ii "Doom II"
+
 # Final Doom
 
 !!! Quote ""
 
     The final chapter to the original Doom games.  This game has been bundled into Doom 2 and consist of the two map packs **TNT: Evilution** and **The Plutonia Experiment**.  Final Doom doesn't introduce anything new to the game franchise, offering instead more challenges along the same formula.
 
-| GOG Store Page | [Doom II](https://www.gog.com/game/doom_ii) |
+| Game Information | [GOG Store Page][] |
 |--:|:--|
-| **Game Engine** | **[GZDoom](https://zdoom.org/index)** |
+| **Game Engine** | **[GZDoom][]** |
 | **Supported Installer** | **setup_final_doom_1.9_(28044).exe** |
 | **Installer System** | **Windows** |
 

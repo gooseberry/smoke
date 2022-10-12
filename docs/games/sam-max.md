@@ -1,12 +1,18 @@
+[//]: # (Import global reference links)
+--8<-- "reference-links.md"
+
+[//]: # (Set local reference links) 
+[GOG Store Page]: https://www.gog.com/game/sam_max_hit_the_road "Sam & Max: Hit the Road"
+
 # Sam & Max: Hit the Road
 
 !!! Quote ""
 
     A classic point-and-click adventure game with great humour, excellent voice acting, and a beautiful art style.  Sam and Max provide a near endless supply of one-liners and puns each one more crude than the last.  In a collection of adventure games, Sam and Max: Hit the Road fun and funny at an unparalleled level.
 
-| GOG Store Page | [Sam & Max: Hit the Road](https://www.gog.com/game/sam_max_hit_the_road) |
+| Game Information | [GOG Store Page][] |
 |--:|:--|
-| **Game Engine** | **[ScummVM](https://www.scummvm.org/)** |
+| **Game Engine** | **[ScummVM][]** |
 | **Supported Installer** | **sam_and_max_hit_the_road_en_gog_2_20100.sh** |
 | **Installer System** | **Linux** |
 

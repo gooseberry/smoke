@@ -1,12 +1,18 @@
+[//]: # (Import global reference links)
+--8<-- "reference-links.md"
+
+[//]: # (Set local reference links) 
+[GOG Store Page]: https://www.gog.com/game/quake_the_offering "Quake"
+
 # Quake
 
 !!! Quote ""
 
     ID software's followup to the Doom series.  Quake set the new standard for first person shooters introducing fully 3D environments.  With tight controls, an endless supply of monsters to shoot down, and an atmospheric soundtrack from Nine Inch Nails, Quake is the pinnacle of FPS games from the 1990s.
 
-| GOG Store Page | [Quake](https://www.gog.com/game/quake_the_offering) |
+| Game Information | [GOG Store Page][] |
 |--:|:--|
-| **Game Engine** | **[QuakeSpasm-Spiked](https://triptohell.info/moodles/qss/)** |
+| **Game Engine** | **[QuakeSpasm-Spiked][]** |
 | **Supported Installer** | **setup_quake_the_offering_2.0.0.6.exe** |
 | **Installer System** | **Windows** |
 

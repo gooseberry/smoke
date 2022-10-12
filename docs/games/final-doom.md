@@ -32,7 +32,7 @@
 
 ## Playing Game
 
--8<-- "playing-game.md"
+--8<-- "playing-game.md"
     
 * Final Doom: TNT Evilution
 * Final Doom: The Plutonia Experiment

@@ -1,2 +1,2 @@
-[GOG Store Page]
-[Game Engine]
+* [GOG Store Page]
+* [Game Engine]

@@ -10,7 +10,7 @@
 
     The Dig is a brilliant experience that dives us masterfully in a strange, but beautiful alien world, full of secrets and surprises.  The game with such an amazing soundtrack that it was released on CD and is available in record stores as we speak.  The Dig is a masterpiece in gaming, and a work of art.
 
-| Game Information | [GOG Store Page |
+| Game Information | [GOG Store Page][] |
 |--:|:--|
 | **Game Engine** | **[ScummVM][]** |
 | **Supported Installer** | **the_dig_en_gog_2_20100.sh** |

@@ -10,3 +10,6 @@
 [ScummVM]: https://www.scummvm.org/
 [Yamagi Quake]: https://www.yamagi.org/quake2/
 
+[//]: # (Other Links not yet Organized)
+
+[GOG Library]: https://www.gog.com/en/account "View your Library on GOG.com"

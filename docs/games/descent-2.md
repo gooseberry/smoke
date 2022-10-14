@@ -10,16 +10,28 @@
 
     Descent 2, like its predecessor, brings the idea of 6 degrees of freedom (6dof) to the first person genre. Fast-paced 3 dimensional mazes that are filled with traps and robots intent on killing anything that moves create an environment designed to leave you lost and wondering which side is up while frantically fighting to stay alive.
 
+## Links
+
+**[GOG Store Page][]**
+
+:   View additional details or purchase the game
+
+**[DXX-Rebirth][]**
+
+:   
 
 | Game Information | [GOG Store Page][] |
 |--:|:--|
 | **Game Engine** | **[DXX-Rebirth][]** |
 | **Supported Installer** | **setup_descent_2_1.1_(16596).exe** |
-| **Installer System** | **Windows** |
 
 ## Requirements
 
 --8<-- "requirements.md"
+
+## Downloading Game
+
+--8<-- "download-game-windows.md"
 
 ## Installing Game
 

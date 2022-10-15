@@ -1,0 +1,10 @@
+[sblaster]
+irq=5
+
+[autoexec]
+@echo off
+mount c "{{ base_dir }}/data"
+c:
+INTRO.EXE
+CF_ENG.EXE /f
+exit

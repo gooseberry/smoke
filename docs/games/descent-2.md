@@ -10,7 +10,6 @@
 
     Descent 2, like its predecessor, brings the idea of 6 degrees of freedom (6dof) to the first person genre. Fast-paced 3 dimensional mazes that are filled with traps and robots intent on killing anything that moves create an environment designed to leave you lost and wondering which side is up while frantically fighting to stay alive.
 
-
 | Game Information | [GOG Store Page][] |
 |--:|:--|
 | **Game Engine** | **[DXX-Rebirth][]** |
@@ -20,6 +19,10 @@
 ## Requirements
 
 --8<-- "requirements.md"
+
+## Downloading Game
+
+--8<-- "download-game-windows.md"
 
 ## Installing Game
 

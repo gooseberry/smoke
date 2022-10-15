@@ -63,6 +63,7 @@ nav:
     - Home: "index.md"
     - Getting Started: "getting-started.md"
     - Supported Games:
+        - Cannon Fodder: "games/cannon-fodder.md"
         - Descent II: "games/descent-2.md"
         - The Dig: "games/the-dig.md"
         - Doom: "games/doom.md"

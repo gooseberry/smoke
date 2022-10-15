@@ -1,0 +1,8 @@
+---
+# Starting playbook to install Cannon Fodder
+
+- name: Cannon Fodder
+  hosts: all
+
+  roles:
+      - cannon_fodder

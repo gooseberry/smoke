@@ -8,7 +8,7 @@
 
 !!! Quote ""
 
-    This game rocks, starting with the awesome music, through the graphics and the great collection of intuitive tables such as the tribute to Epic's first game, Jill of the Jungle, with a table called 'Jungle Pinball'.  They would later develop Extreme Pinball which is a fast paced, surrealistic pinball game.
+    *"War has never been so much fun!"*  This is a simple strategy game that is loaded with hours of fun.  Don't let the simple gameplay fool you, this game is challenging and the difficulty ramps up quickly as you rank up your soldiers through a variety of beautifully designed maps across a wide variety of landscapes.  
 
 | Game Information | [GOG Store Page][] |
 |--:|:--|
@@ -28,18 +28,18 @@
 
 --8<-- "install-game-instructions.md"
 
-        cd ~/git/smoke/playbooks && ansible-playbook epic_pinball.yml
+        cd ~/git/smoke/playbooks && ansible-playbook cannon_fodder.yml
 
 ## Playing Game
 
 --8<-- "playing-game.md"
     
-* Epic Pinball
+* Cannon Fodder
 * DOS Box
 
 --8<-- "thank-you.md"
     
-    * Epic Games for the vision and creating this game.
+    * Sensible Software for the vision and creating this game.
     * GOG for making this game available.
     * DOSBox for ongoing efforts in supporting this excellent port.
     * The folks at VOGONS for supporting all gamers looking to try Very Old Games On New Systems.

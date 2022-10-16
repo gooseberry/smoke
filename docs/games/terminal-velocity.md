@@ -4,7 +4,7 @@
 [//]: # (Set local reference links) 
 [GOG Store Page]: https://www.gog.com/en/game/terminal_velocity "Terminal Velocity"
 
-# Epic Pinball: The Complete Collection
+# Terminal Velocity
 
 !!! Quote ""
 

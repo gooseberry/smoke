@@ -8,7 +8,7 @@
 
 !!! Quote ""
 
-    This game rocks, starting with the awesome music, through the graphics and the great collection of intuitive tables such as the tribute to Epic's first game, Jill of the Jungle, with a table called 'Jungle Pinball'.  They would later develop Extreme Pinball which is a fast paced, surrealistic pinball game.
+    A fast paced shooter that has you flying over various terrain and through obstacle filled tunnels to destroy....basically everything in sight.  Terminal Velocity is wonderful in its focus on simplicity and offers a fast arcade fun experience.  There's little to no story here and none is needed, point your ship to the next opbjective and destroy what you find.  
 
 | Game Information | [GOG Store Page][] |
 |--:|:--|

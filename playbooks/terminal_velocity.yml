@@ -1,0 +1,8 @@
+---
+# Starting playbook to install Terminal Velocity
+
+- name: Terminal Velocity
+  hosts: all
+
+  roles:
+      - terminal_velocity
